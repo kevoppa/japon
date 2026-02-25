@@ -48,9 +48,12 @@ const modalData = {
         <p>1. Suivez les panneaux orange "Airport Bus".</p>
         <p>2. Aux bornes (Fr/En) : Destination <strong>Chiba Area → Kaihin-Makuhari Area</strong>.</p>
         <p>3. Arrêt exact : <strong>APA HOTEL & RESORT TOKYO BAY MAKUHARI</strong>.</p>
-        <p>4. Coût : ~7500 ¥ pour 5 adultes.</p>
+        <p>「アパホテル＆リゾート［千葉］」</p>
+        <p>4. Coût : ~7500 ¥ (40,64 euros) pour 5 adultes.</p>
         <p><em>Mémo Japonais : 「アパホテル＆リゾート〈東京ベイ幕張〉まで大人5名お願いしたいです。」</em></p>
-        
+        <p><em>(Je souhaite réserver un transport pour 5 adultes jusqu'à l'hôtel APA Hotel & Resort Tokyo Bay Makuhari.)</em></p>
+        <p><strong>Durée :</strong> Environ 40-50 minutes selon le trafic.</p>
+
         <div style="background: rgba(217, 83, 79, 0.15); border-left: 4px solid #d9534f; padding: 12px; margin-top: 15px; border-radius: 4px;">
             <p style="margin: 0;"><strong>🧳 Bagages :</strong> Descendez au niveau 1F. Donnez vos billets, gardez précieusement les 5 reçus bagages ! L'arrêt final est juste devant la Central Tower de l'hôtel.</p>
         </div>
@@ -220,17 +223,27 @@ const contentArea = document.getElementById('modal-content-area');
 
 function openModal(id) {
     const contentArea = document.getElementById('modal-content-area');
+    const titleArea = document.getElementById('modal-title-placeholder');
+    
     if (modalData[id]) {
-        contentArea.innerHTML = modalData[id];
+        // On crée un élément temporaire pour extraire le titre h3
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = modalData[id];
+        const titleElement = tempDiv.querySelector('h3');
+        
+        // Si un h3 existe, on le déplace dans la zone de titre, sinon on vide
+        if (titleElement) {
+            titleArea.innerHTML = `<h3>${titleElement.innerHTML}</h3>`;
+            titleElement.remove(); // On l'enlève du corps pour pas qu'il soit en double
+        } else {
+            titleArea.innerHTML = "";
+        }
+
+        contentArea.innerHTML = tempDiv.innerHTML;
         document.getElementById('modal-overlay').style.display = 'block';
         document.getElementById('modal-box').style.display = 'block';
-        
-        // --- PETIT AJOUT ICI : Synchronise le texte du bouton à l'ouverture ---
-        const isDark = document.body.getAttribute('data-theme') === 'dark';
-        updateThemeButtons(isDark ? "☀️ Mode Jour" : "🌙 Mode Nuit");
     }
 }
-
 function closeModal() {
     document.getElementById('modal-overlay').style.display = 'none';
     document.getElementById('modal-box').style.display = 'none';
