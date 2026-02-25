@@ -36,8 +36,12 @@ const modalData = {
     'guide-bus': `
         <h3 style="margin-bottom: 15px;">🚌 Guide Bus Haneda → APA Hotel Makuhari</h3>
         
-        <div style="margin-bottom: 15px; text-align: center;">
-            <img src="images/lieu-bus.jpg" alt="Plan du lieu" style="max-width:100%; height:auto; border-radius: 8px; border: 1px solid rgba(128,128,128,0.3);">
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="documents/lieu-bus.pdf" download class="btn">📥 Télécharger le PDF</a>
+        </div>
+
+        <div class="pdf-container">
+            <embed src="documents/lieu-bus.pdf" type="application/pdf" width="100%" height="500px" />
         </div>
 
         <p><strong>Lieu :</strong> Terminal 3 (T3), Hall des Arrivées (2F).</p>
