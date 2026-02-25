@@ -93,8 +93,8 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 }
 
 .main-nav a:hover {
-    background: var(--nav-hover);
-    color: white;
+    background: var(--accent-blue);
+    color: var(--bg-main);
     /* border-color: var(--nav-hover); Optionnel : pour que la bordure change aussi */
 }
 
@@ -323,7 +323,7 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 
     /* Couleur du texte et icône au survol ou actif */
     .main-nav a:hover, .main-nav a.active {
-        /*color: var(--nav-hover); Utilise ton bleu habituel */
+        color: white; /* Couleur du texte au survol (blanc pour le contraste) */
         background: transparent;
     }
 

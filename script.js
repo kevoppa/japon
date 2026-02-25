@@ -388,8 +388,9 @@ const modalData = {
             <p style="margin: 0; font-size: 0.8em; opacity: 0.7;">📍 〒261-0021 Chiba, Mihama Ward, Hibino, 2-3</p>
         </div>
     `,
-    'guide-car-tokyo1': `
+    'guide-car-tokyo': `
         <h3>🚗 Location Toyota Tokyo (07 au 12 Avril)</h3>
+        <img src="images/toyota/tokyo.jpg" alt="Guide Location Voiture Tokyo" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Agence :</strong> Kaihinmakuhari Sta. North Ext. Shop</p>
         <p><strong>Adresse :</strong> Koendori, Bldg. 1F 1-6-2 hibino, Mihama-ku, Chiba 261-0021<br>千葉市美浜区ひび野1-6-2公園通りビル1F</p>
         <p><strong>Téléphone :</strong> 043-296-8000</p>
@@ -399,6 +400,7 @@ const modalData = {
     `,
     'guide-resto1': `
         <h3>🍴 Dîner Seafood Buffet Ginza</h3>
+        <img src="images/tokyo/seafood-buffet-ginza.jpg" alt="Guide Resto Ginza" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Lieu :</strong> Ginza Nine Building No. 3, 8-10 Ginza, Chuo-ku, Tokyo B1F</p>
         <p><strong>Réservation :</strong> LAO Kevin (0760127109) - 5 Personnes.</p>
         <p><strong>Date & Heure :</strong> Mercredi 8 avril 2026 à 18h00.</p>
@@ -449,8 +451,9 @@ const modalData = {
         <p><strong>Réservation :</strong> 5 Adultes - 3 Nuits (23 au 26 avril) - 5 Chambres non-fumeurs.</p>
         <p>Petit déjeuner compris.</p>
     `,
-    'guide-car-tokyo2': `
+    'guide-car-retour-tokyo': `
         <h3>🚗 Location Toyota Tokyo Asakusabashi (Shopping)</h3>
+        <img src="images/toyota/retour-tokyo.jpg" alt="Guide Location Voiture Asakusabashi" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Agence :</strong> Asakusabashi Shop</p>
         <p><strong>Adresse :</strong> 5-22-5 Asakusabashi, Taito-ku, Tokyo 111-0053<br>台東区浅草橋5-22-5</p>
         <p><strong>Téléphone :</strong> 03-5821-6324</p>
