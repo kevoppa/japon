@@ -293,7 +293,7 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
         padding: 8px 0;
         /* On utilise RGBA pour l'opacité : 0.95 = 95% opaque */
         /* Si ton thème est sombre, on utilise un noir transparent, sinon un blanc */
-        background: rgba(26, 32, 44, 0.5); 
+        background: rgba(26, 32, 44, 0.6); 
         
         border-bottom: 1px solid var(--border-color);
         position: sticky; /* Optionnel : pour que le menu reste en haut au scroll */
@@ -346,4 +346,31 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
     }
 
     .pdf-container embed { height: 400px; }
+
+#theme-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        
+        /* Centrage absolu */
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        
+        /* Reset des styles qui pourraient décaler l'icône */
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 1; /* Très important pour le centrage vertical des émojis */
+        text-indent: 0 !important; 
+        font-size: 1.6rem;
+        
+        z-index: 9999;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        border: 2px solid var(--accent-blue);
+        background: var(--card-bg);
+        cursor: pointer;
+    }
 }

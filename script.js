@@ -16,7 +16,14 @@ function toggleTheme() {
 
 function updateThemeButtons(text) {
     const mainBtn = document.getElementById('theme-btn');
-    if (mainBtn) mainBtn.innerHTML = text;
+    if (mainBtn) {
+        if (window.innerWidth <= 600) {
+            // On prend l'émoji (le premier élément avant l'espace)
+            mainBtn.innerHTML = text.split(' ')[0]; 
+        } else {
+            mainBtn.innerHTML = text;
+        }
+    }
 }
 
 // 2. CHARGEMENT INITIAL (Vérifie la mémoire au démarrage)
@@ -50,6 +57,7 @@ const modalData = {
         <p>3. Arrêt exact : <strong>APA HOTEL & RESORT TOKYO BAY MAKUHARI</strong>.</p>
         <p>「アパホテル＆リゾート［千葉］」</p>
         <p>4. Coût : ~7500 ¥ (40,64 euros) pour 5 adultes.</p>
+
         <p><em>Mémo Japonais : 「アパホテル＆リゾート〈東京ベイ幕張〉まで大人5名お願いしたいです。」</em></p>
         <p><em>(Je souhaite réserver un transport pour 5 adultes jusqu'à l'hôtel APA Hotel & Resort Tokyo Bay Makuhari.)</em></p>
         <p><strong>Durée :</strong> Environ 40-50 minutes selon le trafic.</p>
