@@ -23,7 +23,7 @@ const modalData = {
         <p><em>Mémo Japonais : 「アパホテル＆リゾート〈東京ベイ幕張〉まで大人5名お願いしたいです。」</em></p>
         <p><strong>Bagages :</strong> Descendez au niveau 1F. Donnez vos billets, gardez précieusement les 5 reçus bagages ! L'arrêt final est juste devant la Central Tower de l'hôtel.</p>
     `,
-        'guide-bus-2': `
+        'guide-bus-pdf': `
         <h3>🚌 Guide Officiel : Haneda → Shinjuku / Makuhari</h3>
         <p>Ce guide détaille l'achat des billets aux automates et l'emplacement des comptoirs au Hall des Arrivées.</p>
         
