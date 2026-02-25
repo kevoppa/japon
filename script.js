@@ -260,8 +260,8 @@ const modalData = {
         
         <p><strong>Planning "De l'Aube à la Nuit" :</strong> Un itinéraire optimisé pour profiter de chaque instant sans fatigue, idéal pour admirer le géant japonais sous toutes ses coutures.</p>
 
-        <div style="background: rgba(49, 130, 206, 0.1); border-left: 4px solid var(--accent-blue); padding: 12px; margin: 15px 0; border-radius: 4px;">
-            <p style="margin: 0;">🚗 <strong>Trajet :</strong> Départ 10h00 de Tokyo via la Chuo Expressway. Gardez les yeux ouverts : après 1h de route, la silhouette imposante du volcan surgit soudainement au milieu de l'autoroute.</p>
+        <div class="alert-box-blue">
+            🚗 <strong>Trajet :</strong> Départ 10h00 de Tokyo via la Chuo Expressway. Gardez les yeux ouverts : après 1h de route, la silhouette imposante du volcan surgit soudainement au milieu de l'autoroute.
         </div>
 
         <h4>📍 Matinée : Panorama Sans Effort & Tradition</h4>
@@ -426,6 +426,7 @@ const modalData = {
     `,
     'guide-car-oki': `
         <h3>🚗 Location Voiture Okinawa (Kanucha)</h3>
+        <img src="images/toyota/okinawa.jpg" alt="Guide Location Voiture Okinawa" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Agence :</strong> Bureau Accueil de l'Aéroport (Kanucha Rent-a-Car)</p>
         <p><strong>Adresse :</strong> 439 Kagamizu, ville de Naha, Okinawa 9010142</p>
         <p><strong>Téléphone :</strong> 098-995-9977 (Mail: rentacar@kanucha.jp)</p>
@@ -435,6 +436,7 @@ const modalData = {
     `,
     'guide-villa': `
         <h3>🏠 Villa Onna Luxury (Okinawa)</h3>
+        <img src="images/okinawa/villa.jpg" alt="Guide Villa Okinawa" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Adresse :</strong> 字仲泊1411番地100, 恩納村, 沖縄県 904-0415</p>
         <p><strong>Hôte :</strong> Yota</p>
         <p><strong>Contact d'urgence (Appel Vidéo) :</strong><br>
