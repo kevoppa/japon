@@ -13,15 +13,25 @@ function toggleTheme() {
 
 // DONNEES DE TOUS LES GUIDES DETAILLÉS
 const modalData = {
-        'guide-bus': `
+    'guide-bus': `
         <h3>🚌 Guide Bus Haneda → APA Hotel Makuhari</h3>
+        
+        <div style="margin-bottom: 15px; text-align: center;">
+            <img src="images/lieu-bus.jpg" alt="Plan du lieu" style="max-width:100%; height:auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+        </div>
+
         <p><strong>Lieu :</strong> Terminal 3 (T3), Hall des Arrivées (2F).</p>
         <p>1. Suivez les panneaux orange "Airport Bus".</p>
         <p>2. Aux bornes (Fr/En) : Destination <strong>Chiba Area → Kaihin-Makuhari Area</strong>.</p>
         <p>3. Arrêt exact : <strong>APA HOTEL & RESORT TOKYO BAY MAKUHARI</strong>.</p>
         <p>4. Coût : ~7500 ¥ pour 5 adultes.</p>
-        <p><em>Mémo Japonais : 「アパホテル＆リゾート〈東京ベイ幕張〉まで大人5名お願いしたいです。」</em></p>
-        <p><strong>Bagages :</strong> Descendez au niveau 1F. Donnez vos billets, gardez précieusement les 5 reçus bagages ! L'arrêt final est juste devant la Central Tower de l'hôtel.</p>
+        <p><em>Mémo Japonais : </em></p>
+        <p><em>「アパホテル＆リゾート〈東京ベイ幕張〉まで大人5名お願いしたいです。」</em></p>
+        <p>( Je souhaite réserver un transport pour 5 adultes jusqu'à l'hôtel APA Hotel & Resort Tokyo Bay Makuhari. )</p>
+        
+        <div style="background: #fdf2f2; border-left: 4px solid #d9534f; padding: 10px; margin-top: 10px;">
+            <p><strong>🧳 Bagages :</strong> Descendez au niveau 1F. Donnez vos billets, gardez précieusement les 5 reçus bagages ! L'arrêt final est juste devant la Central Tower de l'hôtel.</p>
+        </div>
     `,
         'guide-bus-pdf': `
         <h3>🚌 Guide Officiel : Haneda → Shinjuku / Makuhari</h3>
@@ -50,6 +60,45 @@ const modalData = {
         <p><strong>Où exactement :</strong> À l'extrême droite après avoir quitté les douanes. Cherchez le comptoir JAL ABC.</p>
         <p><strong>Horaires :</strong> 24h/24 et 7j/7 (fermé juste entre 1h00 et 4h00 du matin).</p>
         <p><strong>Retour :</strong> Pas besoin de le rendre ! Jetez la carte SIM après utilisation.</p>
+    `,
+    'guide-bus-alternative': `
+        <h3>📱 Guide Bus Alternative (Option Tardive)</h3>
+        <p>Si vous manquez le bus direct pour l'hôtel, prenez la ligne vers <strong>Makuhari Baytown</strong>.</p>
+        
+        <table style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em;">
+            <tr style="background: #f4f4f4; text-align: left;">
+                <th style="padding: 8px; border: 1px solid #ddd;">Compagnie</th>
+                <th style="padding: 8px; border: 1px solid #ddd;">Départ T3</th>
+                <th style="padding: 8px; border: 1px solid #ddd;">Arrivée</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Keihin Kyuko</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">21h50</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">22h46</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Limousine Bus</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">22h10</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">23h06</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Keihin Kyuko</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">22h40</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">23h36</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Limousine Bus</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">23h05</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">00h01</td>
+            </tr>
+        </table>
+
+        <div style="margin-top: 15px; padding: 10px; background: #fff3cd; border-radius: 5px;">
+            <p><strong>🚶 Fin de trajet à pied (20 min / 1.4 km) :</strong></p>
+            <p>Descendre à l'arrêt : <em>ファーストウイング (First Wing)</em>.</p>
+            <p>Marcher vers l'hôtel : <strong>Makuhari Prince Hotel (APA Hotel)</strong>.</p>
+            <p><small>📍 〒261-0021 Chiba, Mihama Ward, Hibino, 2-3</small></p>
+        </div>
     `,
     'guide-car-tokyo1': `
         <h3>🚗 Location Toyota Tokyo (07 au 12 Avril)</h3>
