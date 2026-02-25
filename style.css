@@ -1,0 +1,221 @@
+/* VARIABLES GLOBALES */
+:root {
+    --bg-main: #f0f4f8;
+    --bg-card: #ffffff;
+    --text-main: #2d3748;
+    --text-muted: #718096;
+    --accent-red: #e53e3e;
+    --accent-blue: #3182ce;
+    --border-color: #e2e8f0;
+    --shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --radius: 12px;
+}
+
+[data-theme="dark"] {
+    --bg-main: #1a202c;
+    --bg-card: #2d3748;
+    --text-main: #f7fafc;
+    --text-muted: #a0aec0;
+    --accent-red: #fc8181;
+    --accent-blue: #63b3ed;
+    --border-color: #4a5568;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-size: 18px; /* Grande police pour la lisibilité */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* HEADER & NAV */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600') center/cover;
+    color: white;
+}
+header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+.subtitle { font-size: 1.2rem; opacity: 0.9; }
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg-card);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 700;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: var(--bg-main);
+}
+.main-nav a:hover { background: var(--accent-blue); color: white; }
+
+/* LAYOUT & CARDS */
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+.section-title {
+    margin-top: 60px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent-red);
+    color: var(--accent-blue);
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Sur mobile : image en haut, texte en bas */
+    border: 1px solid var(--border-color);
+}
+
+.card-img { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+}
+
+.card-content { 
+    padding: 25px; 
+    flex: 1; /* C'est ça qui force le texte à prendre TOUT l'espace restant */
+    min-width: 0; /* Astuce magique : empêche le texte d'être écrasé */
+}
+
+/* Sur les écrans d'ordinateur et tablettes */
+@media (min-width: 700px) {
+    .card { 
+        flex-direction: row; /* Image à gauche, texte à droite */
+    }
+    .card-img { 
+        width: 320px; /* Largeur fixe de l'image */
+        max-width: 320px;
+        height: auto; 
+        flex-shrink: 0; /* INTERDIT à l'image de s'écraser ou de s'étirer anormalement */
+    }
+}
+
+.badge {
+    background: var(--accent-red);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.card h3 { margin: 0 0 15px 0; font-size: 1.5rem; }
+
+/* BOUTONS ET ALERTES */
+.btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+.btn {
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.btn.secondary { background: var(--text-muted); }
+.btn:hover { opacity: 0.8; }
+
+.alert-box {
+    background: rgba(229, 62, 62, 0.1);
+    border-left: 4px solid var(--accent-red);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+/* THEME BUTTON */
+.theme-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: 2px solid var(--border-color);
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+}
+
+/* MODAL (POPUPS) */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 2000;
+    backdrop-filter: blur(3px);
+}
+.modal-box {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-card);
+    width: 90%; max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: var(--radius);
+    z-index: 2001;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+.modal-box h3 { color: var(--accent-blue); margin-top: 0; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+.modal-box ul { padding-left: 20px; }
+.modal-box p { margin-bottom: 10px; }
+
+/* Style pour le conteneur PDF */
+.pdf-container {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #eee;
+    margin-top: 15px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pdf-container embed {
+    display: block;
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 600px) {
+    .pdf-container embed {
+        height: 400px; /* Plus petit sur mobile pour garder de la place */
+    }
+}

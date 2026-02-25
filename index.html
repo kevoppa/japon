@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japon 2026 - Le Voyage Familial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">🌙 Mode Nuit</button>
+
+    <header>
+        <h1>🇯🇵 JAPON 2026</h1>
+        <p class="subtitle">Kevin, Loïc, May Nhia, Stéphanie, Estelle<br>Du 5 Avril au 27 Avril 2026</p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="#tokyo1">1. Tokyo</a>
+        <a href="#osaka">2. Osaka/Kyoto</a>
+        <a href="#okinawa">3. Okinawa</a>
+        <a href="#tokyo2">4. Retour Tokyo</a>
+        <a href="#france">5. Retour France</a>
+    </nav>
+
+    <main class="container">
+
+        <h1 class="main-title" style="text-align:center;">📅 Le Planning de Voyage</h1>
+
+        <section id="tokyo1">
+            <h2 class="section-title">⛩️ Phase 1 : Arrivée & Tokyo (05/04 - 12/04)</h2>
+
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=600" alt="Gare" class="card-img">
+                <div class="card-content">
+                    <span class="badge">Dimanche 05/04/26</span>
+                    <h3>Départ France ➔ Japon</h3>
+                    <p><strong>11h00 :</strong> TGV Inoui (1ère classe) depuis Lyon Part-Dieu.</p>
+                    <p><strong>13h02 :</strong> Arrivée Paris CDG 2.</p>
+                    <p><strong>20h25 :</strong> Décollage Vol Japan Airlines JL46 (Vol direct - 13h55).</p>
+                </div>
+            </article>
+
+            <article class="card alert-card">
+                <img src="https://cdn.prod.website-files.com/5b27a494dc3d312fe5c01da8/67d9c0401ed6ab22aff643d0_tyo1.webp" alt="Haneda Airport" class="card-img">
+                <div class="card-content">
+                    <span class="badge">Lundi 06/04/26</span>
+                    <h3>Arrivée Tokyo Haneda & Transfert</h3>
+                    <p><strong>17h20 :</strong> Atterrissage à Haneda (Terminal 3).</p>
+                    <div class="alert-box">
+                        ⚠️ <strong>TRÈS IMPORTANT :</strong> Obtenir le TAMPON physique de l'immigration et douane, même avec le QR Code ! Obligatoire pour le Tax Free dans les magasins et pour conduire.
+                    </div>
+                    <p>Direction l'hôtel APA Hotel & Resort Tokyo Bay Makuhari.</p>
+                    <div class="btn-group">
+                        <button class="btn" onclick="openModal('guide-bus')">🚌 Guide Bus Limousine</button>
+                        <button class="btn secondary" onclick="openModal('guide-bus-2')">📖 Guide Officiel Bus</button>
+                        <button class="btn secondary" onclick="openModal('guide-wifi')">📶 Guide Pocket WiFi</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://www.agoda.com/wp-content/uploads/2019/05/Where-to-stay-in-Tokyo-Roppongi-Area_2.jpg" alt="Tokyo Voiture & Repos" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Mardi 07/04/26</span>
+                    <h3>Voiture & Repos</h3>
+                    <p><strong>10h00 :</strong> Récupération de la voiture de location par Kevin et Loïc.</p>
+                    <p>Promenade libre et repas le soir selon la fatigue (décalage horaire).</p>
+                    <button class="btn" onclick="openModal('guide-car-tokyo1')">🚗 Infos Location Toyota</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=600" alt="Shibuya" class="card-img">
+                <div class="card-content">
+                    <span class="badge">Mercredi 08/04/26</span>
+                    <h3>Shibuya & Grand Dîner</h3>
+                    <p>En voiture (5 personnes) : Visite du Shibuya Crossing.</p>
+                    <p><strong>18h00 :</strong> Dîner réservé au Seafood Buffet Dining Ginza Hachiyoshi.</p>
+                    <button class="btn" onclick="openModal('guide-resto1')">🍴 Infos Réservation Dîner</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://img.freepik.com/photos-gratuite/fleurs-cerisier-temple-sensoji-asakusa-tokyo-japon_335224-203.jpg" alt="Asakusa & Fleurs" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Jeu 09/04 au Ven 10/04</span>
+                    <h3>Asakusa & Fleurs</h3>
+                    <p><strong>Jeudi 09 :</strong> Asakusa, Temple Senso-ji, Ueno, Skytree.</p>
+                    <p><strong>Vendredi 10 :</strong> Ashikaga Flower Park (ou alternative selon floraison).</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=600" alt="Mont Fuji" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Samedi 11/04/26</span>
+                    <h3>Expédition Mont Fuji</h3>
+                    <p>Départ très tôt le matin pour éviter les bouchons.</p>
+                    <p>Visite des meilleurs spots autour du Mont Fuji.</p>
+                    <p>Retour tard le soir (vers minuit si besoin) pour une route fluide.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://www.japan-guide.com/g20/3201_01.jpg" alt="Chinatown" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Dimanche 12/04/26</span>
+                    <h3>Chinatown</h3>
+                    <p>Matinée à Chinatown (Kanagawa).</p>
+                    <p><strong>Avant 20h00 :</strong> Rendre la voiture chez Toyota Rent a Car.</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="osaka">
+            <h2 class="section-title">🏯 Phase 2 : Osaka & Kyoto (13/04 - 17/04)</h2>
+
+            <article class="card">
+                <img src="https://jasumotickets.com/wp-content/uploads/2025/12/Shinkansen-Tokyo-to-Osaka-The-Ultimate-Guide-for-Travelers-2025-Hero-Image.jpg" alt="Osaka" class="card-img">
+                <div class="card-content">
+                    <span class="badge">Lundi 13/04/26</span>
+                    <h3>Shinkansen vers Osaka</h3>
+                    <p>Train depuis Tokyo vers Osaka Shin Station (après l'heure de pointe).</p>
+                    <p>Check-in : APA Hotel Shin Ekimae.</p>
+                    <p><strong>12h00 :</strong> Récupération de la nouvelle voiture de location par les garçons.</p>
+                    <p>Soirée : Visite de Dotonbori et repas.</p>
+                    <button class="btn" onclick="openModal('guide-car-osaka')">🚗 Infos Location Osaka</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://japonsamourai.fr/wp-content/uploads/2025/02/Osaka-vs-Kyoto-Ou-devriez-vous-rester.png" alt="Osaka vs Kyoto" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Mar 14/04 au Ven 17/04</span>
+                    <h3>Kyoto & Détente Osaka</h3>
+                    <p><strong>Mardi 14 :</strong> Kyoto (Fushimi Inari - milliers de portes rouges).</p>
+                    <p><strong>Mercredi 15 :</strong> Osaka (Dotonbori + Don Quijote).</p>
+                    <p><strong>Jeudi 16 :</strong> Kyoto (Tofukuji, Gion) + Dîner Pontocho Fujita.</p>
+                    <p><strong>Vendredi 17 :</strong> Osaka Salon Solaniwa (massage, bain thermal).</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="okinawa">
+            <h2 class="section-title">🏝️ Phase 3 : Okinawa (18/04 - 23/04)</h2>
+
+            <article class="card">
+                <img src="https://a0.muscache.com/im/pictures/7428e4c3-497a-4ef7-9ba8-e7d2d839b588.jpg?im_w=1440" alt="Okinawa" class="card-img">
+                <div class="card-content">
+                    <span class="badge">Samedi 18/04/26</span>
+                    <h3>Cap sur Okinawa & La Villa</h3>
+                    <p><strong>05h00 :</strong> Transfert Minibus Booking.com depuis l'hôtel vers l'Aéroport Itami.</p>
+                    <p><strong>08h15 :</strong> Vol ANA NH761 ➔ Arrivée Okinawa (10h25).</p>
+                    <p><strong>10h00 :</strong> Récupération voiture grand format (Kanucha).</p>
+                    <p>Trajet vers la Villa à Onna, puis courses au San-A Ishikawa City.</p>
+                    <div class="btn-group">
+                        <button class="btn" onclick="openModal('guide-transfer-itm')">🚐 Transfert Aéroport</button>
+                        <button class="btn" onclick="openModal('guide-car-oki')">🚗 Voiture Okinawa</button>
+                        <button class="btn secondary" onclick="openModal('guide-villa')">🏠 Accès Villa Onna</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://www.terres-japonaises.com/uploads/sites/77/2020/08/lagon-okinawa-japon.jpeg" alt="Okinawa Exploration Tropicale" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Dim 19/04 au Mer 22/04</span>
+                    <h3>Exploration Tropicale</h3>
+                    <p><strong>Dimanche 19 :</strong> Manzamo Area Revitalization.</p>
+                    <p><strong>Lundi 20 :</strong> Churaumi Aquarium Event Hall.</p>
+                    <p><strong>Mardi 21 :</strong> Visite de Naha Capitale.</p>
+                    <p><strong>Mercredi 22 :</strong> Southeast Botanical Gardens.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://www.snowmonkeyresorts.com/wp-content/uploads/2022/05/4646603_m.jpg" alt="Départ d'Okinawa" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Jeudi 23/04/26</span>
+                    <h3>Départ d'Okinawa</h3>
+                    <p><strong>08h00 :</strong> Départ de la villa. Rendre la voiture à Kanucha.</p>
+                    <p><strong>15h10 :</strong> Vol retour ANA NH470 vers Tokyo Haneda (Arrivée 17h35).</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="tokyo2">
+            <h2 class="section-title">🗼 Phase 4 : Retour Tokyo (23/04 - 26/04)</h2>
+
+            <article class="card">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/482142527.jpg?k=b4e573bb75ee10156f68c0baaed03b49f9f842136a9fa87d9bfedf14e420d25c&o=" alt="Tokyo Nuit" class="card-img">
+                <div class="card-content">
+                    <span class="badge">Jeudi 23/04/26</span>
+                    <h3>Installation Dernier Hôtel</h3>
+                    <p>Trajet en métro depuis Haneda vers l'hôtel <strong>Toyoko Inn Tokyo Asakusa Kuramae No.2</strong>.</p>
+                    <button class="btn" onclick="openModal('guide-hotel-tokyo2')">🏨 Infos Toyoko Inn</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://media.timeout.com/images/105818613/image.jpg" alt="Shopping Final" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Ven 24/04 & Sam 25/04</span>
+                    <h3>Shopping Final</h3>
+                    <p><strong>Vendredi 09h00 :</strong> Location Prius à Asakusabashi.</p>
+                    <p>Shopping à Akihabara, Odaiba, Meiji Jingu. Achat de valises.</p>
+                    <p><strong>Samedi :</strong> Shinjuku Godzilla Head. ⚠️ <strong>Rendre voiture avant 20h00 !</strong></p>
+                    <button class="btn" onclick="openModal('guide-car-tokyo2')">🚗 Location Asakusabashi</button>
+                </div>
+            </article>
+        </section>
+
+        <section id="france">
+            <h2 class="section-title">✈️ Phase 5 : Retour en France (26/04 - 27/04)</h2>
+
+            <article class="card">
+                <img src="https://marais-louvre.fr/wp-content/uploads/2024/09/depositphotos_42314967-stock-photo-travel-to-paris.webp" alt="Retour France" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Dimanche 26/04/26</span>
+                    <h3>Le Grand Retour</h3>
+                    <p><strong>05h30 :</strong> Départ de l'hôtel avec 2 Grands Monospaces réservés.</p>
+                    <p>Rendre les pocket WiFi à Haneda.</p>
+                    <p><strong>10h20 :</strong> Vol JAL45 ➔ Arrivée Paris CDG (17h55).</p>
+                    <p><strong>21h00 :</strong> Navette vers l'hôtel Première Classe Roissy.</p>
+                    <div class="btn-group">
+                        <button class="btn" onclick="openModal('guide-transfer-hnd')">🚐 Transferts Haneda</button>
+                        <button class="btn" onclick="openModal('guide-hotel-paris')">🏨 Hôtel Première Classe CDG</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://resize.programme-television.org/original/var/premiere/storage/images/news/art-de-vivre/deco/deco-le-tgv-inoui-s-offre-un-nouveau-look-4741209/103181446-1-fre-FR/Deco-Le-TGV-Inoui-s-offre-un-nouveau-look.jpg" alt="Navette & TGV" class="card-img" onerror="this.style.display='none'">
+                <div class="card-content">
+                    <span class="badge">Lundi 27/04/26</span>
+                    <h3>Retour à la Maison</h3>
+                    <p><strong>09h15 :</strong> Navette depuis l'hôtel vers l'aéroport CDG.</p>
+                    <p><strong>11h57 :</strong> TGV Inoui 1ère classe depuis Gare CDG 2.</p>
+                    <p><strong>14h00 :</strong> Arrivée à Lyon Part-Dieu. Fin du Voyage ! 🎉</p>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
+    <div id="modal-box" class="modal-box">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modal-content-area"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
