@@ -11,6 +11,7 @@
     --border-color: #e2e8f0;
     --shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
     --radius: 12px;
+    --nav-hover: #8ab7fa; /* TA COULEUR CHOISIE pour le mode CLAIR (ex: Vert canard) */
 }
 
 [data-theme="dark"] {
@@ -21,6 +22,7 @@
     --accent-red: #fc8181;
     --accent-blue: #63b3ed;
     --border-color: #4a5568;
+    --nav-hover: #339fe7; /* BLEU pour le mode SOMBRE */
 }
 
 /* =========================================
@@ -50,7 +52,7 @@ body {
 header {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/background-degrade.jpg') center/cover;
     color: white;
 }
 header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
@@ -78,7 +80,7 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 .main-nav a {
     text-decoration: none;
     color: var(--text-main);
-    background: var(--bg-main); /* Fond solide pour visibilité */
+    background: var(--bg-card); /* Fond solide pour visibilité */
     padding: 8px 15px;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -91,8 +93,9 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 }
 
 .main-nav a:hover {
-    background: var(--accent-blue);
+    background: var(--nav-hover);
     color: white;
+    /* border-color: var(--nav-hover); Optionnel : pour que la bordure change aussi */
 }
 
 .main-nav a span {
@@ -320,7 +323,7 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 
     /* Couleur du texte et icône au survol ou actif */
     .main-nav a:hover, .main-nav a.active {
-        color: var(--accent-blue); /* Utilise ton bleu habituel */
+        color: var(--nav-hover); /* Utilise ton bleu habituel */
         background: transparent;
     }
 
@@ -341,7 +344,7 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 
     /* Changement de couleur du rond au survol pour le retour visuel */
     .main-nav a:hover span {
-        background: var(--accent-blue);
+        background: var(--nav-hover); /* Bleu au survol */
         transform: translateY(-2px);
     }
 
