@@ -323,7 +323,7 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 
     /* Couleur du texte et icône au survol ou actif */
     .main-nav a:hover, .main-nav a.active {
-        color: var(--nav-hover); /* Utilise ton bleu habituel */
+        /*color: var(--nav-hover); Utilise ton bleu habituel */
         background: transparent;
     }
 
@@ -343,10 +343,10 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
     }
 
     /* Changement de couleur du rond au survol pour le retour visuel */
-    .main-nav a:hover span {
+    /*.main-nav a:hover span {
         background: var(--nav-hover); /* Bleu au survol */
-        transform: translateY(-2px);
-    }
+    /*    transform: translateY(-2px);
+    }*/
 
     .pdf-container embed { height: 400px; }
 
@@ -377,3 +377,8 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
         cursor: pointer;
     }
 }
+
+/* Couleur texte rouge */
+.red-text { color: var(--accent-red); }
+/* Couleur texte bleu */
+.blue-text { color: var(--accent-blue); }
