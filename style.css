@@ -140,7 +140,6 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 }
 .btn.secondary { background: var(--text-muted); }
 .btn:hover { opacity: 0.8; }
-
 .alert-box {
     background: rgba(229, 62, 62, 0.1);
     border-left: 4px solid var(--accent-red);
@@ -219,3 +218,55 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
         height: 400px; /* Plus petit sur mobile pour garder de la place */
     }
 }
+
+/* AJUSTEMENTS POUR LE BOUTON DANS LA MODALE */
+.modal-header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.btn-theme-mini {
+    background: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-theme-mini:hover {
+    background: var(--accent-blue);
+    color: white;
+}
+
+.close-btn-inline {
+    font-size: 32px;
+    cursor: pointer;
+    color: var(--text-muted);
+    line-height: 1;
+}
+
+/* On cache l'ancienne croix absolue si on utilise la nouvelle */
+.modal-box .close-btn { display: none; }
+
+/* Correction visuelle du bouton dans la modale */
+#theme-btn-modal {
+    transition: all 0.3s ease;
+    font-weight: bold;
+    min-width: 120px;
+}
+
+/* En mode sombre, on s'assure que le bouton reste lisible */
+[data-theme="dark"] #theme-btn-modal {
+    background: #4a5568;
+    color: #f7fafc;
+    border-color: #718096;
+}
+

@@ -1,23 +1,43 @@
-// GESTION DU MODE NUIT/JOUR
+// 1. GESTION DU THÈME (Mémoire + Synchronisation)
 function toggleTheme() {
     const body = document.body;
-    const btn = document.getElementById('theme-btn');
-    if (body.getAttribute('data-theme') === 'dark') {
+    const isDark = body.getAttribute('data-theme') === 'dark';
+    
+    if (isDark) {
         body.removeAttribute('data-theme');
-        btn.innerHTML = "🌙 Mode Nuit";
+        updateThemeButtons("🌙 Mode Nuit");
+        localStorage.setItem('theme', 'light');
     } else {
         body.setAttribute('data-theme', 'dark');
-        btn.innerHTML = "☀️ Mode Jour";
+        updateThemeButtons("☀️ Mode Jour");
+        localStorage.setItem('theme', 'dark');
     }
 }
+
+function updateThemeButtons(text) {
+    const mainBtn = document.getElementById('theme-btn');
+    if (mainBtn) mainBtn.innerHTML = text;
+}
+
+// 2. CHARGEMENT INITIAL (Vérifie la mémoire au démarrage)
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        // On attend que le HTML soit chargé pour mettre à jour le texte des boutons
+        window.addEventListener('DOMContentLoaded', () => {
+            updateThemeButtons("☀️ Mode Jour");
+        });
+    }
+})();
 
 // DONNEES DE TOUS LES GUIDES DETAILLÉS
 const modalData = {
     'guide-bus': `
-        <h3>🚌 Guide Bus Haneda → APA Hotel Makuhari</h3>
+        <h3 style="margin-bottom: 15px;">🚌 Guide Bus Haneda → APA Hotel Makuhari</h3>
         
         <div style="margin-bottom: 15px; text-align: center;">
-            <img src="images/lieu-bus.jpg" alt="Plan du lieu" style="max-width:100%; height:auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+            <img src="images/lieu-bus.jpg" alt="Plan du lieu" style="max-width:100%; height:auto; border-radius: 8px; border: 1px solid rgba(128,128,128,0.3);">
         </div>
 
         <p><strong>Lieu :</strong> Terminal 3 (T3), Hall des Arrivées (2F).</p>
@@ -25,15 +45,13 @@ const modalData = {
         <p>2. Aux bornes (Fr/En) : Destination <strong>Chiba Area → Kaihin-Makuhari Area</strong>.</p>
         <p>3. Arrêt exact : <strong>APA HOTEL & RESORT TOKYO BAY MAKUHARI</strong>.</p>
         <p>4. Coût : ~7500 ¥ pour 5 adultes.</p>
-        <p><em>Mémo Japonais : </em></p>
-        <p><em>「アパホテル＆リゾート〈東京ベイ幕張〉まで大人5名お願いしたいです。」</em></p>
-        <p>( Je souhaite réserver un transport pour 5 adultes jusqu'à l'hôtel APA Hotel & Resort Tokyo Bay Makuhari. )</p>
+        <p><em>Mémo Japonais : 「アパホテル＆リゾート〈東京ベイ幕張〉まで大人5名お願いしたいです。」</em></p>
         
-        <div style="background: #fdf2f2; border-left: 4px solid #d9534f; padding: 10px; margin-top: 10px;">
-            <p><strong>🧳 Bagages :</strong> Descendez au niveau 1F. Donnez vos billets, gardez précieusement les 5 reçus bagages ! L'arrêt final est juste devant la Central Tower de l'hôtel.</p>
+        <div style="background: rgba(217, 83, 79, 0.15); border-left: 4px solid #d9534f; padding: 12px; margin-top: 15px; border-radius: 4px;">
+            <p style="margin: 0;"><strong>🧳 Bagages :</strong> Descendez au niveau 1F. Donnez vos billets, gardez précieusement les 5 reçus bagages ! L'arrêt final est juste devant la Central Tower de l'hôtel.</p>
         </div>
     `,
-        'guide-bus-pdf': `
+    'guide-bus-pdf': `
         <h3>🚌 Guide Officiel : Haneda → Shinjuku / Makuhari</h3>
         <p>Ce guide détaille l'achat des billets aux automates et l'emplacement des comptoirs au Hall des Arrivées.</p>
         
@@ -55,49 +73,53 @@ const modalData = {
     `,
     'guide-wifi': `
         <h3>📶 Récupération Pocket WiFi (Sakura Mobile)</h3>
-        <img src="images/le-guide-wifi.jpg" alt="Guide WiFi" style="max-width:100%;height:auto;">
+        <img src="images/le-guide-wifi.jpg" alt="Guide WiFi" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Emplacement :</strong> Aéroport Haneda Terminal 3, Hall des arrivées (2F).</p>
         <p><strong>Où exactement :</strong> À l'extrême droite après avoir quitté les douanes. Cherchez le comptoir JAL ABC.</p>
         <p><strong>Horaires :</strong> 24h/24 et 7j/7 (fermé juste entre 1h00 et 4h00 du matin).</p>
         <p><strong>Retour :</strong> Pas besoin de le rendre ! Jetez la carte SIM après utilisation.</p>
     `,
     'guide-bus-alternative': `
-        <h3>📱 Guide Bus Alternative (Option Tardive)</h3>
+        <h3 style="margin-bottom: 15px;">📱 Guide Bus Alternative (Option Tardive)</h3>
         <p>Si vous manquez le bus direct pour l'hôtel, prenez la ligne vers <strong>Makuhari Baytown</strong>.</p>
         
-        <table style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em;">
-            <tr style="background: #f4f4f4; text-align: left;">
-                <th style="padding: 8px; border: 1px solid #ddd;">Compagnie</th>
-                <th style="padding: 8px; border: 1px solid #ddd;">Départ T3</th>
-                <th style="padding: 8px; border: 1px solid #ddd;">Arrivée</th>
-            </tr>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Keihin Kyuko</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">21h50</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">22h46</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Limousine Bus</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">22h10</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">23h06</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Keihin Kyuko</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">22h40</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">23h36</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Limousine Bus</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">23h05</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">00h01</td>
-            </tr>
+        <table style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em; border: 1px solid rgba(128,128,128,0.3);">
+            <thead>
+                <tr style="background: rgba(128, 128, 128, 0.15); text-align: left;">
+                    <th style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Compagnie</th>
+                    <th style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Départ T3</th>
+                    <th style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Arrivée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Keihin Kyuko</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">21h50</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">22h46</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Limousine Bus</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">22h10</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">23h06</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Keihin Kyuko</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">22h40</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">23h36</td>
+                </tr>
+                <tr style="color: #d4a017; font-weight: bold; background: rgba(212, 160, 23, 0.1);">
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Limousine Bus</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">23h05</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">00h01</td>
+                </tr>
+            </tbody>
         </table>
 
-        <div style="margin-top: 15px; padding: 10px; background: #fff3cd; border-radius: 5px;">
-            <p><strong>🚶 Fin de trajet à pied (20 min / 1.4 km) :</strong></p>
-            <p>Descendre à l'arrêt : <em>ファーストウイング (First Wing)</em>.</p>
-            <p>Marcher vers l'hôtel : <strong>Makuhari Prince Hotel (APA Hotel)</strong>.</p>
-            <p><small>📍 〒261-0021 Chiba, Mihama Ward, Hibino, 2-3</small></p>
+        <div style="margin-top: 20px; padding: 15px; background: rgba(255, 193, 7, 0.1); border: 1px solid #d4a017; border-radius: 8px;">
+            <p style="margin: 0 0 8px 0; color: #d4a017; font-weight: bold;">🚶 Fin de trajet à pied (20 min / 1.4 km) :</p>
+            <p style="margin: 0;">Descendre à l'arrêt : <strong>ファーストウイング (First Wing)</strong>.</p>
+            <p style="margin: 5px 0;">Marcher vers l'hôtel : <strong>Makuhari Prince Hotel (APA)</strong>.</p>
+            <p style="margin: 0; font-size: 0.8em; opacity: 0.7;">📍 〒261-0021 Chiba, Mihama Ward, Hibino, 2-3</p>
         </div>
     `,
     'guide-car-tokyo1': `
@@ -193,30 +215,33 @@ const modalBox = document.getElementById('modal-box');
 const contentArea = document.getElementById('modal-content-area');
 
 function openModal(id) {
-    contentArea.innerHTML = modalData[id];
-    overlay.style.display = 'block';
-    modalBox.style.display = 'block';
+    const contentArea = document.getElementById('modal-content-area');
+    if (modalData[id]) {
+        contentArea.innerHTML = modalData[id];
+        document.getElementById('modal-overlay').style.display = 'block';
+        document.getElementById('modal-box').style.display = 'block';
+        
+        // --- PETIT AJOUT ICI : Synchronise le texte du bouton à l'ouverture ---
+        const isDark = document.body.getAttribute('data-theme') === 'dark';
+        updateThemeButtons(isDark ? "☀️ Mode Jour" : "🌙 Mode Nuit");
+    }
 }
 
 function closeModal() {
-    overlay.style.display = 'none';
-    modalBox.style.display = 'none';
+    document.getElementById('modal-overlay').style.display = 'none';
+    document.getElementById('modal-box').style.display = 'none';
 }
 
 // Automatisation des images
 document.addEventListener("DOMContentLoaded", function() {
     const images = document.querySelectorAll('.card-img');
-    
     images.forEach(img => {
-        // 1. Si la source est vide ou le tag src n'existe pas
         if (!img.getAttribute('src') || img.getAttribute('src') === "") {
-            img.remove(); // On supprime la balise pour que le texte prenne toute la place
+            img.remove();
         }
-
-        // 2. Si l'image ne charge pas (lien mort), on met une image par défaut
         img.onerror = function() {
-            this.src = "documents/photo-par-defaut.jpg"; // Remplace par ton chemin
-            this.onerror = null; // Évite une boucle infinie si l'image par défaut est aussi morte
+            this.src = "documents/photo-par-defaut.jpg";
+            this.onerror = null;
         };
     });
 });
