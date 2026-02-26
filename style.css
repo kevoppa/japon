@@ -12,6 +12,7 @@
     --shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
     --radius: 12px;
     --nav-hover: #8ab7fa; /* TA COULEUR CHOISIE pour le mode CLAIR (ex: Vert canard) */
+    --kyoto-orange: rgb(233, 133, 20); /* Couleur orange pour Kyoto */
 }
 
 [data-theme="dark"] {
@@ -19,10 +20,11 @@
     --bg-card: #2d3748;
     --text-main: #f7fafc;
     --text-muted: #a0aec0;
-    --accent-red: #fc8181;
+    --accent-red: #f57070;
     --accent-blue: #63b3ed;
     --border-color: #4a5568;
     --nav-hover: #339fe7; /* BLEU pour le mode SOMBRE */
+    --kyoto-orange: rgb(255, 149, 28); /* Couleur orange pour Kyoto en mode sombre (légèrement plus clair que le mode clair) */
 }
 
 /* =========================================

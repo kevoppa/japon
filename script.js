@@ -50,6 +50,14 @@ function updateThemeButtons(text) {
 
 // DONNEES DE TOUS LES GUIDES DETAILLÉS
 const modalData = {
+    'guide-hotel-osaka': `
+        <h3 style="margin-bottom: 15px;">🏨 Hôtel APA Osaka Shin Ekimae</h3>
+        <img src="images/osaka/hotel.jpg" alt="Guide Hôtel Osaka" style="max-width:100%;height:auto; border-radius:8px;">
+        <p><strong>Nom complet :</strong> APA Hotel & Resort Osaka Shin Ekimae (アパホテル＆リゾート〈大阪新駅前〉)</p>
+        <p><strong>Adresse :</strong> 1-10 Nishikawa, Chuo-ku, Osaka 542-0072<br>大阪市中央区西川1-10</p>
+        <p><strong>Téléphone :</strong> +81 6-6324-7777</p>
+        <p><strong>Réservation :</strong> 5 Adultes - 5 Chambres non-fumeurs - 5 Nuits (13 au 17 avril). Pas de petit déjeuner (non compris).</p>
+    `,
     'guide-osaka': `
         <h3 style="margin-bottom: 15px;">🏯 Osaka : La Cité Électrique et Gourmande</h3>
         
@@ -255,9 +263,18 @@ const modalData = {
             • <strong>Astuce :</strong> Arrivez vers 10h30 pour éviter les files d'attente trop longues dans les restaurants populaires le dimanche midi.</p>
         </div>
     `,
-    'guide-fuji': `
+/*     'guide-mont-fuji': `
         <h3 style="margin-bottom: 15px;">🗻 Le Grand Tour du Mont Fuji (Voiture)</h3>
         
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+            <img src="images/mont-fuji/lac-yamanaka.jpg" alt="Lac Yamanaka" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/houtou.jpg" alt="Houtou Noodles" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/arakurayama-engen-park.jpg" alt="Arakurayama Engen Park" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/oshino-hakkai.jpg" alt="Oshino Hakkai" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/lac-kawaguchi.jpg" alt="Lac Kawaguchi" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/fujinomiya-yakisoba-restaurant-uruoitei.jpg" alt="Fujinomiya Yakisoba Restaurant Uruoitei" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+        </div>
+
         <p><strong>Planning "De l'Aube à la Nuit" :</strong> Un itinéraire optimisé pour profiter de chaque instant sans fatigue, idéal pour admirer le géant japonais sous toutes ses coutures.</p>
 
         <div class="alert-box-blue">
@@ -290,27 +307,120 @@ const modalData = {
             • <strong>Étoiles :</strong> Avant de quitter le plateau d'Asagiri, stoppez 10 min au parking <em>Michi-no-Eki</em> pour contempler la Voie Lactée au-dessus du volcan.<br>
             • <strong>Retour :</strong> Reprise de la route vers 21h30 via la Shin-Tomei pour une arrivée fluide à Tokyo vers minuit.</p>
         </div>
+    `, */
+
+'guide-mont-fuji': `
+        <h3 style="margin-bottom: 12px;">🗻 Le Grand Tour du Mont Fuji (Voiture & Confort)</h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
+            <img src="images/mont-fuji/lac-yamanaka.jpg" alt="Lac Yamanaka" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/houtou.jpg" alt="Houtou Noodles" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/arakurayama-engen-park.jpg" alt="Arakurayama Engen Park" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/oshino-hakkai.jpg" alt="Oshino Hakkai" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/lac-kawaguchi.jpg" alt="Lac Kawaguchi" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="images/mont-fuji/fujinomiya-yakisoba-restaurant-uruoitei.jpg" alt="Fujinomiya Yakisoba Restaurant Uruoitei" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+        </div>
+
+        <p style="margin-bottom: 10px;"><strong>Planning "Zénitude & Panorama" :</strong> Un itinéraire optimisé pour profiter de chaque instant sans fatigue, idéal pour admirer le géant japonais sous toutes ses coutures avec un maximum de confort.</p>
+
+        <div class="alert-box-blue" style="margin-bottom: 15px; padding: 10px;">
+            🚗 <strong>Trajet :</strong> Départ 07h30 de Tokyo via la Chuo Expressway. Gardez les yeux ouverts : après 1h de route, la silhouette imposante du volcan surgit soudainement au milieu de l'autoroute.
+        </div>
+
+        <h4 style="margin-bottom: 8px;">📍 Matinée : Panorama Sans Effort & Tradition</h4>
+        <ul style="margin-bottom: 15px;">
+            <li style="margin-bottom: 8px;"><strong>09h15 : Lac Yamanaka (Panorama-dai)</strong> — Oubliez les marches ! Ici, on se gare face au volcan. C'est l'un des points de vue les plus larges et impressionnants, où le Fuji semble à portée de main.<br>
+                <small>📍 Hirano, Yamanakako, 401-0502 | <a href="https://www.google.com/maps/search/?api=1&query=Yamanakako+Myojinyama+Panorama-dai" target="_blank" style="color: #1a73e8; text-decoration: none; font-weight: bold;">↗️ Maps</a></small>
+            </li>
+            <li style="margin-bottom: 8px;"><strong>10h30 : Oshino Hakkai</strong> — Flânez entre les huit étangs sacrés aux eaux cristallines d'un bleu profond, alimentés par la fonte des neiges. Un décor de carte postale, tout plat et très reposant.<br>
+                <small>📍 Shibokusa, Oshino, 401-0511 | <a href="https://www.google.com/maps/search/?api=1&query=Oshino+hakkai" target="_blank" style="color: #1a73e8; text-decoration: none; font-weight: bold;">↗️ Maps</a></small>
+            </li>
+            <li style="margin-bottom: 8px;"><strong>12h00 : Déjeuner (Houtou Fudo)</strong> — Goûtez aux <em>Houtou Noodles</em>, ces nouilles larges et fondantes mijotées dans une soupe de potiron. Un délice local beaucoup plus tendre que les Udon classiques.<br>
+                <small>📍 2458 Funatsu, Fujikawaguchiko, 401-0301 | <a href="https://www.google.com/maps/search/?api=1&query=Hoto+Fudo+Higashikoiji" target="_blank" style="color: #1a73e8; text-decoration: none; font-weight: bold;">↗️ Maps</a></small>
+            </li>
+        </ul>
+
+        <h4 style="margin-bottom: 8px;">🌊 Après-midi : Sérénité et Puissance Naturelle</h4>
+        <ul style="margin-bottom: 15px;">
+            <li style="margin-bottom: 8px;"><strong>14h00 : Lac Kawaguchi (Parc Oishi)</strong> — L'instant Zen. Marchez le long des parterres de fleurs qui bordent le lac. C’est le moment idéal pour une glace à la lavande face au reflet parfait du volcan dans l'eau.<br>
+                <small>📍 2525 Oishi, Fujikawaguchiko, 401-0305 | <a href="https://www.google.com/maps/search/?api=1&query=Oishi+Park+Fujikawaguchiko" target="_blank" style="color: #1a73e8; text-decoration: none; font-weight: bold;">↗️ Maps</a></small>
+            </li>
+            <li style="margin-bottom: 8px;"><strong>16h00 : Chutes de Shiraito</strong> — Un spectacle sauvage unique. L'eau ne tombe pas d'une rivière, elle jaillit directement de la roche volcanique en centaines de filets de soie. Un lieu pur, frais et puissant.<br>
+                <small>📍 273-1 Kamiide, Fujinomiya, 418-0103 | <a href="https://www.google.com/maps/search/?api=1&query=Shiraito+Falls+Fujinomiya" target="_blank" style="color: #1a73e8; text-decoration: none; font-weight: bold;">↗️ Maps</a></small>
+            </li>
+        </ul>
+
+        <h4 style="margin-bottom: 8px;">✨ Soirée : Le Grand Final sous les Étoiles</h4>
+        <ul style="margin-bottom: 15px;">
+            <li style="margin-bottom: 8px;"><strong>17h30 : Lac Tanuki</strong> — Le spot ultime pour le coucher de soleil. Posez-vous sur le ponton en bois et regardez le ciel passer du orange au violet électrique sur les neiges éternelles, dans un calme absolu.<br>
+                <small>📍 634 Inokashira, Fujinomiya, 418-0108 | <a href="https://www.google.com/maps/search/?api=1&query=Lake+Tanuki+Fugaku+Terrace" target="_blank" style="color: #1a73e8; text-decoration: none; font-weight: bold;">↗️ Maps</a></small>
+            </li>
+            <li style="margin-bottom: 8px;"><strong>18h45 : Dîner à Fujinomiya (Uruoitei)</strong> — Dégustez les célèbres <em>Fujinomiya Yakisoba</em> chez <em>Uruoitei</em>, une véritable institution où les nouilles sont sautées avec un savoir-faire inimitable.<br>
+                <small>📍 415-2 Yodoshi, Fujinomiya, 418-0051 | <a href="https://www.google.com/maps/search/?api=1&query=Uruoitei+Yakisoba+Fujinomiya" target="_blank" style="color: #1a73e8; text-decoration: none; font-weight: bold;">↗️ Maps</a></small>
+            </li>
+            <li style="margin-bottom: 8px;"><strong>Final : Sanctuaire Fujisan Sengen Taisha</strong> — Terminez la journée par une marche mystique dans ce sanctuaire illuminé de nuit. L'atmosphère y est solennelle et apaisante avant de reprendre la route.<br>
+                <small>📍 1-1 Miyacho, Fujinomiya, 418-0067 | <a href="https://www.google.com/maps/search/?api=1&query=Fujisan+Hongu+Sengen+Taisha" target="_blank" style="color: #1a73e8; text-decoration: none; font-weight: bold;">↗️ Maps</a></small>
+            </li>
+        </ul>
+
+        <div style="background: rgba(212, 160, 23, 0.12); border: 1px solid #d4a017; padding: 10px; border-radius: 8px; font-size: 0.85em;">
+            <p style="margin: 0;"><strong>💡 Rappels GPS & Voitures :</strong><br>
+            • Cliquez sur les liens <strong>↗️ Maps</strong> pour lancer la navigation directe.<br>
+            • <strong>Étoiles :</strong> Avant de quitter le plateau d'Asagiri, stoppez 10 min au parking <em>Michi-no-Eki</em> pour contempler la Voie Lactée.<br>
+            • <strong>Péages :</strong> Voies "CASH" (vert) ou "ETC" (bleu).<br>
+            • <strong>Retour :</strong> Départ vers 20h30 pour une arrivée fluide à Tokyo vers 22h30.</p>
+        </div>
     `,
-    'guide-bus': `
+'guide-bus': `
         <h3 style="margin-bottom: 15px;">🚌 Guide Bus Haneda → APA Hotel Makuhari</h3>
         
         <div class="btn-group" style="margin-bottom: 15px;">
             <a href="documents/lieu-bus.pdf" download class="btn">📥 Télécharger le PDF</a>
         </div>
 
-        <div class="pdf-container">
+        <div class="pdf-container" style="margin-bottom: 20px;">
             <embed src="documents/lieu-bus.pdf" type="application/pdf" width="100%" height="500px" />
         </div>
 
+        <h4 style="margin-bottom: 10px;">🕒 Horaires Bus Limousine (6 Avril 2026)</h4>
+        <table style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9em; border: 1px solid rgba(128,128,128,0.3);">
+            <thead>
+                <tr style="background: rgba(128, 128, 128, 0.15); text-align: left;">
+                    <th style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Compagnie</th>
+                    <th style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Départ T3</th>
+                    <th style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Arrivée APA Hotel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Keisei Bus</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">18h10</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">19h14</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Limousine Bus</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">20h05</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">21h09</td>
+                </tr>
+                <tr style="color: #d4a017; font-weight: bold; background: rgba(212, 160, 23, 0.1);">
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Keisei Bus (Dernier)</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">21h30</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">22h34</td>
+                </tr>
+            </tbody>
+        </table>
+
+    <h4 style="margin-bottom: 10px;">🎫 Acheter ticket bus</h4>
         <p><strong>Lieu :</strong> Terminal 3 (T3), Hall des Arrivées (2F).</p>
         <p>1. Suivez les panneaux orange "Airport Bus".</p>
         <p>2. Aux bornes (Fr/En) : Destination <strong>Chiba Area → Kaihin-Makuhari Area</strong>.</p>
         <p>3. Arrêt exact : <strong>APA HOTEL & RESORT TOKYO BAY MAKUHARI</strong>.</p>
         <p>「アパホテル＆リゾート［千葉］」</p>
-        <p>4. Coût : ~7500 ¥ (40,64 euros) pour 5 adultes.</p>
+        <p>4. Coût : ~7500 ¥ (env. 46 euros) pour 5 adultes.</p>
 
-        <p><em>Mémo Japonais : 「アパホテル＆リゾート〈東京ベイ幕張〉まで大人5名お願いしたいです。」</em></p>
+        <p style="margin-top: 15px;"><em>Mémo Japonais : 「アパホテル＆リゾート〈東京ベイ幕張〉まで大人5名お願いしたいです。」</em></p>
         <p><em>(Je souhaite réserver un transport pour 5 adultes jusqu'à l'hôtel APA Hotel & Resort Tokyo Bay Makuhari.)</em></p>
+        
         <p><strong>Durée :</strong> Environ 40-50 minutes selon le trafic.</p>
 
         <div style="background: rgba(217, 83, 79, 0.15); border-left: 4px solid #d9534f; padding: 12px; margin-top: 15px; border-radius: 4px;">
@@ -374,7 +484,7 @@ const modalData = {
                     <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">23h36</td>
                 </tr>
                 <tr style="color: #d4a017; font-weight: bold; background: rgba(212, 160, 23, 0.1);">
-                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Limousine Bus</td>
+                    <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">Limousine Bus (Dernier)</td>
                     <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">23h05</td>
                     <td style="padding: 10px; border: 1px solid rgba(128,128,128,0.3);">00h01</td>
                 </tr>
@@ -383,7 +493,7 @@ const modalData = {
 
         <div style="margin-top: 20px; padding: 15px; background: rgba(255, 193, 7, 0.1); border: 1px solid #d4a017; border-radius: 8px;">
             <p style="margin: 0 0 8px 0; color: #d4a017; font-weight: bold;">🚶 Fin de trajet à pied (20 min / 1.4 km) :</p>
-            <p style="margin: 0;">Descendre à l'arrêt : <strong>ファーストウイング (First Wing)</strong>.</p>
+            <p style="margin: 0;">Descendre à l'arrêt : <strong>Makuhari Baytown 幕張ベイタウン</strong>.</p>
             <p style="margin: 5px 0;">Marcher vers l'hôtel : <strong>Makuhari Prince Hotel (APA)</strong>.</p>
             <p style="margin: 0; font-size: 0.8em; opacity: 0.7;">📍 〒261-0021 Chiba, Mihama Ward, Hibino, 2-3</p>
         </div>
@@ -402,7 +512,7 @@ const modalData = {
         <h3>🍴 Dîner Seafood Buffet Ginza</h3>
         <img src="images/tokyo/seafood-buffet-ginza.jpg" alt="Guide Resto Ginza" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Lieu :</strong> Ginza Nine Building No. 3, 8-10 Ginza, Chuo-ku, Tokyo B1F</p>
-        <p><strong>Réservation :</strong> LAO Kevin (0760127109) - 5 Personnes.</p>
+        <p><strong>Réservation :</strong> 5 Personnes.</p>
         <p><strong>Date & Heure :</strong> Mercredi 8 avril 2026 à 18h00.</p>
         <p><strong>Menu :</strong> Premium grillé sur table (120 min). Bœuf Wagyu noir et oursin de mer au homard + Buffet 150 sortes + Boissons à volonté.</p>
         <p><strong>Prix :</strong> 18 000 Yens par personne. Table en salle semi-privée.</p>
@@ -418,6 +528,7 @@ const modalData = {
     `,
     'guide-transfer-itm': `
         <h3>🚐 Transfert Hôtel Osaka → Aéroport ITM</h3>
+        <img src="images/osaka/transfert.webp" alt="Guide Transfert Osaka" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px;">
         <p><strong>Prise en charge :</strong> Samedi 18 Avril à 05h00.</p>
         <p><strong>Lieu :</strong> APA Hotel Shin-Osaka Ekimae.</p>
         <p><strong>Destination :</strong> Osaka Itami International Airport (ITM).</p>
@@ -437,16 +548,23 @@ const modalData = {
     'guide-villa': `
         <h3>🏠 Villa Onna Luxury (Okinawa)</h3>
         <img src="images/okinawa/villa.jpg" alt="Guide Villa Okinawa" style="max-width:100%;height:auto; border-radius:8px;">
-        <p><strong>Adresse :</strong> 字仲泊1411番地100, 恩納村, 沖縄県 904-0415</p>
-        <p><strong>Hôte :</strong> Yota</p>
-        <p><strong>Contact d'urgence (Appel Vidéo) :</strong><br>
-        - WhatsApp : +81-80-8053-5529<br>
-        - Line ID : yotaokinawa ou mikaOkinawa</p>
+        <p><strong>Adresse :</strong> Onna, Okinawa</p>
+        <p><strong>Hôte :</strong> Yota & Mika</p>
+        <p><strong>Durée :</strong> 5 nuits (18 au 23 avril).</p>
         <p><strong>Check-in :</strong> Après 15h00. <strong>Check-out :</strong> Avant 11h00.</p>
-        <p><em>Utilisez LINE pour des conseils vidéo si la maison est difficile à trouver.</em></p>
+        <p><strong>Équipements :</strong> Cuisine équipée, barbecue, 5 chambres, 3 salles de bain, Vue 180 degrès sur mer.</p>
     `,
-    'guide-hotel-tokyo2': `
+    'guide-hotel-tokyo': `
+        <h3>🏨 Hôtel APA (Tokyo Makuhari)</h3>
+        <img src="images/tokyo/hotel.jpg" alt="Guide Hôtel Tokyo" style="max-width:100%;height:auto; border-radius:8px;">
+        <p><strong>Nom complet :</strong> APA Hotel & Resort Tokyo Bay Makuhari (アパホテル＆リゾート〈東京ベイ幕張〉)</p>
+        <p><strong>Adresse :</strong> 2-3 Hibino, Mihama-ku, Chiba 261-0021<br>千葉市美浜区ひび野2-3</p>
+        <p><strong>Téléphone :</strong> +81 43-296-6111</p>
+        <p><strong>Réservation :</strong> 5 Adultes - 5 Chambres non-fumeurs - 5 Nuits (7 au 12 avril). Pas de petit déjeuner (non compris).</p>
+    `,
+    'guide-hotel-retour-tokyo': `
         <h3>🏨 Hôtel Toyoko Inn Asakusa (Retour Tokyo)</h3>
+        <img src="images/tokyo-retour/hotel.jpg" alt="Guide Hôtel Retour Tokyo" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Nom complet :</strong> Toyoko Inn Tokyo Asakusa Kuramae No.2 (東横INN浅草蔵前2)</p>
         <p><strong>Adresse :</strong> Taito-ku Kuramae 2-7-5, Tokyo 111-0051<br>台東区蔵前2-7-5</p>
         <p><strong>Téléphone :</strong> +81 3 6899 2045</p>
@@ -464,16 +582,18 @@ const modalData = {
     `,
     'guide-transfer-hnd': `
         <h3>🚐 2x Transferts Hôtel → Haneda</h3>
+        <img src="images/tokyo-retour/transfert.jpg" alt="Guide Transfert Haneda" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Date et heure :</strong> Dimanche 26 Avril à 05h30.</p>
         <p><strong>Départ :</strong> Toyoko Inn Tokyo Asakusa Kuramae No.2.</p>
         <p><strong>Arrivée :</strong> Haneda Airport Terminal 3 Station.</p>
         <p><strong>Réservation 1 :</strong> Large People Carrier (Carzen+).</p>
-        <p><strong>Réservation 2 :</strong> Large People Carrier (New World Japan Co. Ltd) ID: 748321480.</p>
+        <p><strong>Réservation 2 :</strong> Large People Carrier (New World Japan Co. Ltd).</p>
         <p><em>Chauffeurs attendront max 15 minutes.</em></p>
     `,
     'guide-hotel-paris': `
         <h3>🏨 Hôtel Première Classe (Paris CDG) & Navettes</h3>
-        <p><strong>Adresse :</strong> Rue Du Stade Sauvanet, 77990 Le Mesnil-Amelot</p>
+        <img src="images/paris/hotel.jpg" alt="Guide Hôtel Paris CDG" style="max-width:100%;height:auto; border-radius:8px;">
+        <p><strong>Adresse :</strong> 2 Rue Du Stade Sauvanet, 77990 Le Mesnil-Amelot</p>
         <p><strong>Téléphone :</strong> +33 1 60 27 10 74</p>
         <p><strong>Navette Aller (26/04) :</strong> Aéroport CDG vers Hôtel à 21h00.</p>
         <p><strong>Hôtel :</strong> 1 grand lit double (Check-out le 27/04 avant 11h). Petit déjeuner compris.</p>

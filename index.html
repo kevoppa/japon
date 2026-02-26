@@ -55,20 +55,23 @@
                     <p><strong class="red-text">21h30 :</strong> Prendre le Bus Limousine > Direction l'hôtel APA Hotel & Resort Tokyo Bay Makuhari.</p>
                     <div class="btn-group">
                         <button class="btn" onclick="openModal('guide-bus')">🚌 Guide Bus Limousine</button>
-                        <button class="btn secondary" onclick="openModal('guide-bus-pdf')">📖 Guide Bus PDF</button>
-                        <button class="btn secondary" onclick="openModal('guide-wifi')">📶 Guide Pocket WiFi</button>
-                        <button class="btn secondary" onclick="openModal('guide-bus-alternative')">📱 Guide Bus Alternative</button>
+                        <button class="btn" onclick="openModal('guide-bus-pdf')">📖 Guide Bus PDF</button>
+                        <button class="btn" onclick="openModal('guide-wifi')">📶 Guide Pocket WiFi</button>
+                        <button class="btn" onclick="openModal('guide-bus-alternative')">📱 Guide Bus Alternative</button>
+                        <button class="btn" onclick="openModal('guide-hotel-tokyo')">🏨 Infos APA Hotel & Resort Tokyo Bay Makuhari</button>
                     </div>
                 </div>
             </article>
 
             <article class="card">
-                <img src="images/repos.jpg" alt="Tokyo Voiture & Repos" class="card-img">
+                <img src="images/repos.jpg" alt="Tokyo Voiture & repos" class="card-img">
                 <div class="card-content">
                     <span class="badge">Mardi 07/04/2026</span>
-                    <h3>Voiture & Repos</h3>
+                    <h3>Voiture & Promenade</h3>
                     <p><strong class="red-text">10h00 :</strong> Récupération de la voiture de location par Kevin et Loïc.</p>
-                    <p><strong class="red-text">10h50 :</strong> Promenade libre et repas le soir selon la fatigue (décalage horaire).</p>
+                    <p><strong class="red-text">~10h50 :</strong> Promenade libre et repas le soir selon la fatigue.
+                        <div class="alert-box-blue">Décalage horaire de 7h par rapport à la France</div>
+                    </p>
                     <button class="btn" onclick="openModal('guide-car-tokyo')">🚗 Infos Location Toyota</button>
                 </div>
             </article>
@@ -98,9 +101,9 @@
                 <div class="card-content">
                     <span class="badge">Samedi 11/04/2026</span>
                     <h3>Expédition Mont Fuji</h3>
-                    <p><strong class="red-text">~9h30 :</strong> Départ après les heures de pointe pour éviter les bouchons le matin.</p>
+                    <p><strong class="red-text">~7h00 :</strong> Départ tot avant les heures de pointe pour éviter les bouchons le matin.</p>
                     <p>Visite des meilleurs spots autour du Mont Fuji.</p>
-                    <button class="btn" onclick="openModal('guide-fuji')">🗻 Guide Mont Fuji</button>
+                    <button class="btn" onclick="openModal('guide-mont-fuji')">🗻 Guide Mont Fuji</button>
                     <p class="alert-box-blue">Retour tard le soir (vers minuit si besoin) pour une route fluide.</p>
                 </div>
             </article>
@@ -133,6 +136,7 @@
                     <p><strong class="red-text">Soirée :</strong> Visite de Dotonbori et repas locauste.</p>
                     <div class="btn-group">
                         <button class="btn" onclick="openModal('guide-ligne-keiyo')">🚆 Guide Trajet vers Osaka</button>
+                        <button class="btn" onclick="openModal('guide-hotel-osaka')">🏨 Infos Hotel Osaka</button>
                         <button class="btn" onclick="openModal('guide-car-osaka')">🚗 Infos Location Osaka</button>
                         <button class="btn" onclick="openModal('guide-dotonbori')">🍤 Guide Dotonbori</button>
                     </div>
@@ -142,10 +146,10 @@
             <article class="card">
                 <img src="images/osaka-kyoto.jpg" alt="Osaka vs Kyoto" class="card-img">
                 <div class="card-content">
-                    <h3>Visite <em class="red-text">Kyoto</em> & <em class="blue-text">Osaka</em></h3>
-                    <p><span class="badge">Mardi 14/04/2026</span><br><strong class="red-text">Kyoto :</strong> Fushimi Inari + Temple Kiyomizu-dera + ruelle Sannenzaka.</p>
+                    <h3>Visite <em style="color: var(--kyoto-orange);">Kyoto</em> & <em class="blue-text">Osaka</em></h3>
+                    <p><span class="badge">Mardi 14/04/2026</span><br><strong style="color: var(--kyoto-orange);">Kyoto :</strong> Fushimi Inari + Temple Kiyomizu-dera + ruelle Sannenzaka.</p>
                     <p><span class="badge">Mercredi 15/04/2026</span><br><strong class="blue-text">Osaka :</strong> Chateau Osaka + Dotonbori + Shinsekai Market + Don Quijote + Umeda Sky Building.</p>
-                    <p><span class="badge">Jeudi 16/04/2026</span><br><strong class="red-text">Kyoto :</strong> Nishiki marché culinaire Kyoto + Tofukuji + Gion + temple kinkaku-ji.</p>
+                    <p><span class="badge">Jeudi 16/04/2026</span><br><strong style="color: var(--kyoto-orange);">Kyoto :</strong> Nishiki marché culinaire Kyoto + Tofukuji + Gion + temple kinkaku-ji.</p>
                     <p><span class="badge">Vendredi 17/04/2026</span><br><strong class="blue-text">Osaka :</strong> Marché Kuromon Ichiba + Salon Solaniwa (massage, bain thermal).</p>
                     <div class="btn-group">
                         <button class="btn" onclick="openModal('guide-kyoto')">⛩️ Guide Kyoto</button>
@@ -170,7 +174,7 @@
                     <div class="btn-group">
                         <button class="btn" onclick="openModal('guide-transfer-itm')">🚐 Transfert Aéroport</button>
                         <button class="btn" onclick="openModal('guide-car-oki')">🚗 Voiture Okinawa</button>
-                        <button class="btn secondary" onclick="openModal('guide-villa')">🏠 Accès Villa Onna</button>
+                        <button class="btn" onclick="openModal('guide-villa')">🏠 Accès Villa Onna</button>
                     </div>
                 </div>
             </article>
@@ -210,7 +214,7 @@
                     <span class="badge">Jeudi 23/04/2026</span>
                     <h3>Dernier Hôtel</h3>
                     <p>Trajet en métro depuis Haneda vers l'hôtel <strong>Toyoko Inn Tokyo Asakusa Kuramae No.2</strong>.</p>
-                    <button class="btn" onclick="openModal('guide-hotel-tokyo2')">🏨 Infos Toyoko Inn</button>
+                    <button class="btn" onclick="openModal('guide-hotel-retour-tokyo')">🏨 Infos Toyoko Inn</button>
                 </div>
             </article>
 
