@@ -384,7 +384,8 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
         z-index: 9999;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         border: 2px solid var(--accent-blue);
-        background: var(--card-bg);
+background: var(--bg-card); /* CORRIGÉ : --bg-card au lieu de --card-bg */
+    color: var(--text-main);    /* Pour que l'émoji soit bien visible */
         cursor: pointer;
     }
 }
@@ -429,4 +430,28 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 @keyframes zoomAnim {
     from { transform: scale(0.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
+/* Force le curseur loupe sur toutes les images cliquables du site */
+img {
+    cursor: zoom-in;
+}
+
+/* Sauf pour l'image déjà agrandie qui doit montrer qu'on va fermer */
+#image-viewer, #image-viewer img {
+    cursor: zoom-out;
+}
+
+/* Gestion fine des curseurs */
+.card-img, .modal-box img {
+    cursor: zoom-in; /* Loupe uniquement sur les images de contenu */
+}
+
+#image-viewer, 
+#image-viewer img {
+    cursor: zoom-out !important; /* Force le signe "-" pour fermer */
+}
+
+.main-nav a, .btn, .close-btn-inline, #theme-btn {
+    cursor: pointer; /* Main pour les boutons, pas de loupe ici */
 }

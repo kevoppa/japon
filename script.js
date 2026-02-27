@@ -668,3 +668,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// On écoute les clics sur toute la page
+// --- GESTION DE L'APERÇU DES IMAGES (Délégation d'événement) ---
+// --- SYSTÈME D'APERÇU IMAGE AMÉLIORÉ ---
+
+document.addEventListener('click', function (e) {
+    // Si on clique sur une image
+    if (e.target.tagName === 'IMG') {
+        // On vérifie que ce n'est pas l'image déjà agrandie
+        if (e.target.id === 'full-image') return;
+        
+        const viewer = document.getElementById('image-viewer');
+        const fullImg = document.getElementById('full-image');
+        
+        if (viewer && fullImg) {
+            fullImg.src = e.target.src;
+            viewer.style.display = 'flex'; // On utilise flex pour le centrage CSS
+        }
+    }
+});
+
+// Ajout d'une sécurité spécifique pour fermer en cliquant sur l'image agrandie
+document.getElementById('image-viewer')?.addEventListener('click', function() {
+    this.style.display = 'none';
+});
