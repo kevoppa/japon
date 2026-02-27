@@ -647,3 +647,24 @@ document.addEventListener("DOMContentLoaded", function() {
         };
     });
 });
+
+// --- GESTION DE L'APERÇU DES IMAGES ---
+document.addEventListener('DOMContentLoaded', () => {
+    // On sélectionne toutes les images des cartes
+    const images = document.querySelectorAll('.card-img, .modal-box img');
+    const viewer = document.getElementById('image-viewer');
+    const fullImg = document.getElementById('full-image');
+
+    images.forEach(img => {
+        // On ajoute le curseur de zoom
+        img.style.cursor = 'zoom-in';
+        
+        img.addEventListener('click', (e) => {
+            // Empêche d'ouvrir la modale de texte si on clique sur l'image
+            e.stopPropagation(); 
+            
+            fullImg.src = img.src;
+            viewer.style.display = 'flex';
+        });
+    });
+});

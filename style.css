@@ -393,3 +393,40 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 .red-text { color: var(--accent-red); }
 /* Couleur texte bleu */
 .blue-text { color: var(--accent-blue); }
+
+/* --- Simple Image Viewer --- */
+.img-full-screen {
+    cursor: zoom-in;
+    transition: transform 0.2s;
+}
+
+.img-full-screen:hover {
+    opacity: 0.9;
+}
+
+/* Modale spécifique pour l'aperçu image */
+#image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 3000; /* Au-dessus de tout */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    cursor: zoom-out;
+    align-items: center;
+    justify-content: center;
+}
+
+#image-viewer img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: zoomAnim 0.2s ease-out;
+}
+
+@keyframes zoomAnim {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
