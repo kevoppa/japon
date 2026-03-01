@@ -601,6 +601,7 @@ const modalData = {
     `
 };
 
+
 // FONCTIONS POUR OUVRIR / FERMER LES MODALS
 const overlay = document.getElementById('modal-overlay');
 const modalBox = document.getElementById('modal-box');
@@ -609,29 +610,37 @@ const contentArea = document.getElementById('modal-content-area');
 function openModal(id) {
     const contentArea = document.getElementById('modal-content-area');
     const titleArea = document.getElementById('modal-title-placeholder');
+    const overlay = document.getElementById('modal-overlay');
+    const modalBox = document.getElementById('modal-box');
     
     if (modalData[id]) {
-        // On crée un élément temporaire pour extraire le titre h3
+        // Création d'un conteneur temporaire
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = modalData[id];
+        
+        // Extraction du titre H3
         const titleElement = tempDiv.querySelector('h3');
         
-        // Si un h3 existe, on le déplace dans la zone de titre, sinon on vide
         if (titleElement) {
-            titleArea.innerHTML = `<h3>${titleElement.innerHTML}</h3>`;
-            titleElement.remove(); // On l'enlève du corps pour pas qu'il soit en double
+            titleArea.innerHTML = `<h3 style="margin:0; color:var(--accent-blue);">${titleElement.innerHTML}</h3>`;
+            titleElement.remove(); // On l'enlève pour ne pas l'avoir deux fois
         } else {
             titleArea.innerHTML = "";
         }
 
         contentArea.innerHTML = tempDiv.innerHTML;
-        document.getElementById('modal-overlay').style.display = 'block';
-        document.getElementById('modal-box').style.display = 'block';
+        
+        // Affichage
+        overlay.style.display = 'block';
+        modalBox.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Bloque le scroll
     }
 }
+
 function closeModal() {
     document.getElementById('modal-overlay').style.display = 'none';
     document.getElementById('modal-box').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Relance le scroll
 }
 
 // Automatisation des images
@@ -692,4 +701,151 @@ document.addEventListener('click', function (e) {
 // Ajout d'une sécurité spécifique pour fermer en cliquant sur l'image agrandie
 document.getElementById('image-viewer')?.addEventListener('click', function() {
     this.style.display = 'none';
+});
+
+
+// --- SYSTÈME SCROLLSPY ---
+window.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px', // Déclenche quand la section est dans le tiers supérieur
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // 1. Récupérer l'ID de la section visible
+                const id = entry.target.getAttribute('id');
+                
+                // 2. Retirer la classe 'active' de tous les liens
+                document.querySelectorAll('.main-nav a').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // 3. Ajouter la classe 'active' au lien correspondant
+                const activeLink = document.querySelector(`.main-nav a[href="#${id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observer toutes les sections qui ont un ID correspondant à un lien de navigation
+    document.querySelectorAll('section[id]').forEach((section) => {
+        observer.observe(section);
+    });
+});
+
+
+
+
+
+// =========================================
+// 1. CONFIGURATION DES ÉTAPES
+// =========================================
+// On ajoute 'header' au début pour que le 0% soit tout en haut du site
+// On définit manuellement le pourcentage de remplissage pour chaque section
+// Définition des positions pour le MOBILE (écrans < 600px)
+const positionsMobile = {
+    'header': 0,
+    'tokyo1': 14,
+    'osaka': 33,
+    'okinawa': 51,
+    'tokyo2': 70,
+    'france': 100
+};
+
+// Définition des positions pour le WEB (écrans >= 600px)
+const positionsWeb = {
+    'header': 0,
+    'tokyo1': 28,
+    'osaka': 39,
+    'okinawa': 51,
+    'tokyo2': 62,
+    'france': 100
+};
+
+function updateProgress(id) {
+    const progressBar = document.getElementById('progress-bar');
+    if (!progressBar) return;
+
+    // 1. Détecter si on est en mobile ou web (seuil de 600px comme ton CSS)
+    const isMobile = window.innerWidth <= 600;
+    
+    // 2. Choisir le bon dictionnaire de positions
+    const positions = isMobile ? positionsMobile : positionsWeb;
+
+    // 3. Appliquer la largeur
+    const pourcentage = positions[id];
+
+    if (pourcentage !== undefined) {
+        progressBar.style.width = pourcentage + '%';
+    }
+}
+
+// L'Observer reste le même, il envoie juste l'ID à la fonction
+document.addEventListener('DOMContentLoaded', () => {
+    // Force l'ID sur le header pour l'observer
+    const headerEl = document.querySelector('header');
+    if (headerEl) headerEl.id = 'header';
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-30% 0px -60% 0px', // Ajuste ici pour déclencher plus ou moins tôt
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                
+                // Update des liens actifs
+                document.querySelectorAll('.main-nav a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Appel de la fonction avec les positions manuelles
+                updateProgress(id);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section[id], header').forEach(el => observer.observe(el));
+});
+// =========================================
+// 4. ÉVÉNEMENTS GLOBAUX (CLICS)
+// =========================================
+document.addEventListener('click', function (e) {
+    // Aperçu Image (Zoom)
+    if (e.target.tagName === 'IMG' && e.target.id !== 'full-image') {
+        const viewer = document.getElementById('image-viewer');
+        const fullImg = document.getElementById('full-image');
+        if (viewer && fullImg) {
+            fullImg.src = e.target.src;
+            viewer.style.display = 'flex';
+        }
+    }
+});
+
+document.getElementById('image-viewer')?.addEventListener('click', function() {
+    this.style.display = 'none';
+});
+
+// Recalculer la position de la barre si on redimensionne la fenêtre
+window.addEventListener('resize', () => {
+    // On récupère l'id de la section actuellement active (celle qui a la classe .active)
+    const activeLink = document.querySelector('.main-nav a.active');
+    if (activeLink) {
+        const id = activeLink.getAttribute('href').replace('#', '');
+        updateProgress(id);
+    } else {
+        // Si aucun lien n'est actif, on est probablement en haut
+        updateProgress('header');
+    }
 });
