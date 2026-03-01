@@ -2,7 +2,7 @@
 
 /* Définit un espace de sécurité au-dessus de chaque section lors du clic sur le menu */
 section {
-    scroll-margin-top: 70px; /* Ajustez cette valeur selon la hauteur de votre barre de navigation */
+    scroll-margin-top: 90px; /* Ajustez cette valeur selon la hauteur de votre barre de navigation */
 }
 
 /* Si vous voulez un défilement fluide et élégant */
@@ -123,5 +123,19 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
     .main-nav a.active span {
         background: white;
         color: var(--accent-red);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Définit un espace de sécurité au-dessus de chaque section lors du clic sur le menu */
+    section {
+    scroll-margin-top: 70px; /* Ajustez cette valeur selon la hauteur de votre barre de navigation */
+    }
+}
+
+@media (max-height: 600px) {
+    /* Définit un espace de sécurité au-dessus de chaque section lors du clic sur le menu */
+    section {
+    scroll-margin-top: 105px; /* Ajustez cette valeur selon la hauteur de votre barre de navigation */
     }
 }
