@@ -28,7 +28,7 @@
     --nav-hover: #339fe7;
     --kyoto-orange: rgb(255, 149, 28);
     --text-active: #000000;
-    --nav-rail-color: var(--accent-blue); /* Bleu plus visible pour le mode sombre */
+    --nav-rail-color: rgba(49, 130, 206, 0.4); /* Bleu plus visible pour le mode sombre */
 }
 
 /* =========================================
@@ -73,7 +73,9 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 10px 0;
     /* On transforme la bordure en "rail" bleu pour la barre */
-    border-bottom: 4px solid var(--nav-rail-color);
+
+    /* BACKGROUND DE LA BARRE PROGRESSIVE ! */
+    border-bottom: 4px solid var(--nav-rail-color); /* POUR LA BORDURE ARRIERE PLAN le reste de la BARRE PROGRESSIVE !! */
 }
 
 .nav-progress-bar {
@@ -200,7 +202,6 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
     /* NAVIGATION MOBILE STYLE ANCIEN */
     .main-nav {
         /* On garde la bordure bleue même en mobile */
-        border-bottom: 3px solid var(--accent-blue) !important;
     }
     
     .nav-progress-bar {
@@ -223,6 +224,7 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
         color: var(--text-main);
     }
 
+    /* Petit bouton NON ACTIF! mobile */
     .main-nav a span {
         width: 22px;
         height: 22px;
