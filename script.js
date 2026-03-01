@@ -747,8 +747,19 @@ window.addEventListener('DOMContentLoaded', () => {
 // =========================================
 // On ajoute 'header' au début pour que le 0% soit tout en haut du site
 // On définit manuellement le pourcentage de remplissage pour chaque section
-// Définition des positions pour le MOBILE (écrans < 600px)
+
+// Définition des positions pour le MOBILE (écrans VERTICALE < 600px)
 const positionsMobile = {
+    'header': 0,
+    'tokyo1': 14,
+    'osaka': 33,
+    'okinawa': 51,
+    'tokyo2': 70,
+    'france': 100
+};
+
+// Définition des positions pour le MOBILE (écrans HORIZONTAUX < 600px)
+const positionsMobileHorizontal = {
     'header': 0,
     'tokyo1': 14,
     'osaka': 33,
@@ -771,19 +782,37 @@ function updateProgress(id) {
     const progressBar = document.getElementById('progress-bar');
     if (!progressBar) return;
 
-    // 1. Détecter si on est en mobile ou web (seuil de 600px comme ton CSS)
-    const isMobile = window.innerWidth <= 600;
-    
-    // 2. Choisir le bon dictionnaire de positions
-    const positions = isMobile ? positionsMobile : positionsWeb;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    let positions;
 
-    // 3. Appliquer la largeur
+    // DETECTION DE L'ECRAN
+    if (width <= 600) {
+        // Mobile Vertical classique
+        positions = positionsMobile;
+    } 
+    else if (width <= 950 && width > height) {
+        // Mobile ou petite tablette en HORIZONTAL (Largeur > Hauteur)
+        positions = positionsMobileHorizontal;
+    } 
+    else {
+        // Version Web / Desktop
+        positions = positionsWeb;
+    }
+
     const pourcentage = positions[id];
-
     if (pourcentage !== undefined) {
         progressBar.style.width = pourcentage + '%';
     }
 }
+
+// L'écouteur de redimensionnement s'occupe de tout quand on tourne l'écran
+window.addEventListener('resize', () => {
+    const activeLink = document.querySelector('.main-nav a.active');
+    const currentId = activeLink ? activeLink.getAttribute('href').replace('#', '') : 'header';
+    updateProgress(currentId);
+});
+
 
 // L'Observer reste le même, il envoie juste l'ID à la fonction
 document.addEventListener('DOMContentLoaded', () => {
