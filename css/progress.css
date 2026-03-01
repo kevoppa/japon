@@ -1,0 +1,16 @@
+/* --- BARRE DE PROGRESSION DE NAVIGATION --- */
+
+.nav-progress-bar {
+    position: absolute;
+    bottom: -4px; 
+    left: 0;
+    height: 4px;
+    width: 0%; 
+    background: var(--accent-red);
+    transition: width 0.5s ease-in-out;
+    z-index: 1100;
+}
+
+@media (max-width: 600px) {
+    .nav-progress-bar { height: 3px; bottom: -3px; }
+}

@@ -1,0 +1,127 @@
+/* --- STYLES DE LA NAVIGATION --- */
+
+/* Définit un espace de sécurité au-dessus de chaque section lors du clic sur le menu */
+section {
+    scroll-margin-top: 70px; /* Ajustez cette valeur selon la hauteur de votre barre de navigation */
+}
+
+/* Si vous voulez un défilement fluide et élégant */
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/background-degrade.jpg') center/cover;
+    color: white;
+    position: relative;
+}
+
+header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+.subtitle { font-size: 1.2rem; opacity: 0.9; }
+
+.main-nav {
+    position: sticky; /* On utilise sticky pour que la barre reste visible en haut lors du scroll */
+    top: 0;
+    background: var(--bg-main-avec-flou) !important; 
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    border-bottom: 4px solid var(--nav-rail-color);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+    gap: 15px;
+}
+
+.main-nav a {
+    text-align: center;
+    flex: 1;
+    text-decoration: none;
+    color: var(--text-main);
+    background: var(--bg-card);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color);
+}
+
+.main-nav a:hover { background: var(--accent-blue); color: var(--bg-main); }
+.main-nav a.active { border-color: var(--accent-red); color: var(--accent-red); }
+
+.main-nav a span {
+    background: var(--accent-red);
+    color: white;
+    width: 20px; height: 20px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; font-size: 0.75rem;
+}
+
+@media (max-width: 600px) {
+    .main-nav {
+        padding: 5px 0;
+    }
+
+    .nav-container { 
+        gap: 0; /* On colle les conteneurs pour maximiser l'espace interne */
+        padding: 0 2px;
+    }
+
+    .main-nav a { 
+        flex-direction: column; 
+        padding: 5px 2px; /* Un peu de padding latéral pour que le texte ne touche pas le bord du bouton */
+        font-size: 0.63rem; /* On descend d'un cran pour la lisibilité */
+        min-width: 0; 
+        border: none; 
+        background: transparent;
+        gap: 2px;
+        /* --- CHANGEMENT CLÉ ICI --- */
+        white-space: normal; /* On autorise le retour à la ligne pour le texte long */
+        line-height: 1.1;    /* On resserre les lignes si ça coupe */
+        word-wrap: break-word;
+    }
+
+    /* Bouton active */
+    .main-nav a.active { 
+        color: white !important; /* On inverse les couleurs pour que le texte soit lisible sur le rouge */
+        background: var(--bouton-active-mobile);
+        backdrop-filter: blur(5px);
+        border-radius: 6px; 
+        font-weight: bold;
+    }
+
+    /* Quand tu clique sur mobile on ne voit pas de HOVER mais on voit juste le texte bleu qui change */
+    .main-nav a:hover { 
+        color: white !important; /* On inverse les couleurs pour que le texte soit lisible sur le rouge */
+        background: var(--bouton-active-mobile);
+        backdrop-filter: blur(5px);
+        border-radius: 6px; 
+        font-weight: bold;
+    }
+
+    /* On s'assure que le texte "Tokyo" ou "France" soit bien centré sous le chiffre */
+    .main-nav a span {
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+        flex-shrink: 0; /* Empêche le cercle de s'écraser */
+    }
+    
+    .main-nav a.active span {
+        background: white;
+        color: var(--accent-red);
+    }
+}

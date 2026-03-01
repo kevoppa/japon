@@ -1,41 +1,4 @@
-// 1. GESTION DU THÈME
-function toggleTheme() {
-    const body = document.body;
-    const icon = document.getElementById('theme-icon'); // Cible bien le span de l'icône
-    
-    // Ton CSS utilise [data-theme="dark"], donc on bascule l'attribut
-    const isDark = body.getAttribute('data-theme') === 'dark';
-    
-    if (isDark) {
-        body.removeAttribute('data-theme');
-        if(icon) icon.innerText = '🌙';
-        localStorage.setItem('theme', 'light');
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        if(icon) icon.innerText = '☀️';
-        localStorage.setItem('theme', 'dark');
-    }
-}
-
-// 2. CHARGEMENT INITIAL
-(function() {
-    const savedTheme = localStorage.getItem('theme');
-    const body = document.body;
-
-    if (savedTheme === 'dark') {
-        body.setAttribute('data-theme', 'dark');
-    } else {
-        body.removeAttribute('data-theme');
-    }
-
-    // Une fois que la page est chargée, on met la bonne icône
-    window.addEventListener('DOMContentLoaded', () => {
-        const icon = document.getElementById('theme-icon');
-        if (icon) {
-            icon.innerText = (savedTheme === 'dark') ? '☀️' : '🌙';
-        }
-    });
-})();
+// Contient tes données de texte (modalData) et les fonctions d'ouverture/fermeture.
 
 // DONNEES DE TOUS LES GUIDES DETAILLÉS
 const modalData = {
@@ -590,12 +553,6 @@ const modalData = {
     `
 };
 
-
-// FONCTIONS POUR OUVRIR / FERMER LES MODALS
-const overlay = document.getElementById('modal-overlay');
-const modalBox = document.getElementById('modal-box');
-const contentArea = document.getElementById('modal-content-area');
-
 function openModal(id) {
     const contentArea = document.getElementById('modal-content-area');
     const titleArea = document.getElementById('modal-title-placeholder');
@@ -603,285 +560,25 @@ function openModal(id) {
     const modalBox = document.getElementById('modal-box');
     
     if (modalData[id]) {
-        // Création d'un conteneur temporaire
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = modalData[id];
-        
-        // Extraction du titre H3
         const titleElement = tempDiv.querySelector('h3');
         
         if (titleElement) {
             titleArea.innerHTML = `<h3 style="margin:0; color:var(--accent-blue);">${titleElement.innerHTML}</h3>`;
-            titleElement.remove(); // On l'enlève pour ne pas l'avoir deux fois
+            titleElement.remove();
         } else {
             titleArea.innerHTML = "";
         }
-
         contentArea.innerHTML = tempDiv.innerHTML;
-        
-        // Affichage
         overlay.style.display = 'block';
         modalBox.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Bloque le scroll
+        document.body.style.overflow = 'hidden';
     }
 }
 
 function closeModal() {
     document.getElementById('modal-overlay').style.display = 'none';
     document.getElementById('modal-box').style.display = 'none';
-    document.body.style.overflow = 'auto'; // Relance le scroll
-}
-
-// Automatisation des images
-document.addEventListener("DOMContentLoaded", function() {
-    const images = document.querySelectorAll('.card-img');
-    images.forEach(img => {
-        if (!img.getAttribute('src') || img.getAttribute('src') === "") {
-            img.remove();
-        }
-        img.onerror = function() {
-            this.src = "documents/photo-par-defaut.jpg";
-            this.onerror = null;
-        };
-    });
-});
-
-// --- GESTION DE L'APERÇU DES IMAGES ---
-document.addEventListener('DOMContentLoaded', () => {
-    // On sélectionne toutes les images des cartes
-    const images = document.querySelectorAll('.card-img, .modal-box img');
-    const viewer = document.getElementById('image-viewer');
-    const fullImg = document.getElementById('full-image');
-
-    images.forEach(img => {
-        // On ajoute le curseur de zoom
-        img.style.cursor = 'zoom-in';
-        
-        img.addEventListener('click', (e) => {
-            // Empêche d'ouvrir la modale de texte si on clique sur l'image
-            e.stopPropagation(); 
-            
-            fullImg.src = img.src;
-            viewer.style.display = 'flex';
-        });
-    });
-});
-
-// On écoute les clics sur toute la page
-// --- GESTION DE L'APERÇU DES IMAGES (Délégation d'événement) ---
-// --- SYSTÈME D'APERÇU IMAGE AMÉLIORÉ ---
-
-document.addEventListener('click', function (e) {
-    // Si on clique sur une image
-    if (e.target.tagName === 'IMG') {
-        // On vérifie que ce n'est pas l'image déjà agrandie
-        if (e.target.id === 'full-image') return;
-        
-        const viewer = document.getElementById('image-viewer');
-        const fullImg = document.getElementById('full-image');
-        
-        if (viewer && fullImg) {
-            fullImg.src = e.target.src;
-            viewer.style.display = 'flex'; // On utilise flex pour le centrage CSS
-        }
-    }
-});
-
-// Ajout d'une sécurité spécifique pour fermer en cliquant sur l'image agrandie
-document.getElementById('image-viewer')?.addEventListener('click', function() {
-    this.style.display = 'none';
-});
-
-
-// --- SYSTÈME SCROLLSPY ---
-window.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -70% 0px', // Déclenche quand la section est dans le tiers supérieur
-        threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // 1. Récupérer l'ID de la section visible
-                const id = entry.target.getAttribute('id');
-                
-                // 2. Retirer la classe 'active' de tous les liens
-                document.querySelectorAll('.main-nav a').forEach(link => {
-                    link.classList.remove('active');
-                });
-
-                // 3. Ajouter la classe 'active' au lien correspondant
-                const activeLink = document.querySelector(`.main-nav a[href="#${id}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
-        });
-    }, observerOptions);
-
-    // Observer toutes les sections qui ont un ID correspondant à un lien de navigation
-    document.querySelectorAll('section[id]').forEach((section) => {
-        observer.observe(section);
-    });
-});
-
-
-
-
-
-// =========================================
-// 1. CONFIGURATION DES ÉTAPES
-// =========================================
-// On ajoute 'header' au début pour que le 0% soit tout en haut du site
-// On définit manuellement le pourcentage de remplissage pour chaque section
-
-// Définition des positions pour le MOBILE (écrans VERTICALE < 600px)
-const positionsMobile = {
-    'header': 0,
-    'tokyo1': 14,
-    'osaka': 33,
-    'okinawa': 51,
-    'tokyo2': 70,
-    'france': 100
-};
-
-// Définition des positions pour le MOBILE (écrans HORIZONTAUX < 600px)
-const positionsMobileHorizontal = {
-    'header': 0,
-    'tokyo1': 12,
-    'osaka': 32,
-    'okinawa': 51,
-    'tokyo2': 71,
-    'france': 100
-};
-
-// Définition des positions pour le WEB (écrans >= 600px)
-const positionsWeb = {
-    'header': 0,
-    'tokyo1': 28,
-    'osaka': 39,
-    'okinawa': 51,
-    'tokyo2': 62,
-    'france': 100
-};
-
-function updateProgress(id) {
-    const progressBar = document.getElementById('progress-bar');
-    if (!progressBar) return;
-
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    let positions;
-
-    // DETECTION DE L'ECRAN
-    if (width <= 600) {
-        // Mobile Vertical classique
-        positions = positionsMobile;
-    } 
-    else if (width <= 950 && width > height) {
-        // Mobile ou petite tablette en HORIZONTAL (Largeur > Hauteur)
-        positions = positionsMobileHorizontal;
-    } 
-    else {
-        // Version Web / Desktop
-        positions = positionsWeb;
-    }
-
-    const pourcentage = positions[id];
-    if (pourcentage !== undefined) {
-        progressBar.style.width = pourcentage + '%';
-    }
-}
-
-// L'écouteur de redimensionnement s'occupe de tout quand on tourne l'écran
-window.addEventListener('resize', () => {
-    const activeLink = document.querySelector('.main-nav a.active');
-    const currentId = activeLink ? activeLink.getAttribute('href').replace('#', '') : 'header';
-    updateProgress(currentId);
-});
-
-
-// L'Observer reste le même, il envoie juste l'ID à la fonction
-document.addEventListener('DOMContentLoaded', () => {
-    // Force l'ID sur le header pour l'observer
-    const headerEl = document.querySelector('header');
-    if (headerEl) headerEl.id = 'header';
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '-30% 0px -60% 0px', // Ajuste ici pour déclencher plus ou moins tôt
-        threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                
-                // Update des liens actifs
-                document.querySelectorAll('.main-nav a').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
-
-                // Appel de la fonction avec les positions manuelles
-                updateProgress(id);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('section[id], header').forEach(el => observer.observe(el));
-});
-// =========================================
-// 4. ÉVÉNEMENTS GLOBAUX (CLICS)
-// =========================================
-document.addEventListener('click', function (e) {
-    // Aperçu Image (Zoom)
-    if (e.target.tagName === 'IMG' && e.target.id !== 'full-image') {
-        const viewer = document.getElementById('image-viewer');
-        const fullImg = document.getElementById('full-image');
-        if (viewer && fullImg) {
-            fullImg.src = e.target.src;
-            viewer.style.display = 'flex';
-        }
-    }
-});
-
-document.getElementById('image-viewer')?.addEventListener('click', function() {
-    this.style.display = 'none';
-});
-
-// Recalculer la position de la barre si on redimensionne la fenêtre
-window.addEventListener('resize', () => {
-    // On récupère l'id de la section actuellement active (celle qui a la classe .active)
-    const activeLink = document.querySelector('.main-nav a.active');
-    if (activeLink) {
-        const id = activeLink.getAttribute('href').replace('#', '');
-        updateProgress(id);
-    } else {
-        // Si aucun lien n'est actif, on est probablement en haut
-        updateProgress('header');
-    }
-});
-
-// Afficher/Cacher le bouton selon le scroll
-window.addEventListener('scroll', () => {
-    const btn = document.getElementById('back-to-top');
-    if (window.scrollY > 400) { // Apparaît après 400px de scroll
-        btn.style.display = 'block';
-    } else {
-        btn.style.display = 'none';
-    }
-});
-
-// Fonction de remontée fluide
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    document.body.style.overflow = 'auto';
 }

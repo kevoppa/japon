@@ -1,0 +1,23 @@
+/* --- BOUTON "RETOUR EN HAUT" --- */
+
+.back-to-top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 45px; height: 45px;
+    background: var(--accent-red);
+    color: white;
+    border: none; border-radius: 50%;
+    font-size: 1.5rem; font-weight: bold;
+    cursor: pointer; display: none;
+    z-index: 2000; box-shadow: var(--shadow);
+    transition: transform 0.2s, opacity 0.3s;
+}
+.back-to-top:hover {
+    background: var(--accent-blue); 
+}
+
+/* Positionnement en bas a droite sur mobile format VERTICAL et HORIZONTAL */
+@media (max-width: 500px) and (max-height: 500px) {
+    .back-to-top { bottom: 20px; right: 80px; }
+}

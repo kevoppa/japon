@@ -1,0 +1,24 @@
+/* --- STYLES DES BOUTONS GUIDES, DES ALERTES ET MESSAGES D'INFORMATION --- */
+
+.btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+.btn {
+    background: var(--accent-blue);
+    color: var(--bg-main);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn.secondary { background: var(--text-muted); }
+.btn:hover { opacity: 0.8; }
+
+.alert-box { background: rgba(229, 62, 62, 0.1); border-left: 4px solid var(--accent-red); padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+.alert-box-blue { background: rgba(49, 130, 206, 0.1); border-left: 4px solid var(--accent-blue); padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+
+.red-text { color: var(--accent-red); }
+.blue-text { color: var(--accent-blue); }
