@@ -1,49 +1,38 @@
-// 1. GESTION DU THÈME (Mémoire + Synchronisation)
+// 1. GESTION DU THÈME
 function toggleTheme() {
     const body = document.body;
+    const icon = document.getElementById('theme-icon'); // Cible bien le span de l'icône
+    
+    // Ton CSS utilise [data-theme="dark"], donc on bascule l'attribut
     const isDark = body.getAttribute('data-theme') === 'dark';
     
     if (isDark) {
         body.removeAttribute('data-theme');
-        updateThemeButtons("🌙 Mode Nuit");
+        if(icon) icon.innerText = '🌙';
         localStorage.setItem('theme', 'light');
     } else {
         body.setAttribute('data-theme', 'dark');
-        updateThemeButtons("☀️ Mode Jour");
+        if(icon) icon.innerText = '☀️';
         localStorage.setItem('theme', 'dark');
     }
 }
 
-function updateThemeButtons(text) {
-    const mainBtn = document.getElementById('theme-btn');
-    if (mainBtn) {
-        if (window.innerWidth <= 600) {
-            // On prend l'émoji (le premier élément avant l'espace)
-            mainBtn.innerHTML = text.split(' ')[0]; 
-        } else {
-            mainBtn.innerHTML = text;
-        }
-    }
-}
-
-// 2. CHARGEMENT INITIAL (Vérifie la mémoire au démarrage)
+// 2. CHARGEMENT INITIAL
 (function() {
     const savedTheme = localStorage.getItem('theme');
-    
-    // On applique le thème immédiatement pour éviter le flash blanc
+    const body = document.body;
+
     if (savedTheme === 'dark') {
-        document.body.setAttribute('data-theme', 'dark');
+        body.setAttribute('data-theme', 'dark');
     } else {
-        document.body.removeAttribute('data-theme');
+        body.removeAttribute('data-theme');
     }
 
-    // On attend que le DOM soit prêt pour régler l'aspect du bouton
+    // Une fois que la page est chargée, on met la bonne icône
     window.addEventListener('DOMContentLoaded', () => {
-        if (savedTheme === 'dark') {
-            updateThemeButtons("☀️ Mode Jour");
-        } else {
-            // Par défaut ou si 'light', on propose de passer en nuit
-            updateThemeButtons("🌙 Mode Nuit");
+        const icon = document.getElementById('theme-icon');
+        if (icon) {
+            icon.innerText = (savedTheme === 'dark') ? '☀️' : '🌙';
         }
     });
 })();
@@ -761,10 +750,10 @@ const positionsMobile = {
 // Définition des positions pour le MOBILE (écrans HORIZONTAUX < 600px)
 const positionsMobileHorizontal = {
     'header': 0,
-    'tokyo1': 14,
-    'osaka': 33,
+    'tokyo1': 12,
+    'osaka': 32,
     'okinawa': 51,
-    'tokyo2': 70,
+    'tokyo2': 71,
     'france': 100
 };
 
@@ -878,3 +867,21 @@ window.addEventListener('resize', () => {
         updateProgress('header');
     }
 });
+
+// Afficher/Cacher le bouton selon le scroll
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('back-to-top');
+    if (window.scrollY > 400) { // Apparaît après 400px de scroll
+        btn.style.display = 'block';
+    } else {
+        btn.style.display = 'none';
+    }
+});
+
+// Fonction de remontée fluide
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}

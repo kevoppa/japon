@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japon 2026 - Le Voyage Familial</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Lien pour synchroniser avec les fichiers CSS (Emplacement dossier : css/xxxx.css) -->   
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/progress.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/backToTop.css">
+    <link rel="stylesheet" href="css/scrollSpy.css">
+    <link rel="stylesheet" href="css/imageViewer.css">
+    <link rel="stylesheet" href="css/alerts.css">
+
 </head>
 <body>
-
-    <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">🌙 Mode Nuit</button>
 
     <header>
         <h1>🇯🇵 JAPON 2026</h1>
         <p class="subtitle">Kevin, Loïc, May Nhia, Stéphanie, Estelle<br>Du 5 Avril au 27 Avril 2026</p>
+
+        <button id="theme-toggle" class="theme-btn-header" onclick="toggleTheme()">
+            <span id="theme-icon">🌙</span>
+            <span class="theme-text">Mode Nuit</span>
+        </button>
     </header>
 
     <nav class="main-nav">
@@ -270,6 +285,21 @@
 
     </main>
 
+<!-- Lien pour synchroniser avec les fichiers Script .js (Emplacement dossier : js/xxxx.js) -->
+<script src="js/script.js"></script>
+
+<script src="js/navigation.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/backToTop.js"></script>
+<script src="js/scrollSpy.js"></script>
+<script src="js/imageViewer.js"></script>
+<script src="js/alerts.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/utils.js"></script>
+
+<!-- Modaux dynamiques -->
 <div id="modal-overlay" class="modal-overlay" onclick="closeModal()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000;"></div>
 
 <div id="modal-box" class="modal-box" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--bg-card); z-index:2100; width:90%; max-width:600px; border-radius:12px; overflow:hidden;">
@@ -280,15 +310,16 @@
     <div id="modal-content-area" style="padding:20px; max-height:70vh; overflow-y:auto;">
         </div>
 </div>
-
     <div id="modal-content-area"></div>
 </div>
 
-    <script src="script.js"></script>
-    
+<!-- Visionneuse d'images en plein écran -->
 <div id="image-viewer" onclick="this.style.display='none'">
     <img id="full-image" src="" alt="Aperçu">
 </div>
+
+<!-- Bouton de retour en haut  -->
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()">↑</button>
 
 </body>
 </html>

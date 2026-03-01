@@ -58,8 +58,10 @@ body {
 header {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/background-degrade.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/background-degrade.jpg') center/cover;
     color: white;
+
+    position: relative; /* Pour que le bouton de thème puisse se positionner par rapport au header */
 }
 header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 .subtitle { font-size: 1.2rem; opacity: 0.9; }
@@ -283,3 +285,90 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 @keyframes zoomAnim { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 img { cursor: zoom-in; }
 #image-viewer, #image-viewer img { cursor: zoom-out !important; }
+
+/* Bouton Retour en Haut */
+.back-to-top {
+    position: fixed;
+    bottom: 85px; /* Juste au-dessus du bouton de thème */
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: var(--accent-red);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: none; /* Caché par défaut */
+    z-index: 2000;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
+    background: var(--accent-blue);
+}
+
+/* Optionnel : Adaptation Mobile Paysage */
+@media (max-height: 500px) {
+    .back-to-top { bottom: 20px; right: 80px; } /* Décale pour ne pas gêner en horizontal */
+}
+
+
+/* --- BOUTON THEME NUIT ET JOUR --- */
+/* Style du bouton dans le header */
+.theme-btn-header {
+    position: absolute; /* Il se place par rapport au header */
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.theme-btn-header:hover {
+    background: var(--accent-blue);
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .theme-btn-header {
+        top: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Par défaut (Mobile et Horizontal), on cache le texte */
+.theme-text {
+    display: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 8px;
+    color: white;
+}
+
+/* Format WEB (écrans > 1024px par exemple) */
+@media (min-width: 1025px) {
+    .theme-btn-header {
+        width: auto; /* Le bouton s'élargit pour accueillir le texte */
+        padding: 0 15px;
+        border-radius: 30px; /* Forme pilule plus jolie avec du texte */
+    }
+    
+    .theme-text {
+        display: inline; /* On affiche le texte uniquement ici */
+    }
+}
