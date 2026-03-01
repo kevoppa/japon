@@ -147,7 +147,7 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
 .main-nav a.active span {
     background: var(--accent-red);
     color : white;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 /* =========================================
@@ -178,13 +178,14 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
     border: 2px solid var(--border-color); padding: 12px 20px;
     border-radius: 30px; font-weight: bold; cursor: pointer;
     box-shadow: var(--shadow); z-index: 1000;
-    opacity: 0.7; /* Opacité initiale pour indiquer que c'est cliquable */
-    transition: opacity 0.2s; /* Transition pour un effet de survol plus fluide */
+    /*opacity: 0.7; /* Opacité initiale pour indiquer que c'est cliquable */
+    /*transition: opacity 0.2s; /* Transition pour un effet de survol plus fluide */
 }
 
-.theme-btn:hover {
-    opacity: 1; /* Opacité complète au survol */
-}
+/* Opacité complète au survol */
+/*.theme-btn:hover {
+    opacity: 1; 
+}*/
 
 /* =========================================
    6. MEDIA QUERIES (ADAPTATION ECRANS)
@@ -234,15 +235,11 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
         color: white !important; /* On force le blanc pour le contraste sur le fond bleu */
         background: var(--accent-red); /* Fond bleu plein pour plus de visibilité */
         border-radius: 8px;
-        transform: translateY(-2px);
-        font-weight: bold; /* Texte en gras pour plus de visibilité */
-        font-size: 11px; /* Taille de police légèrement réduite pour s'adapter au mobile */
     }
 
     .main-nav a.active span {
         background: white;
         color: var(--accent-red);
-        font-weight: bold; /* Numéro en gras pour plus de visibilité */
     }
 
     /* Ajustement bouton thème mobile */
