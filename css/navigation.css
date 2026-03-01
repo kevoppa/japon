@@ -59,7 +59,7 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
     border: 1px solid var(--border-color);
 }
 
-.main-nav a:hover { background: var(--accent-blue); color: var(--bg-main); }
+.main-nav a:hover { background: var(--bg-main); color: var(--text-main); }
 .main-nav a.active { border-color: var(--accent-red); color: var(--accent-red); }
 
 .main-nav a span {
