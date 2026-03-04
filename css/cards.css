@@ -1,7 +1,9 @@
 /* --- STYLES DES CARTES DE CONTENU --- */
 
+/* Base globale pour tous les éléments */
 * { box-sizing: border-box; }
 
+/* Style général du site */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-main);
@@ -11,9 +13,11 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Conteneur principal et titres de section */
 .container { max-width: 900px; margin: 0 auto; padding: 20px; }
 .section-title { margin-top: 60px; padding-bottom: 10px; border-bottom: 3px solid var(--accent-red); color: var(--accent-blue); }
 
+/* Carte générique utilisée sur le planning */
 .card { 
     background: var(--bg-card); 
     border-radius: var(--radius); 
@@ -25,10 +29,12 @@ body {
     border: 1px solid var(--border-color); 
 }
 
+/* Corrige le premier titre dans une carte */
 .card-content h3:first-child {
     margin-top: 0;
 }
 
+/* Image, contenu et badge des cartes */
 .card-img { width: 100%; height: 250px; object-fit: cover; }
 .card-content { padding: 25px; flex: 1; }
 .badge { 
@@ -42,6 +48,7 @@ body {
     margin-bottom: 10px; 
 }
 
+/* Version desktop : image à gauche, contenu à droite */
 @media (min-width: 700px) {
     .card { flex-direction: row; }
     .card-img { width: 320px; max-width: 320px; height: auto; }

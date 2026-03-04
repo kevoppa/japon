@@ -1,5 +1,6 @@
 /* --- BARRE DE PROGRESSION DE NAVIGATION --- */
 
+/* Barre rouge qui avance pendant la lecture du planning */
 .nav-progress-bar {
     position: absolute;
     bottom: -4px; 
@@ -11,6 +12,7 @@
     z-index: 1100;
 }
 
+/* Version un peu plus fine sur mobile */
 @media (max-width: 600px) {
     .nav-progress-bar { height: 3px; bottom: -3px; }
 }

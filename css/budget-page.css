@@ -1,0 +1,56 @@
+/* Barre du haut de la page budget */
+.budget-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+/* Titre et sous-texte du budget */
+.budget-toolbar__meta h3 {
+    margin: 0 0 4px;
+    font-size: clamp(1.2rem, 2vw, 1.45rem);
+}
+
+.budget-toolbar__meta p {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* Zone des actions : ouvrir / télécharger */
+.budget-toolbar__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Bouton générique de la page budget */
+.budget-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Bouton principal mis en avant */
+.budget-action--primary {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-red));
+    border-color: transparent;
+    color: #fff;
+}
+
+/* Petit texte d'aide sous la toolbar */
+.budget-note {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}

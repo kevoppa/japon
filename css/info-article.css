@@ -1,0 +1,197 @@
+/* Largeur de lecture des fiches infos */
+.info-article-page.container {
+    max-width: 980px;
+}
+
+/* Fil d'Ariane en haut des fiches */
+.info-breadcrumb {
+    margin: 0 0 18px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.info-breadcrumb a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.info-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Boutons de retour rapide */
+.info-back-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 24px;
+}
+
+.info-back-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.info-back-link:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+/* En-tête d'une fiche */
+.info-article-header {
+    margin-bottom: 20px;
+}
+
+.info-article-header h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.1;
+    color: var(--text-main);
+}
+
+.info-article-lead {
+    margin: 0;
+    font-size: 1.08rem;
+    color: var(--text-main);
+}
+
+/* Blocs de contenu de la fiche */
+.info-article-section {
+    margin-bottom: 24px;
+}
+
+.info-article-section h2 {
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.45rem;
+    color: var(--text-main);
+}
+
+/* Listes simples : étapes, points, liens */
+.info-step-list,
+.info-points-list,
+.info-links-list {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-main);
+}
+
+.info-step-list li,
+.info-points-list li,
+.info-links-list li {
+    margin-bottom: 10px;
+}
+
+.info-links-list a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.info-links-list a:hover {
+    text-decoration: underline;
+}
+
+/* Encadré de note ou rappel */
+.info-note-box {
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--bg-main) 60%, var(--bg-card) 40%);
+    padding: 16px 18px;
+    color: var(--text-main);
+}
+
+.info-note-box p {
+    margin: 0;
+}
+
+/* Ligne d'actions en bas de fiche */
+.info-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.info-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Bouton principal mis en avant */
+.info-action--primary {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-red));
+    border-color: transparent;
+    color: #fff;
+}
+
+/* Cartes de liens vers d'autres fiches */
+.info-topic-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.info-topic-card {
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--bg-card);
+    padding: 18px;
+}
+
+.info-topic-card--link {
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s ease;
+}
+
+.info-topic-card--link:hover {
+    border-color: var(--accent-blue);
+}
+
+.info-topic-card--link:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 3px;
+}
+
+.info-topic-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+.info-topic-card p {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.info-topic-card__cta {
+    margin-top: 12px;
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+/* Ajuste la taille du titre sur mobile */
+@media (max-width: 700px) {
+    .info-article-header h1 {
+        font-size: 2.1rem;
+    }
+}

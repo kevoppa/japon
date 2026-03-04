@@ -1,0 +1,310 @@
+/* Largeur de la page infos pratiques */
+.info-page.container {
+    max-width: 1400px;
+}
+
+/* Layout principal : sommaire à gauche, contenu à droite */
+.info-page {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+/* Colonne du sommaire desktop */
+.info-toc {
+    position: sticky;
+    top: 24px;
+}
+
+/* Boîte visuelle du sommaire */
+.info-toc__box {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--bg-card);
+    box-shadow: var(--shadow);
+    padding: 18px;
+}
+
+.info-toc__box h2 {
+    margin: 0 0 14px;
+    font-size: 1.05rem;
+}
+
+/* Liens du sommaire */
+.info-toc__nav {
+    display: grid;
+    gap: 8px;
+}
+
+.info-toc__nav a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 0.96rem;
+}
+
+.info-toc__nav a:hover {
+    text-decoration: underline;
+}
+
+.info-toc__link,
+.info-toc__section-link,
+.info-toc__child-link {
+    display: block;
+}
+
+.info-toc__group {
+    display: grid;
+    gap: 8px;
+}
+
+.info-toc__section-link {
+    font-weight: 700;
+}
+
+.info-toc__children {
+    display: grid;
+    gap: 8px;
+    padding-left: 14px;
+    border-left: 1px solid var(--border-color);
+}
+
+.info-toc__child-link {
+    font-size: 0.93rem;
+    line-height: 1.4;
+}
+
+/* Colonne de contenu */
+.info-content {
+    min-width: 0;
+}
+
+/* Introduction de la page */
+.info-article-intro {
+    margin-bottom: 28px;
+}
+
+.info-kicker {
+    margin: 0 0 10px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.info-article-intro h1 {
+    margin: 0 0 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.1;
+    color: var(--text-main);
+}
+
+.info-lead {
+    font-size: 1.12rem;
+    color: var(--text-main);
+}
+
+.info-article-intro p {
+    margin: 0 0 16px;
+}
+
+/* Sections principales */
+.info-section {
+    margin-top: 30px;
+    padding-top: 4px;
+}
+
+.info-section h2 {
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: var(--text-main);
+}
+
+.info-section > p {
+    margin: 0 0 18px;
+    color: var(--text-muted);
+}
+
+/* Liste des blocs cliquables */
+.info-topic-list {
+    display: grid;
+    gap: 14px;
+}
+
+/* Bloc de contenu simple ou cliquable */
+.info-topic {
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--bg-card);
+    padding: 18px;
+}
+
+/* État hover / focus des blocs cliquables */
+.info-topic--link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-topic--link:hover {
+    border-color: var(--accent-blue);
+    background-color: var(--border-color-2);
+}
+
+.info-topic--link:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 3px;
+}
+
+.info-topic h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+.info-topic p {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.info-topic p + p {
+    margin-top: 12px;
+}
+
+.info-topic__cta {
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+.info-topic a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.info-topic a:hover {
+    text-decoration: underline;
+}
+
+/* Bloc des liens principaux dans le menu mobile */
+.site-menu__primary-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.site-menu__summary {
+    display: none;
+}
+
+/* Cache le sommaire fixe sur tablette et mobile */
+@media (max-width: 900px) {
+    .info-page {
+        grid-template-columns: 1fr;
+    }
+
+    .info-toc {
+        display: none;
+    }
+}
+
+/* Mobile : le sommaire passe dans le menu hamburger */
+@media (max-width: 700px) {
+    /* forcer le menu hamburger à rester visible */
+    .site-menu__toggle {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        z-index: 1400;
+    }
+
+    .site-menu__container {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        position: fixed;
+        top: 64px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        max-height: none;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        z-index: 1390;
+    }
+
+    .site-menu.is-open .site-menu__container {
+        display: flex;
+    }
+
+    .site-menu__primary-links {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding-bottom: 14px;
+        margin-bottom: 14px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .site-menu__summary {
+        display: block;
+    }
+
+    .site-menu__summary-title {
+        margin: 0 0 10px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-muted);
+    }
+
+.site-menu__summary-links {
+        display: grid;
+        gap: 8px;
+    }
+
+    .site-menu__summary-link {
+        display: block;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: var(--border-color-2);
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .site-menu__summary-link--section {
+        font-weight: 700;
+    }
+
+    .site-menu__summary-link--child {
+        margin-left: 12px;
+        font-size: 0.93rem;
+    }
+
+    .site-menu__summary-link:hover {
+        color: var(--accent-blue);
+    }
+
+    .info-article-intro h1 {
+        font-size: 2.1rem;
+    }
+
+}

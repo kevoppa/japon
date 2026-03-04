@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Voyage Japon - Japon 2026</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/budget-page.css">
+</head>
+<body>
+    <nav class="site-menu" aria-label="Navigation des pages">
+        <div class="site-menu__bar">
+            <button id="theme-toggle" class="theme-btn-header site-menu__theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span>
+                <span class="theme-text">Mode Nuit</span>
+            </button>
+            <div id="site-menu-links" class="site-menu__container">
+                <a class="site-menu__link is-active" href="budget-voyage-japon.html">Budget Voyage Japon</a>
+                <a class="site-menu__link" href="planning.html">Planning</a>
+                <a class="site-menu__link" href="infos-pratiques.html">Infos pratiques</a>
+            </div>
+            <button class="site-menu__toggle" type="button" aria-expanded="false" aria-controls="site-menu-links" aria-label="Ouvrir le menu" onclick="toggleSiteMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <h1>🇯🇵 JAPON 2026</h1>
+        <p class="subtitle">Kevin, Loïc, May Nhia, Stéphanie, Estelle<br>Du 5 Avril au 27 Avril 2026</p>
+    </header>
+
+    <main class="container">
+        <section class="page-intro">
+            <h2>Budget Voyage Japon</h2>
+            <p>Affichage direct du classeur budget du voyage, avec navigation par feuille et lecture confortable sur mobile comme sur PC.</p>
+        </section>
+
+        <article class="card">
+            <div class="card-content">
+                <div class="budget-toolbar">
+                    <div class="budget-toolbar__meta">
+                        <h3 id="budget-workbook-name">Budget_Voyage_Japon_2025 - 5 personnes.xlsx</h3>
+                        <p id="budget-workbook-meta">Fichier Excel source du budget du voyage.</p>
+                    </div>
+                    <div class="budget-toolbar__actions">
+                        <a id="budget-workbook-link" class="budget-action budget-action--primary" href="0-fichiers-sensibles/Budget_Voyage_Japon_2025 - 5 personnes.xlsx">Ouvrir le fichier Excel</a>
+                        <a class="budget-action" href="0-fichiers-sensibles/Budget_Voyage_Japon_2025 - 5 personnes.xlsx" download>Télécharger le fichier</a>
+                    </div>
+                </div>
+
+                <p class="budget-note">Affichage en lecture seule. Tu peux changer de feuille, faire défiler librement le tableau et ouvrir le fichier Excel original à tout moment.</p>
+            </div>
+        </article>
+    </main>
+
+    <script src="js/theme.js"></script>
+</body>
+</html>

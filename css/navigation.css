@@ -1,33 +1,177 @@
 /* --- STYLES DE LA NAVIGATION --- */
 
-/* Définit un espace de sécurité au-dessus de chaque section lors du clic sur le menu */
+/* Décalage des ancres pour éviter qu'un titre soit caché */
 section {
-    scroll-margin-top: 90px; /* Ajustez cette valeur selon la hauteur de votre barre de navigation */
+    scroll-margin-top: 132px;
 }
 
-/* Si vous voulez un défilement fluide et élégant */
+/* Défilement fluide entre les ancres */
 html {
     scroll-behavior: smooth;
 }
 
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/background-degrade.jpg') center/cover;
-    color: white;
-    position: relative;
+/* Laisse de la place au menu du haut */
+body {
+    padding-top: 82px;
 }
 
-header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
-.subtitle { font-size: 1.2rem; opacity: 0.9; }
+/* Header visuel avec image de fond */
+header {
+    text-align: center;
+    padding: 48px 20px 60px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/background-degrade.jpg') center/cover;
+    color: white;
+}
 
-.main-nav {
-    position: sticky; /* On utilise sticky pour que la barre reste visible en haut lors du scroll */
+header h1 {
+    margin: 40px 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Barre de navigation principale des pages */
+.site-menu {
+    position: absolute;
     top: 0;
-    background: var(--bg-main-avec-flou) !important; 
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.site-menu__bar {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+/* Conteneur des liens de navigation */
+.site-menu__container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+/* Boutons de navigation des pages */
+.site-menu__link {
+    padding: 11px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color) with a 0.5px transparent border for better anti-aliasing;
+    background: var(--menu-link-flou);
+    backdrop-filter: blur(10px);
+    color: var(--text-main);
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* États hover et actif */
+.site-menu__link:hover {
+    background: var(--bg-card-2);
+    color: var(--accent-blue);
+}
+
+.site-menu__link.is-active {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-red));
+    border-color: transparent;
+    color: var(--bg-main);
+    box-shadow: 0 12px 24px rgba(49, 130, 206, 0.22);
+}
+
+/* Bouton de changement de thème dans la navigation */
+.site-menu__theme {
+    position: static;
+    flex-shrink: 0;
+    width: auto;
+    height: 48px;
+    min-width: 48px;
+    padding: 0 14px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.site-menu__theme .theme-text {
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+/* Bouton hamburger mobile */
+.site-menu__toggle {
+    display: none;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    cursor: pointer;
+}
+
+/* Traits du bouton hamburger */
+.site-menu__toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+}
+
+.page-intro {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.page-intro h2 {
+    margin-bottom: 10px;
+    color: var(--accent-blue);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.page-intro p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--text-muted);
+}
+
+/* Navigation interne du planning */
+.main-nav {
+    position: sticky;
+    top: 0px;
+    background: var(--bg-main-avec-flou) !important;
     backdrop-filter: blur(5px);
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
     border-bottom: 4px solid var(--nav-rail-color);
 }
@@ -59,15 +203,94 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
     border: 1px solid var(--border-color);
 }
 
-.main-nav a:hover { background: var(--bg-main); color: var(--text-main); }
-.main-nav a.active { border-color: var(--accent-red); color: var(--accent-red); }
+.main-nav a:hover {
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+.main-nav a.active {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
 
 .main-nav a span {
     background: var(--accent-red);
     color: white;
-    width: 20px; height: 20px;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 50%; font-size: 0.75rem;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+}
+
+/* Règles mobile pour le menu du haut */
+@media (max-width: 700px) {
+    body {
+        padding-top: 74px;
+    }
+
+    .site-menu__bar {
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .site-menu__theme {
+        order: 1;
+        height: 44px;
+        min-width: 44px;
+        padding: 0 12px;
+    }
+
+    .site-menu__theme .theme-text {
+        display: none;
+    }
+
+    .site-menu__toggle {
+        order: 3;
+        display: inline-flex;
+        width: 44px;
+        height: 44px;
+    }
+
+    .site-menu__container {
+        order: 4;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 14px;
+        right: 14px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 12px;
+        background: var(--menu-link-flou);
+        backdrop-filter: blur(10px);
+        color: var(--text-main);
+        border: 1px solid var(--border-color);
+        border-radius: 18px;
+        box-shadow: 0 18px 36px rgba(15, 23, 42, 0.14);
+    }
+
+    .site-menu.is-open .site-menu__container {
+        display: flex;
+    }
+
+    .site-menu__link {
+        width: 100%;
+        min-width: 0;
+        text-align: left;
+        border-radius: 14px;
+        padding: 12px 14px;
+        background: var(--border-color-2);
+        backdrop-filter: blur(10px);
+        color: var(--text-main);
+    }
+
+    .main-nav {
+        top: 0px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -75,67 +298,86 @@ header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
         padding: 5px 0;
     }
 
-    .nav-container { 
-        gap: 0; /* On colle les conteneurs pour maximiser l'espace interne */
+    .nav-container {
+        gap: 0;
         padding: 0 2px;
     }
 
-    .main-nav a { 
-        flex-direction: column; 
-        padding: 5px 2px; /* Un peu de padding latéral pour que le texte ne touche pas le bord du bouton */
-        font-size: 0.63rem; /* On descend d'un cran pour la lisibilité */
-        min-width: 0; 
-        border: none; 
+    .main-nav a {
+        flex-direction: column;
+        padding: 5px 2px;
+        font-size: 0.63rem;
+        min-width: 0;
+        border: none;
         background: transparent;
         gap: 2px;
-        /* --- CHANGEMENT CLÉ ICI --- */
-        white-space: normal; /* On autorise le retour à la ligne pour le texte long */
-        line-height: 1.1;    /* On resserre les lignes si ça coupe */
+        white-space: normal;
+        line-height: 1.1;
         word-wrap: break-word;
     }
 
-    /* Bouton active */
-    .main-nav a.active { 
-        color: white !important; /* On inverse les couleurs pour que le texte soit lisible sur le rouge */
+    .main-nav a.active {
+        color: white !important;
         background: var(--bouton-active-mobile);
         backdrop-filter: blur(5px);
-        border-radius: 6px; 
+        border-radius: 6px;
         font-weight: bold;
     }
 
-    /* Quand tu clique sur mobile on ne voit pas de HOVER mais on voit juste le texte bleu qui change */
-    .main-nav a:hover { 
-        color: white !important; /* On inverse les couleurs pour que le texte soit lisible sur le rouge */
+    .main-nav a:hover {
+        color: white !important;
         background: var(--bouton-active-mobile);
         backdrop-filter: blur(5px);
-        border-radius: 6px; 
+        border-radius: 6px;
         font-weight: bold;
     }
 
-    /* On s'assure que le texte "Tokyo" ou "France" soit bien centré sous le chiffre */
     .main-nav a span {
         width: 18px;
         height: 18px;
         font-size: 0.7rem;
-        flex-shrink: 0; /* Empêche le cercle de s'écraser */
+        flex-shrink: 0;
     }
-    
+
     .main-nav a.active span {
         background: white;
         color: var(--accent-red);
     }
-}
 
-@media (max-width: 600px) {
-    /* Définit un espace de sécurité au-dessus de chaque section lors du clic sur le menu */
     section {
-    scroll-margin-top: 70px; /* Ajustez cette valeur selon la hauteur de votre barre de navigation */
+        scroll-margin-top: 130px;
     }
 }
 
 @media (max-height: 600px) {
-    /* Définit un espace de sécurité au-dessus de chaque section lors du clic sur le menu */
     section {
-    scroll-margin-top: 105px; /* Ajustez cette valeur selon la hauteur de votre barre de navigation */
+        scroll-margin-top: 130px;
+    }
+}
+
+@media (max-width: 500px) and (max-height: 500px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .site-menu__bar {
+        padding: 10px 12px;
+    }
+
+    .site-menu__theme,
+    .site-menu__toggle {
+        height: 40px;
+        width: 40px;
+        min-width: 40px;
+    }
+
+    .site-menu__container {
+        top: calc(100% + 6px);
+        left: 12px;
+        right: 12px;
+    }
+
+    .main-nav {
+        top: 70px;
     }
 }
