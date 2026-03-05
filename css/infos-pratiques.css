@@ -9,6 +9,7 @@
     grid-template-columns: 260px minmax(0, 1fr);
     gap: 32px;
     align-items: start;
+    margin-bottom: 200px; /* espace en bas de tous les contenus infos pratiques */
 }
 
 /* Colonne du sommaire desktop */
