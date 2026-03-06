@@ -1,0 +1,150 @@
+/** Restaurants filters: container */
+.restaurant-filter {
+    margin: 0 0 16px;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--bg-card);
+}
+
+/** Restaurants filters: title */
+.restaurant-filter__label {
+    margin: 0 0 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+/** Restaurants filters: chips layout */
+.restaurant-filter__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/** Restaurants filters: chip button base */
+.restaurant-filter__chip {
+    appearance: none;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-main);
+    padding: 9px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/** Restaurants filters: chip interactive states */
+.restaurant-filter__chip:hover,
+.restaurant-filter__chip:focus-visible,
+.restaurant-filter__chip.is-active {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    outline: none;
+}
+
+/** Restaurants filters: empty state message */
+.restaurant-filter__empty {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/** Restaurants cards: tags wrapper */
+.restaurant-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 8px;
+}
+
+/** Restaurants cards: tag base */
+.restaurant-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/** Tag palette: buffet a volonte */
+.tag--buffet-a-volonte {
+    border-color: #1f6fd1;
+    color: #1f6fd1;
+    background: rgba(31, 111, 209, 0.12);
+}
+
+/** Tag palette: a volonte sur commande */
+.tag--a-volonte-sur-commande {
+    border-color: #d97706;
+    color: #d97706;
+    background: rgba(217, 119, 6, 0.12);
+}
+
+/** Tag palette: pas a volonte */
+.tag--pas-a-volonte {
+    border-color: #6b7280;
+    color: #6b7280;
+    background: rgba(107, 114, 128, 0.14);
+}
+
+/** Tag palette: fruit de mer */
+.tag--fruit-de-mer {
+    border-color: #0f766e;
+    color: #0f766e;
+    background: rgba(15, 118, 110, 0.12);
+}
+
+/** Tag palette: specialise viande */
+.tag--specialise-viande {
+    border-color: #b91c1c;
+    color: #b91c1c;
+    background: rgba(185, 28, 28, 0.12);
+}
+
+/** Tag palette: viande wagyu */
+.tag--viande-wagyu {
+    border-color: #8b4513;
+    color: #8b4513;
+    background: rgba(139, 69, 19, 0.12);
+}
+
+/** Tag palette: buffet d'hotel */
+.tag--buffet-hotel {
+    border-color: #0f766e;
+    color: #0f766e;
+    background: rgba(15, 118, 110, 0.12);
+}
+
+/** Tag palette: cuisine chinoise */
+.tag--cuisine-chinoise {
+    border-color: #7c2d12;
+    color: #7c2d12;
+    background: rgba(124, 45, 18, 0.12);
+}
+
+/** Tag palette: yakiniku */
+.tag--yakiniku {
+    border-color: #9f1239;
+    color: #9f1239;
+    background: rgba(159, 18, 57, 0.12);
+}
+
+/** Tag palette: namba */
+.tag--namba {
+    border-color: #1d4ed8;
+    color: #1d4ed8;
+    background: rgba(29, 78, 216, 0.12);
+}
+
+/** Tag palette: proche gare */
+.tag--proche-gare {
+    border-color: #15803d;
+    color: #15803d;
+    background: rgba(21, 128, 61, 0.12);
+}

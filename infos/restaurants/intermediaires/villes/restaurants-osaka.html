@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../../../css/alerts.css">
     <link rel="stylesheet" href="../../../../css/infos-pratiques.css">
     <link rel="stylesheet" href="../../../../css/info-article.css">
+    <link rel="stylesheet" href="../../../../css/restaurants-filters.css">
 </head>
 <body>
     <nav class="site-menu" aria-label="Navigation des pages">
@@ -73,7 +74,7 @@
             <div class="info-back-nav">
                 <a class="info-back-link" href="../restaurants.html">← Retour à Restaurants</a>
             </div>
-
+            
             <section class="info-article-header">
                 <h1>Restaurants à Osaka</h1>
                 <p class="info-article-lead">Cette page regroupe les repères les plus simples pour manger facilement à Osaka dans les zones animées et en format groupe.</p>
@@ -81,35 +82,73 @@
 
             <article>
                 <div class="card-content">
+                    <section class="restaurant-filter" aria-label="Filtrer les fiches restaurants">
+                        <p class="restaurant-filter__label">Trier par : hashtag</p>
+                        <div class="restaurant-filter__chips">
+                            <button class="restaurant-filter__chip is-active" type="button" data-filter-tag="all">#Tout</button>
+                            <button class="restaurant-filter__chip tag--buffet-a-volonte" type="button" data-filter-tag="buffet-a-volonte">#Buffet &agrave; volont&eacute;</button>
+                            <button class="restaurant-filter__chip tag--a-volonte-sur-commande" type="button" data-filter-tag="a-volonte-sur-commande">#&Agrave; volont&eacute; sur commande</button>
+                            <button class="restaurant-filter__chip tag--buffet-hotel" type="button" data-filter-tag="buffet-hotel">#Buffet d&apos;h&ocirc;tel</button>
+                            <button class="restaurant-filter__chip tag--cuisine-chinoise" type="button" data-filter-tag="cuisine-chinoise">#Cuisine chinoise</button>
+                            <button class="restaurant-filter__chip tag--specialise-viande" type="button" data-filter-tag="specialise-viande">#Sp&eacute;cialis&eacute; viande</button>
+                            <button class="restaurant-filter__chip tag--yakiniku" type="button" data-filter-tag="yakiniku">#Yakiniku</button>
+                            <button class="restaurant-filter__chip tag--namba" type="button" data-filter-tag="namba">#Namba</button>
+                            <button class="restaurant-filter__chip tag--proche-gare" type="button" data-filter-tag="proche-gare">#Proche gare</button>
+                        </div>
+                        <p id="restaurant-filter-empty" class="restaurant-filter__empty" hidden>Aucune fiche ne correspond &agrave; ce filtre pour le moment.</p>
+                    </section>
+
                     <div class="info-topic-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
-                        <a class="info-topic info-topic--link" href="osaka/yurayura.html" style="padding:14px 16px; border-radius:10px;">
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="buffet-a-volonte,buffet-hotel,namba,proche-gare" href="osaka/yurayura.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Restaurant YURAYURA (Hotel Royal Classic Osaka)</h3>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Restaurant buffet situ&eacute; &agrave; Namba, pratique pour un groupe de 5 avec r&eacute;servation en ligne et horaires clairs lunch/dinner.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--buffet-a-volonte">#Buffet &agrave; volont&eacute;</span>
+                                <span class="restaurant-tag tag--buffet-hotel">#Buffet d&apos;h&ocirc;tel</span>
+                                <span class="restaurant-tag tag--namba">#Namba</span>
+                                <span class="restaurant-tag tag--proche-gare">#Proche gare</span>
+                            </div>
                             <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
                         </a>
-                        <a class="info-topic info-topic--link" href="osaka/yakiniku-jack-tennoji.html" style="padding:14px 16px; border-radius:10px;">
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="a-volonte-sur-commande,specialise-viande,yakiniku,proche-gare" href="osaka/yakiniku-jack-tennoji.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Yakiniku Jack Tennoji</h3>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Yakiniku &agrave; volont&eacute; tr&egrave;s proche de la gare de Tennoji, avec r&eacute;servation en ligne et rep&egrave;res pratiques pour un groupe.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--a-volonte-sur-commande">#&Agrave; volont&eacute; sur commande</span>
+                                <span class="restaurant-tag tag--specialise-viande">#Sp&eacute;cialis&eacute; viande</span>
+                                <span class="restaurant-tag tag--yakiniku">#Yakiniku</span>
+                                <span class="restaurant-tag tag--proche-gare">#Proche gare</span>
+                            </div>
                             <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
                         </a>
-                        <a class="info-topic info-topic--link" href="osaka/folk-kitchen.html" style="padding:14px 16px; border-radius:10px;">
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="buffet-a-volonte,buffet-hotel,proche-gare" href="osaka/folk-kitchen.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Folk Kitchen (Hilton Osaka)</h3>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Buffet all-day dining &agrave; Umeda, pratique pour un groupe de 5 avec r&eacute;servation en ligne et horaires multiples.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--buffet-a-volonte">#Buffet &agrave; volont&eacute;</span>
+                                <span class="restaurant-tag tag--buffet-hotel">#Buffet d&apos;h&ocirc;tel</span>
+                                <span class="restaurant-tag tag--proche-gare">#Proche gare</span>
+                            </div>
                             <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
                         </a>
-                        <a class="info-topic info-topic--link" href="osaka/cafe-restaurant-serena.html" style="padding:14px 16px; border-radius:10px;">
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="buffet-a-volonte,buffet-hotel" href="osaka/cafe-restaurant-serena.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Cafe Restaurant SERENA</h3>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Restaurant buffet de l&apos;Hotel Nikko Osaka (2F), central &agrave; Shinsaibashi avec r&eacute;servation en ligne.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--buffet-a-volonte">#Buffet &agrave; volont&eacute;</span>
+                                <span class="restaurant-tag tag--buffet-hotel">#Buffet d&apos;h&ocirc;tel</span>
+                            </div>
                             <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
                         </a>
-                        <a class="info-topic info-topic--link" href="osaka/hong-kong-chonron-namba-parks.html" style="padding:14px 16px; border-radius:10px;">
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="buffet-a-volonte,cuisine-chinoise,namba,proche-gare" href="osaka/hong-kong-chonron-namba-parks.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Hong Kong Chonron Namba Parks</h3>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Buffet chinois au 6e &eacute;tage de Namba Parks, simple d&apos;acc&egrave;s pour un groupe et pratique en zone Namba.</p>
-                            <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
-                        </a>
-                        <a class="info-topic info-topic--link" href="osaka/kyoto-kanigin-kawaramacho.html" style="padding:14px 16px; border-radius:10px;">
-                            <h3 style="margin-bottom:6px; font-size:1.05rem;">Kyoto Kanigin Kawaramacho</h3>
-                            <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Restaurant sp&eacute;cialis&eacute; crabes et formules &agrave; volont&eacute; dans le secteur Kawaramachi, avec r&eacute;servation en ligne.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--buffet-a-volonte">#Buffet &agrave; volont&eacute;</span>
+                                <span class="restaurant-tag tag--cuisine-chinoise">#Cuisine chinoise</span>
+                                <span class="restaurant-tag tag--namba">#Namba</span>
+                                <span class="restaurant-tag tag--proche-gare">#Proche gare</span>
+                            </div>
                             <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
                         </a>
                     </div>
@@ -119,5 +158,46 @@
     </main>
 
     <script src="../../../../js/theme.js"></script>
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('[data-filter-tag]');
+            var cards = document.querySelectorAll('.js-restaurant-card');
+            var emptyState = document.getElementById('restaurant-filter-empty');
+
+            function applyFilter(tag) {
+                var visibleCount = 0;
+
+                buttons.forEach(function (button) {
+                    var isActive = button.getAttribute('data-filter-tag') === tag;
+                    button.classList.toggle('is-active', isActive);
+                });
+
+                cards.forEach(function (card) {
+                    var tags = (card.getAttribute('data-tags') || '')
+                        .split(',')
+                        .map(function (item) { return item.trim(); })
+                        .filter(Boolean);
+
+                    var showCard = tag === 'all' || tags.indexOf(tag) !== -1;
+                    card.style.display = showCard ? '' : 'none';
+
+                    if (showCard) {
+                        visibleCount += 1;
+                    }
+                });
+
+                emptyState.hidden = visibleCount !== 0;
+            }
+
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    applyFilter(button.getAttribute('data-filter-tag'));
+                });
+            });
+
+            applyFilter('all');
+        }());
+    </script>
 </body>
 </html>
+

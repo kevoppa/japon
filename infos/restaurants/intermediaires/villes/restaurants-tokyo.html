@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../../../css/alerts.css">
     <link rel="stylesheet" href="../../../../css/infos-pratiques.css">
     <link rel="stylesheet" href="../../../../css/info-article.css">
+    <link rel="stylesheet" href="../../../../css/restaurants-filters.css">
 </head>
 <body>
     <nav class="site-menu" aria-label="Navigation des pages">
@@ -81,15 +82,36 @@
 
             <article>
                 <div class="card-content">
+                    <section class="restaurant-filter" aria-label="Filtrer les fiches restaurants">
+                        <p class="restaurant-filter__label">Trier par : hashtag</p>
+                        <div class="restaurant-filter__chips">
+                            <button class="restaurant-filter__chip is-active" type="button" data-filter-tag="all">#Tout</button>
+                            <button class="restaurant-filter__chip tag--buffet-a-volonte" type="button" data-filter-tag="buffet-a-volonte">#Buffet &agrave; volont&eacute;</button>
+                            <button class="restaurant-filter__chip tag--a-volonte-sur-commande" type="button" data-filter-tag="a-volonte-sur-commande">#&Agrave; volont&eacute; sur commande</button>
+                            <button class="restaurant-filter__chip tag--pas-a-volonte" type="button" data-filter-tag="pas-a-volonte">#Pas &agrave; volont&eacute;</button>
+                            <button class="restaurant-filter__chip tag--fruit-de-mer" type="button" data-filter-tag="fruit-de-mer">#Fruit de mer</button>
+                            <button class="restaurant-filter__chip tag--specialise-viande" type="button" data-filter-tag="specialise-viande">#Sp&eacute;cialis&eacute; viande</button>
+                            <button class="restaurant-filter__chip tag--viande-wagyu" type="button" data-filter-tag="viande-wagyu">#Viande wagyu</button>
+                        </div>
+                        <p id="restaurant-filter-empty" class="restaurant-filter__empty" hidden>Aucune fiche ne correspond &agrave; ce filtre pour le moment.</p>
+                    </section>
+
                     <div class="info-topic-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
-                        <a class="info-topic info-topic--link" href="tokyo/ginza-happo.html" style="padding:14px 16px; border-radius:10px;">
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="buffet-a-volonte,fruit-de-mer" href="tokyo/ginza-happo.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Seafood Buffet Dining Ginza Happo</h3>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Grand buffet de fruits de mer / sushi / yakiniku &agrave; Ginza (Tokyo), adapt&eacute; aux groupes et aux familles avec une tr&egrave;s grande capacit&eacute; d&apos;accueil.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--buffet-a-volonte">#Buffet &agrave; volont&eacute;</span>
+                                <span class="restaurant-tag tag--fruit-de-mer">#Fruit de mer</span>
+                            </div>
                             <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
                         </a>
-                        <a class="info-topic info-topic--link" href="tokyo/sky-grill-buffet-musashi.html" style="padding:14px 16px; border-radius:10px;">
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="buffet-a-volonte" href="tokyo/sky-grill-buffet-musashi.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Sky Grill Buffet Musashi</h3>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Buffet au 26e &eacute;tage de l&apos;Asakusa View Hotel avec vue Skytree, pratique pour un groupe avec r&eacute;servation en ligne.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--buffet-a-volonte">#Buffet &agrave; volont&eacute;</span>
+                            </div>
                             <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
                         </a>
                     </div>
@@ -99,5 +121,46 @@
     </main>
 
     <script src="../../../../js/theme.js"></script>
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('[data-filter-tag]');
+            var cards = document.querySelectorAll('.js-restaurant-card');
+            var emptyState = document.getElementById('restaurant-filter-empty');
+
+            function applyFilter(tag) {
+                var visibleCount = 0;
+
+                buttons.forEach(function (button) {
+                    var isActive = button.getAttribute('data-filter-tag') === tag;
+                    button.classList.toggle('is-active', isActive);
+                });
+
+                cards.forEach(function (card) {
+                    var tags = (card.getAttribute('data-tags') || '')
+                        .split(',')
+                        .map(function (item) { return item.trim(); })
+                        .filter(Boolean);
+
+                    var showCard = tag === 'all' || tags.indexOf(tag) !== -1;
+                    card.style.display = showCard ? '' : 'none';
+
+                    if (showCard) {
+                        visibleCount += 1;
+                    }
+                });
+
+                emptyState.hidden = visibleCount !== 0;
+            }
+
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    applyFilter(button.getAttribute('data-filter-tag'));
+                });
+            });
+
+            applyFilter('all');
+        }());
+    </script>
 </body>
 </html>
+
