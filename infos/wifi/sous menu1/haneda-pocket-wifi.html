@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pocket WiFi à Haneda - Japon 2026</title>
+    <title>WiFi de l'aéroport de Haneda - Japon 2026</title>
     <link rel="stylesheet" href="../../../css/theme.css">
     <link rel="stylesheet" href="../../../css/navigation.css">
     <link rel="stylesheet" href="../../../css/cards.css">
     <link rel="stylesheet" href="../../../css/alerts.css">
     <link rel="stylesheet" href="../../../css/infos-pratiques.css">
     <link rel="stylesheet" href="../../../css/info-article.css">
+    <link rel="stylesheet" href="../../../css/apercu-image-gallery.css">
+    <link rel="stylesheet" href="../../../css/wifi-haneda-pocket-wifi.css">
 </head>
 <body>
     <nav class="site-menu" aria-label="Navigation des pages">
@@ -29,8 +31,9 @@
                     <div class="site-menu__summary-links">
                         <a class="site-menu__summary-link" href="../../../infos-pratiques.html">Menu principal</a>
                         <a class="site-menu__summary-link site-menu__summary-link--section" href="../wifi-et-arrivee.html">WiFi et arriv&eacute;e</a>
-                        <a class="site-menu__summary-link site-menu__summary-link--child" href="haneda-pocket-wifi.html">Comment obtenir le WiFi &agrave; l&apos;arriv&eacute;e &agrave; Haneda ?</a>
-                        <a class="site-menu__summary-link site-menu__summary-link--child" href="probleme-pocket-wifi.html">Que faire si le pocket WiFi ne fonctionne pas ?</a>                    </div>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="haneda-pocket-wifi.html">WiFi gratuit &agrave; l&apos;arriv&eacute;e &agrave; Haneda</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="sakura-mobile-pocket-wifi.html">Retirer la Pocket WiFi Sakura Mobile &agrave; Haneda</a>
+                    </div>
                 </div>
             </div>
             <button class="site-menu__toggle" type="button" aria-expanded="false" aria-controls="site-menu-links" aria-label="Ouvrir le menu" onclick="toggleSiteMenu()">
@@ -55,8 +58,8 @@
                     <div class="info-toc__group">
                         <a class="info-toc__section-link" href="../wifi-et-arrivee.html">WiFi et arriv&eacute;e</a>
                         <div class="info-toc__children">
-                            <a class="info-toc__child-link" href="haneda-pocket-wifi.html">Comment obtenir le WiFi &agrave; l&apos;arriv&eacute;e &agrave; Haneda ?</a>
-                            <a class="info-toc__child-link" href="probleme-pocket-wifi.html">Que faire si le pocket WiFi ne fonctionne pas ?</a>
+                            <a class="info-toc__child-link" href="haneda-pocket-wifi.html">WiFi gratuit &agrave; l&apos;arriv&eacute;e &agrave; Haneda</a>
+                            <a class="info-toc__child-link" href="sakura-mobile-pocket-wifi.html">Retirer la Pocket WiFi Sakura Mobile &agrave; Haneda</a>
                         </div>
                     </div>
                 </nav>
@@ -64,35 +67,72 @@
         </aside>
 
         <div class="info-content info-content--article">
-        <p class="info-breadcrumb"><a href="../../../infos-pratiques.html">Infos pratiques</a> / <a href="../wifi-et-arrivee.html">WiFi</a> / Récupération du pocket WiFi à Haneda</p>
+        <p class="info-breadcrumb"><a href="../../../infos-pratiques.html">Infos pratiques</a> / <a href="../wifi-et-arrivee.html">WiFi</a> / WiFi gratuit de l'aéroport Haneda</p>
         <div class='info-back-nav'>
             <a class='info-back-link' href='../wifi-et-arrivee.html'>← Retour à WiFi</a>
         </div>
 
         <section class="info-article-header">
             <h1>Comment obtenir le WiFi à l'arrivée à Haneda ?</h1>
-            <p class="info-article-lead">Fiche pratique pour récupérer rapidement le pocket WiFi pocket WiFi à l'arrivée à l'aéroport de Haneda, sans stress et avec les bons repères.</p>
+            <p class="info-article-lead">L'aéroport de Haneda propose un WiFi gratuit dans ses terminaux. Voici les étapes utiles, les bons repères visuels et les plans pour se connecter rapidement dès l'arrivée.</p>
         </section>
 
         <article class="card info-article-section">
             <div class="card-content">
                 <h2>Résumé rapide</h2>
                 <div class="info-note-box">
-                    <p>Le retrait se fait à l'aéroport Haneda Terminal 3, hall des arrivées, au comptoir JAL ABC situé sur l'extrême droite après la sortie des douanes. Le service est annoncé 24h/24 avec une fermeture entre 1h00 et 4h00 du matin.</p>
+                    <p>Le réseau gratuit de l'aéroport s'appelle <strong>HANEDA-FREE-WIFI</strong>. À l'arrivée internationale, tu passes par le <strong>Terminal 3</strong>, puis tu arrives dans le <strong>hall des arrivées 2F</strong> après la douane. Il suffit d'activer le WiFi, de sélectionner ce réseau, d'ouvrir un navigateur et de suivre les instructions à l'écran.</p>
                 </div>
             </div>
         </article>
 
         <article class="card info-article-section">
             <div class="card-content">
-                <h2>Étapes pratiques</h2>
+                <h2>Images repères utiles</h2>
+
+                <div class="haneda-info-gallery restaurant-gallery" id="restaurant-gallery">
+                    <figure>
+                        <img src="../../../images/wifi/haneda-pocket-wifi/haneda-free-wifi.png" alt="Visuel officiel Haneda Free WiFi" loading="lazy">
+                        <figcaption>Le visuel officiel du WiFi gratuit de Haneda. Cherche le réseau <strong>HANEDA-FREE-WIFI</strong></figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../../../images/wifi/haneda-pocket-wifi/haneda-terminal3-arrival-map.png" alt="Plan officiel des procédures d'arrivée au Terminal 3 de Haneda" loading="lazy">
+                        <figcaption>Plan officiel du parcours d'arrivée au <strong>Terminal 3</strong>. Le point <strong>6</strong> correspond au <strong>hall des arrivées</strong> après la douane.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../../../images/wifi/haneda-pocket-wifi/haneda-terminal3-2f-map.png" alt="Plan officiel du hall des arrivées 2F du Terminal 3 à Haneda" loading="lazy">
+                        <figcaption>Plan officiel du <strong>hall des arrivées 2F</strong> du Terminal 3. C'est la zone où tu te trouves juste après la sortie.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </article>
+
+        <article class="card info-article-section">
+            <div class="card-content">
+                <h2>Étapes pour se connecter</h2>
                 <ol class="info-step-list">
-                    <li>Terminer d'abord les étapes d'arrivée : immigration, récupération des bagages, puis douane.</li>
-                    <li>Une fois dans le hall des arrivées du Terminal 3, avancer vers la partie droite du hall.</li>
-                    <li>Repérer le comptoir JAL ABC, indiqué comme point de retrait.</li>
-                    <li>Présenter la réservation ou la confirmation de commande pocket WiFi.</li>
-                    <li>Vérifier immédiatement que le boîtier et les informations utiles correspondent bien à la réservation.</li>
+                    <li>Après l'atterrissage, terminer le parcours normal : immigration, récupération des bagages, puis douane.</li>
+                    <li>Une fois arrivé dans le <strong>hall des arrivées du Terminal 3</strong>, sortir le téléphone.</li>
+                    <li>Activer le WiFi dans les réglages de l'appareil.</li>
+                    <li>Dans la liste des réseaux disponibles, sélectionner <strong>HANEDA-FREE-WIFI</strong>.</li>
+                    <li>Ouvrir un navigateur internet si la page de connexion ne s'affiche pas toute seule.</li>
+                    <li>Suivre les indications affichées à l'écran pour valider la connexion.</li>
+                    <li>Une fois connecté, utiliser Internet pour vérifier l'itinéraire, les mails, les billets ou prévenir les autres.</li>
                 </ol>
+            </div>
+        </article>
+
+        <article class="card info-article-section">
+            <div class="card-content">
+                <h2>Où tu seras exactement</h2>
+                <ul class="info-points-list">
+                    <li>À l'arrivée internationale, vous passez par le <strong>Terminal 3</strong> de Haneda.</li>
+                    <li>Le WiFi gratuit est disponible dans le terminal.</li>
+                    <li>Le repère principal après la douane est le <strong>2F Arrival Lobby</strong>, c'est-à-dire le hall des arrivées au 2e étage.</li>
+                    <li>Le plan d'arrivée permet de visualiser le trajet jusqu'au hall, puis le plan 2F permet de mieux se repérer une fois sorti.</li>
+                </ul>
             </div>
         </article>
 
@@ -100,33 +140,40 @@
             <div class="card-content">
                 <h2>Points importants</h2>
                 <ul class="info-points-list">
-                    <li>Lieu indiqué dans tes documents actuels : Haneda Terminal 3, hall des arrivées, 2F.</li>
-                    <li>Repère utile : aller à l'extrême droite après la sortie des douanes.</li>
-                    <li>Le guide actuel indique qu'il n'est pas nécessaire de rendre le matériel et qu'il suffit de jeter la carte SIM après usage.</li>
-                    <li>Conserver sous la main la confirmation de commande PDF et les mails liés au pocket WiFi.</li>
+                    <li>Le nom exact du réseau à choisir est <strong>HANEDA-FREE-WIFI</strong>.</li>
+                    <li>Si rien ne s'affiche après la connexion, ouvrir manuellement Safari, Chrome ou un autre navigateur.</li>
+                    <li>Le signal peut être plus faible dans certaines zones.</li>
+                    <li>Le site officiel précise aussi que ce WiFi ne peut pas être utilisé dans les boutiques, sauf dans les lounges.</li>
+                    <li>Le WiFi de l'aéroport est utile pour un besoin rapide à l'arrivée, mais il peut être moins stable qu'une eSIM ou un pocket WiFi personnel.</li>
                 </ul>
             </div>
         </article>
 
         <article class="card info-article-section">
             <div class="card-content">
-                <h2>Documents utiles</h2>
+                <h2>Liens utiles</h2>
                 <div class="info-action-row">
-                    <a class="info-action info-action--primary" href="../../../0-fichiers-sensibles/0-POCKET_wifi/order-confirmation.pdf">Ouvrir la commande PDF</a>
-                    <a class="info-action" href="../../../0-fichiers-sensibles/0-POCKET_wifi/order-confirmation.pdf" download>Télécharger la commande</a>
+                    <a class="info-action info-action--primary" href="https://tokyo-haneda.com/en/service/facilities/wireless_lan.html" target="_blank" rel="noopener noreferrer">Page officielle WiFi Haneda</a>
+                    <a class="info-action" href="https://tokyo-haneda.com/en/floor/terminal3/2nd_floor.html" target="_blank" rel="noopener noreferrer">Plan officiel Terminal 3 - 2F</a>
                 </div>
                 <ul class="info-links-list">
-                    <li><a href="../../../0-fichiers-sensibles/0-POCKET_wifi/email-order-confirmation.msg">Mail de confirmation pocket WiFi</a></li>
-                    <li><a href="../../../0-fichiers-sensibles/0-POCKET_wifi/esim/email-esim-ready.msg">Mail eSIM</a></li>
-                    <li><a href="../../../0-fichiers-sensibles/0-POCKET_wifi/esim/email-esim-receipt.msg">Reçu Ubigi / eSIM</a></li>
+                    <li><a href="https://tokyo-haneda.com/en/flight/int/arr_step.html" target="_blank" rel="noopener noreferrer">Procédures d'arrivée internationales - Terminal 3</a></li>
                 </ul>
             </div>
         </article>
         </div>
     </main>
 
+    <div id="restaurant-image-viewer" class="restaurant-image-viewer" aria-hidden="true">
+        <button id="restaurant-image-prev" class="restaurant-image-viewer__btn restaurant-image-viewer__btn--prev" type="button" aria-label="Image précédente">&#10094;</button>
+        <button id="restaurant-image-next" class="restaurant-image-viewer__btn restaurant-image-viewer__btn--next" type="button" aria-label="Image suivante">&#10095;</button>
+        <button id="restaurant-image-close" class="restaurant-image-viewer__btn restaurant-image-viewer__btn--close" type="button" aria-label="Fermer">&times;</button>
+        <div id="restaurant-image-zone-left" class="restaurant-image-viewer__zone restaurant-image-viewer__zone--left" aria-hidden="true"></div>
+        <div id="restaurant-image-zone-right" class="restaurant-image-viewer__zone restaurant-image-viewer__zone--right" aria-hidden="true"></div>
+        <img id="restaurant-image-full" class="restaurant-image-viewer__img" src="" alt="Aperçu image">
+    </div>
+
     <script src="../../../js/theme.js"></script>
+    <script src="../../../js/apercu-image-gallery.js"></script>
 </body>
 </html>
-
-
