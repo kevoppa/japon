@@ -3,7 +3,12 @@ window.modalData = window.modalData || {};
 // OKINAWA
 window.modalData['guide-car-okinawa'] = /* html */ `
     <h3>🚗 Location Voiture Okinawa (location)</h3>
-        <img src="images/toyota/okinawa.jpg" alt="Guide Location Voiture Okinawa" style="max-width:100%;height:auto; border-radius:8px;">
+
+<div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-bottom:20px;">
+    <img src="images/okinawa/okinawa.jpg" alt="Guide Location Voiture Okinawa" style="width:100%; height:auto; border-radius:8px;">
+    <img src="images/okinawa/location-kanucha-rentacar2.jpg" alt="Agence Kanucha Rentacar Okinawa" style="width:100%; height:auto; border-radius:8px;">
+</div>
+
         <p><strong>Agence :</strong> Bureau Accueil de l'Aéroport (location Rent-a-Car)</p>
         <p><strong>Adresse :</strong> 439 Kagamizu, ville de Naha, Okinawa 9010142</p>
         <p><strong>Téléphone :</strong> 098-995-9977 (Mail: rentacar@kanucha.jp)</p>
