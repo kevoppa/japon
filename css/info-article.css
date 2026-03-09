@@ -136,10 +136,38 @@
     font-weight: 700;
 }
 
+.info-action:visited {
+    color: var(--text-main);
+}
+
+.info-action:hover,
+.info-action:focus-visible {
+    text-decoration: none;
+}
+
 /* Bouton principal mis en avant */
 .info-action--primary {
     background: linear-gradient(135deg, var(--accent-blue), var(--accent-red));
     border-color: transparent;
+    color: #fff;
+}
+
+.info-action--primary:visited,
+.info-action--primary:hover,
+.info-action--primary:focus-visible {
+    color: #fff;
+}
+
+/* Les boutons d'action ne doivent pas reprendre la couleur par defaut des liens de carte */
+.info-topic .info-action,
+.info-topic .info-action:visited {
+    color: var(--text-main);
+}
+
+.info-topic .info-action--primary,
+.info-topic .info-action--primary:visited,
+.info-topic .info-action--primary:hover,
+.info-topic .info-action--primary:focus-visible {
     color: #fff;
 }
 

@@ -3,6 +3,7 @@ window.modalData = window.modalData || {};
 // VOL OSAKA -> OKINAWA
 window.modalData['guide-vol-okinawa'] = /* html */ `
     <h3>✈️ Infos vol pour Okinawa</h3>
+        <img src="images/avions/avion-osaka-vers-okinawa.jpg" alt="Avion vol okinawa" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Osaka (ITM) vers Naha (OKA)</strong><br>sam. 18 avr. · 8h15 - sam. 18 avr. · 10h25</p>
         <p>Vol direct · 2 h 10 min · Classe économique<br>All Nippon Airways · NH761</p>
 

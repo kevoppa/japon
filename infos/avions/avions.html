@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport - Japon 2026</title>
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/navigation.css">
+    <link rel="stylesheet" href="../../css/cards.css">
+    <link rel="stylesheet" href="../../css/alerts.css">
+    <link rel="stylesheet" href="../../css/infos-pratiques.css">
+    <link rel="stylesheet" href="../../css/info-article.css">
+</head>
+<body>
+    <nav class="site-menu" aria-label="Navigation des pages">
+        <div class="site-menu__bar">
+            <button id="theme-toggle" class="theme-btn-header site-menu__theme" onclick="toggleTheme()">
+                <span id="theme-icon">&#127769;</span>
+                <span class="theme-text">Mode Nuit</span>
+            </button>
+            <div id="site-menu-links" class="site-menu__container">
+                <div class="site-menu__primary-links">
+                    <a class="site-menu__link" href="../../budget-voyage-japon.html">Budget Voyage Japon</a>
+                    <a class="site-menu__link" href="../../planning.html">Planning</a>
+                    <a class="site-menu__link is-active" href="../../infos-pratiques.html">Infos pratiques</a>
+                </div>
+                <div class="site-menu__summary" aria-label="Sommaire mobile">
+                    <p class="site-menu__summary-title">Sommaire</p>
+                    <div class="site-menu__summary-links">
+                        <a class="site-menu__summary-link" href="../../infos-pratiques.html">Menu principal</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--section" href="avions.html">Avions</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="sous menu1/circuler-a-tokyo.html"> Trajectoire du vol JL45 / JL46 Paris ↔ Tokyo</a>
+                    </div>
+                </div>
+            </div>
+            <button class="site-menu__toggle" type="button" aria-expanded="false" aria-controls="site-menu-links" aria-label="Ouvrir le menu" onclick="toggleSiteMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <h1>&#127471;&#127477; JAPON 2026</h1>
+        <p class="subtitle">Kevin, Lo&iuml;c, May Nhia, St&eacute;phanie, Estelle<br>Du 5 Avril au 27 Avril 2026</p>
+    </header>
+
+    <main class="container info-page">
+        <aside class="info-toc" aria-label="Sommaire">
+            <div class="info-toc__box">
+                <h2>Sommaire</h2>
+                <nav class="info-toc__nav">
+                    <a class="info-toc__link" href="../../infos-pratiques.html">Menu principal</a>
+                    <div class="info-toc__group">
+                        <a class="info-toc__section-link" href="avions.html">Avions</a>
+                        <div class="info-toc__children">
+                            <a class="info-toc__child-link" href="sous menu1/trajectoire-vol-japanairlines.html"> Trajectoire du vol JL45 / JL46 Paris ↔ Tokyo</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="info-content info-content--article">
+            <p class="info-breadcrumb"><a href="../../infos-pratiques.html">Infos pratiques</a> / Avions</p>
+            <div class="info-back-nav">
+                <a class="info-back-link" href="../../infos-pratiques.html">&#8592; Retour &agrave; Infos pratiques</a>
+            </div>
+
+            <section class="info-article-header">
+                <h1>Avions</h1>
+                <p class="info-article-lead">Les informations des vols et des trajectoires des avions.</p>
+            </section>
+
+            <article class="card info-article-section">
+                <div class="card-content">
+                    <h2>Fiches disponibles</h2>
+                    <div class="info-topic-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
+                        <a class="info-topic info-topic--link" href="sous menu1/trajectoire-vol-japanairlines.html" style="padding:14px 16px; border-radius:10px;">
+                            <h3 style="margin-bottom:6px; font-size:1.05rem;">  Trajectoire du vol JL45 / JL46<br> Paris ↔ Tokyo</h3>
+                            <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Guide simple pour comprendre et suivre la trajectoire des avions.</p>
+                            <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
+                        </a>
+                        <a class="info-topic info-topic--link" href="sous menu1/trajectoire-vol-ana-nh761.html" style="padding:14px 16px; border-radius:10px;">
+                            <h3 style="margin-bottom:6px; font-size:1.05rem;"> Trajectoire du vol NH761<br> Osaka Itami → Naha</h3>
+                            <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Guide simple pour comprendre et suivre la trajectoire des avions.</p>
+                            <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
+                        </a>
+                        <a class="info-topic info-topic--link" href="sous menu1/trajectoire-vol-ana-boeing-787.html" style="padding:14px 16px; border-radius:10px;">
+                            <h3 style="margin-bottom:6px; font-size:1.05rem;"> Trajectoire du vol NH470<br> Naha → Tokyo Haneda</h3>
+                            <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Guide simple pour comprendre et suivre la trajectoire des avions.</p>
+                            <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <script src="../../js/theme.js"></script>
+</body>
+</html>

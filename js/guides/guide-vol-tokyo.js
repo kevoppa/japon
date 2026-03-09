@@ -3,6 +3,8 @@ window.modalData = window.modalData || {};
 // VOL OKINAWA -> TOKYO
 window.modalData['guide-vol-tokyo'] = /* html */ `
     <h3>✈️ Infos vol à Tokyo</h3>
+    <img src="images/avions/avion-retour-tokyo.jpg" alt="Avion vol okinawa" style="max-width:100%;height:auto; border-radius:8px;">
+        
         <p><strong>Naha (OKA) vers Tokyo (HND)</strong><br>jeu. 23 avr. · 15h10 - jeu. 23 avr. · 17h35</p>
         <p>Vol direct · 2 h 25 min · Classe économique<br>All Nippon Airways · NH470</p>
 

@@ -3,6 +3,8 @@ window.modalData = window.modalData || {};
 // VOLS JAPON ALLER / RETOUR
 window.modalData['guide-vol-japon'] = /* html */ `
     <h3>✈️ Infos vol Japon aller/retour</h3>
+    <img src="images/avions/avion-japon.jpg" alt="Avion vol japon" style="max-width:100%;height:auto; border-radius:8px;">
+        
         <p><strong>Paris (CDG) vers Tokyo (HND)</strong><br>dim. 5 avr. · 20h25 - lun. 6 avr. · 17h20</p>
         <p>Vol direct · 13 h 55 min · Classe économique<br>Japan Airlines · JL46</p>
 
