@@ -148,3 +148,24 @@
     color: #15803d;
     background: rgba(21, 128, 61, 0.12);
 }
+
+/** Tag palette: restaurant local pas cher */
+.tag--restaurant-local-pas-cher {
+    border-color: #b45309;
+    color: #b45309;
+    background: rgba(180, 83, 9, 0.12);
+}
+
+/** Tag palette: restaurant occidental */
+.tag--restaurant-occidental {
+    border-color: #7c3aed;
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.12);
+}
+
+/** Tag palette: bistro */
+.tag--bistro {
+    border-color: #be185d;
+    color: #be185d;
+    background: rgba(190, 24, 93, 0.12);
+}

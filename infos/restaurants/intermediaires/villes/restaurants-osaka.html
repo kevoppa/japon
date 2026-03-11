@@ -88,10 +88,13 @@
                             <button class="restaurant-filter__chip is-active" type="button" data-filter-tag="all">#Tout</button>
                             <button class="restaurant-filter__chip tag--buffet-a-volonte" type="button" data-filter-tag="buffet-a-volonte">#Buffet &agrave; volont&eacute;</button>
                             <button class="restaurant-filter__chip tag--a-volonte-sur-commande" type="button" data-filter-tag="a-volonte-sur-commande">#&Agrave; volont&eacute; sur commande</button>
+                            <button class="restaurant-filter__chip tag--pas-a-volonte" type="button" data-filter-tag="pas-a-volonte">#Pas &agrave; volont&eacute;</button>
                             <button class="restaurant-filter__chip tag--buffet-hotel" type="button" data-filter-tag="buffet-hotel">#Buffet d&apos;h&ocirc;tel</button>
                             <button class="restaurant-filter__chip tag--cuisine-chinoise" type="button" data-filter-tag="cuisine-chinoise">#Cuisine chinoise</button>
+                            <button class="restaurant-filter__chip tag--fruit-de-mer" type="button" data-filter-tag="fruit-de-mer">#Fruits de mer</button>
                             <button class="restaurant-filter__chip tag--specialise-viande" type="button" data-filter-tag="specialise-viande">#Sp&eacute;cialis&eacute; viande</button>
                             <button class="restaurant-filter__chip tag--yakiniku" type="button" data-filter-tag="yakiniku">#Yakiniku</button>
+                            <button class="restaurant-filter__chip tag--restaurant-local-pas-cher" type="button" data-filter-tag="restaurant-local-pas-cher">#Restaurant Local (pas cher)</button>
                             <button class="restaurant-filter__chip tag--namba" type="button" data-filter-tag="namba">#Namba</button>
                             <button class="restaurant-filter__chip tag--proche-gare" type="button" data-filter-tag="proche-gare">#Proche gare</button>
                         </div>
@@ -99,6 +102,37 @@
                     </section>
 
                     <div class="info-topic-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="pas-a-volonte,fruit-de-mer,specialise-viande,proche-gare,restaurant-local-pas-cher" href="osaka/new-tsurumatsu-kitte-osaka.html" style="padding:14px 16px; border-radius:10px;">
+                            <h3 style="margin-bottom:6px; font-size:1.05rem;">New Tsurumatsu KITTE Osaka</h3>
+                            <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Izakaya viande &amp; fruits de mer &agrave; Umeda, direct depuis Osaka Station, plus abordable qu&apos;un buffet et pratique pour un groupe de 5.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--restaurant-local-pas-cher">#Restaurant Local (pas cher)</span>
+                                <span class="restaurant-tag tag--pas-a-volonte">#Pas &agrave; volont&eacute;</span>
+                                <span class="restaurant-tag tag--fruit-de-mer">#Fruits de mer</span>
+                                <span class="restaurant-tag tag--specialise-viande">#Sp&eacute;cialis&eacute; viande</span>
+                                <span class="restaurant-tag tag--proche-gare">#Proche gare</span>
+                            </div>
+                            <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
+                        </a>
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="pas-a-volonte,proche-gare,restaurant-local-pas-cher" href="osaka/onigiri-gorichan-namba.html" style="padding:14px 16px; border-radius:10px;">
+                            <h3 style="margin-bottom:6px; font-size:1.05rem;">Onigiri Gorichan Namba</h3>
+                            <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Petite adresse locale d&apos;onigiri pr&egrave;s de Shinsaibashi, pratique pour un repas simple, rapide et peu cher.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--restaurant-local-pas-cher">#Restaurant Local (pas cher)</span>
+                                <span class="restaurant-tag tag--pas-a-volonte">#Pas &agrave; volont&eacute;</span>
+                                <span class="restaurant-tag tag--proche-gare">#Proche gare</span>
+                            </div>
+                            <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
+                        </a>
+                        <a class="info-topic info-topic--link js-restaurant-card" data-tags="pas-a-volonte,proche-gare" href="osaka/dynamic-kitchen-bar-san-obp.html" style="padding:14px 16px; border-radius:10px;">
+                            <h3 style="margin-bottom:6px; font-size:1.05rem;">Dynamic Kitchen &amp; Bar SAN</h3>
+                            <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Restaurant japonais contemporain au 38e &eacute;tage de Twin 21, avec vue, r&eacute;servation en ligne et ambiance plus pos&eacute;e.</p>
+                            <div class="restaurant-tags" aria-label="Tags restaurant">
+                                <span class="restaurant-tag tag--pas-a-volonte">#Pas &agrave; volont&eacute;</span>
+                                <span class="restaurant-tag tag--proche-gare">#Proche gare</span>
+                            </div>
+                            <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Lire la fiche</p>
+                        </a>
                         <a class="info-topic info-topic--link js-restaurant-card" data-tags="buffet-a-volonte,buffet-hotel,namba,proche-gare" href="osaka/yurayura.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Restaurant YURAYURA (Hotel Royal Classic Osaka)</h3>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Restaurant buffet situ&eacute; &agrave; Namba, pratique pour un groupe de 5 avec r&eacute;servation en ligne et horaires clairs lunch/dinner.</p>
