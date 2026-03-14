@@ -227,7 +227,7 @@ A B C   |   D E
 
 <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0;">
 <img src="images/shinkansen/APA_Hotel_building.jpg" style="width:100%;height:150px;object-fit:cover;border-radius:6px;">
-<img src="images/shinkansen/Osaka_street_near_shin_osaka.png" style="width:100%;height:150px;object-fit:cover;border-radius:6px;">
+<img src="images/shinkansen/Osaka_street_near_shin_osaka.webp" style="width:100%;height:150px;object-fit:cover;border-radius:6px;">
 <img src="images/shinkansen/Osaka_street_near_shin_osaka2.png" style="width:100%;height:150px;object-fit:cover;border-radius:6px;">
 <img src="images/shinkansen/Osaka_street_near_shin_osaka3.png" style="width:100%;height:150px;object-fit:cover;border-radius:6px;">
 </div>
@@ -248,5 +248,84 @@ A B C   |   D E
 </div>
 
 <p style="margin-top:15px;"><strong>Durée totale du trajet :</strong> environ 3h.</p>
+<hr>
+        <!-- PDFs -->
+        <h3 style="margin-bottom: 15px;">📄 Ticket en fichier PDF</h3>
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/estelle - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" download class="btn">📥 Télécharger le PDF "reservation.pdf "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <embed src="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/estelle - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" type="application/pdf" width="100%" height="500px" />
+        </div>
 
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/kevin - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" download class="btn">📥 Télécharger le PDF " reservation.pdf "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <embed src="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/kevin - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" type="application/pdf" width="100%" height="500px" />
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/loic - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" download class="btn">📥 Télécharger le PDF " reservation.pdf "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <embed src="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/loic - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" type="application/pdf" width="100%" height="500px" />
+        </div>
+        
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/maman - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" download class="btn">📥 Télécharger le PDF " reservation.pdf "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <embed src="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/maman - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" type="application/pdf" width="100%" height="500px" />
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/stephanie - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" download class="btn">📥 Télécharger le PDF " reservation.pdf "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <embed src="0-fichiers-sensibles/0-SHINKANSEN/000-BILLETS (qr code)/stephanie - Tokaido Sanyo Kyushu Shinkansen Internet Reservation Service.pdf" type="application/pdf" width="100%" height="500px" />
+        </div>
+<hr>
+        <!-- EMAIL COMFIRMATION & LIENS QR CODE -->
+        <h3 style="margin-bottom: 15px;">📧 Liens des mails de confirmation et QR CODE</h3>
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/00-EMAIL_confirmation/_Shinkansen Reservation Service_ Reservation Confirmation.msg" download class="btn">📥 Télécharger "Shinkansen Reservation Service.msg"</a>
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/00-EMAIL_confirmation/liens qrcode/estelle - _Shinkansen Reservation Service_ QR-Ticket.msg" download class="btn">📥 Télécharger "Shinkansen Reservation Service_ QR-Ticket.msg"</a>
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/00-EMAIL_confirmation/liens qrcode/kevin - _Shinkansen Reservation Service_ QR-Ticket.msg" download class="btn">📥 Télécharger "Shinkansen Reservation Service_ QR-Ticket.msg"</a>
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/00-EMAIL_confirmation/liens qrcode/loic - _Shinkansen Reservation Service_ QR-Ticket.msg" download class="btn">📥 Télécharger "Shinkansen Reservation Service_ QR-Ticket.msg"</a>
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/00-EMAIL_confirmation/liens qrcode/maman - _Shinkansen Reservation Service_ QR-Ticket.msg" download class="btn">📥 Télécharger "Shinkansen Reservation Service_ QR-Ticket.msg"</a>
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/00-EMAIL_confirmation/liens qrcode/stephanie - _Shinkansen Reservation Service_ QR-Ticket.msg" download class="btn">📥 Télécharger "Shinkansen Reservation Service_ QR-Ticket.msg"</a>
+        </div>
+<hr>
+        <!-- Capture PNG - INFOS & PROCEDURE d'achat -->
+        <h3 style="margin-bottom: 15px;">📸 Capture PNG - INFOS et PROCEDURE d'achat</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (450).png" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (451).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (452).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (453).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (454).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (455).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (456).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (457).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (458).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (459).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (460).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">       
+        </div>
 `;

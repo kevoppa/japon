@@ -6,7 +6,7 @@ window.modalData['guide-transfert-itm'] = /* html */ `
         <p><strong>Prise en charge :</strong> Samedi 18 avril à 05h00.</p>
         <p><strong>Lieu :</strong> APA Hotel Shin-Osaka Ekimae.</p>
         <p><strong>Destination :</strong> Osaka Itami International Airport (ITM).</p>
-        <p><strong>Véhicule :</strong> Minibus (Service service chauffeur) - Max 5 personnes.</p>
+        <p><strong>Véhicule :</strong> Minibus (Service chauffeur) - Max 5 personnes.</p>
         <p><strong>Prix :</strong> 108.39 EUR payé.</p>
 
         <div class="btn-group" style="margin-bottom: 15px;">

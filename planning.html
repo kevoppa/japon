@@ -152,8 +152,11 @@
                     <span class="badge">Dimanche 12/04/2026</span>
                     
                     <p><strong class="blue-text">~9h30 :</strong> Matinée à Chinatown (Kanagawa).</p>
-                    <button class="btn" onclick="openModal('guide-chinatown')">🍜 Guide Chinatown</button>
-                    <p class="alert-box"><strong> ⚠️ Rentrer avant 19h00 :</strong> Rendre la voiture chez Toyota Rent a Car !</p>
+                    <p class="alert-box"><strong> ⚠️ Rentrer avant 19h00 :</strong> Rendre la voiture chez Toyota Rent a Car avant 20h00.</p>
+                    <div class="btn-group">
+                        <button class="btn" onclick="openModal('guide-chinatown')">🍜 Guide Chinatown</button>
+                        <button class="btn" onclick="openModal('guide-car-tokyo')">🚗 Location voiture Tokyo</button>
+                    </div>
                 </div>
             </article>
         </section>
@@ -167,15 +170,16 @@
                     <h3>Shinkansen vers Osaka</h3>
                     <span class="badge">Lundi 13/04/2026</span>
                     
-                    <p><strong class="blue-text">~8h30 :</strong> Marcher à la station Gare de Kaihimmakuhari. <br>(13 minutes - 800 mètres)</p>
-                    <p><strong class="blue-text">09h00 :</strong> Prendre la ligne Keiyō (Ligne Rouge) > Direction Gare de Tokyo.</p>
-                    <p><strong class="blue-text">~12h00 :</strong> Shinkansen Tokyo vers Osaka Shin Station. <br>(2h30 de trajet)</p>
+                    <p><strong class="blue-text">09h00 :</strong> Pret en bas de l'hôtel pour attendre le chauffeur.</p>
+                    <p><strong class="blue-text">09h30 :</strong> Départ pour la gare de tokyo, via Minibus chauffeur Réservé.</p>
+                    <p><strong class="blue-text">12h18 :</strong> Départ du train Shinkansen Tokyo vers Osaka Shin Station. <br>(2h30 de trajet)</p>
                     <p><strong class="blue-text">~15h00 :</strong> Check-in : APA Hotel Osaka Shin Ekimae.</p>
                     <p><strong class="blue-text">~16h00 :</strong> Récupération de la nouvelle voiture de location par les garçons.</p>
                     <p><strong class="blue-text">Soirée :</strong> Visite de Dotonbori et repas locauste.</p>
                     <div class="btn-group">
-                        <button class="btn" onclick="openModal('guide-tokyo-osaka-shinkansen')">🚆 Guide Shinkansen</button> 
-                        <button class="btn" onclick="openModal('guide-ligne-keiyo')">🚆 Guide Trajet vers Osaka</button>
+                        <button class="btn" onclick="openModal('guide-transfert-gare-tokyo')">🚐 Transfert Gare de Tokyo</button>
+                        <button class="btn" onclick="openModal('guide-tokyo-osaka-shinkansen')">🚅 Guide Shinkansen</button> 
+                        <button class="btn" onclick="openModal('guide-ligne-keiyo')">🚆 Guide Trajet en métro</button>
                         <button class="btn" onclick="openModal('guide-hotel-osaka')">🏨 Infos Hotel Osaka</button>
                         <button class="btn" onclick="openModal('guide-car-osaka')">🚗 Location voiture Osaka</button>
                         <button class="btn" onclick="openModal('guide-dotonbori')">🍤 Guide Dotonbori</button>
@@ -191,7 +195,7 @@
                     <p><span class="badge">Mercredi 15/04/2026</span><br><strong class="blue-text">Osaka :</strong> Chateau Osaka + Dotonbori + Shinsekai Market + Don Quijote + Umeda Sky Building + Universal Studio</p>
                     <p><span class="badge">Jeudi 16/04/2026</span><br><strong style="color: var(--kyoto-orange);">Kyoto :</strong> Nishiki marché culinaire Kyoto + Tofukuji + Gion + temple Kinkaku-ji.</p>
                     <p><span class="badge">Vendredi 17/04/2026</span><br><strong class="blue-text">Osaka :</strong> Marché Kuromon Ichiba + ONSEN Salon Solaniwa (massage, bain thermal).</p>
-                    <p class="alert-box"><strong> ⚠️ Rentrer avant 20h00 :</strong> Rendre la voiture chez Toyota Rent a Car avant 21h00 !</p>
+                    <p class="alert-box"><strong> ⚠️ Rentrer avant 20h00 :</strong> Rendre la voiture chez Toyota Rent a Car avant 21h00.</p>
                     <div class="btn-group">
                         <button class="btn" onclick="openModal('guide-kyoto')">⛩️ Guide Kyoto</button>
                         <button class="btn" onclick="openModal('guide-osaka')">🏯 Guide Osaka</button>
@@ -354,6 +358,7 @@
 <script src="js/guides/guide-shinkansen.js"></script>
 <script src="js/guides/guide-transfert-retour-hnd.js"></script>
 <script src="js/guides/guide-tgv-inoui.js"></script>
+<script src="js/guides/guide-transfert-gare-tokyo.js"></script>
 <script src="js/guides/guide-vol-japon.js"></script>
 <script src="js/guides/guide-okinawa.js"></script>
 <script src="js/guides/guide-qr-japan-visit.js"></script>
