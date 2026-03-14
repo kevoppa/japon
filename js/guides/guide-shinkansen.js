@@ -315,17 +315,80 @@ A B C   |   D E
         <!-- Capture PNG - INFOS & PROCEDURE d'achat -->
         <h3 style="margin-bottom: 15px;">📸 Capture PNG - INFOS et PROCEDURE d'achat</h3>
 
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (450).png" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (451).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (452).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (453).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (454).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (455).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (456).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (457).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (458).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (459).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (460).png" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">       
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (450).png" download class="btn">📥 Télécharger l'image " Capture d’écran (450).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (450).png" alt="Capture d’écran (450)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (451).png" download class="btn">📥 Télécharger l'image " Capture d’écran (451).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (451).png" alt="Capture d’écran (451)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (452).png" download class="btn">📥 Télécharger l'image " Capture d’écran (452).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (452).png" alt="Capture d’écran (452)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (453).png" download class="btn">📥 Télécharger l'image " Capture d’écran (453).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (453).png" alt="Capture d’écran (453)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (454).png" download class="btn">📥 Télécharger l'image " Capture d’écran (454).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (454).png" alt="Capture d’écran (454)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (455).png" download class="btn">📥 Télécharger l'image " Capture d’écran (455).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (455).png" alt="Capture d’écran (455)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (456).png" download class="btn">📥 Télécharger l'image " Capture d’écran (456).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (456).png" alt="Capture d’écran (456)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (457).png" download class="btn">📥 Télécharger l'image " Capture d’écran (457).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (457).png" alt="Capture d’écran (457)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (458).png" download class="btn">📥 Télécharger l'image " Capture d’écran (458).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (458).png" alt="Capture d’écran (458)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (459).png" download class="btn">📥 Télécharger l'image " Capture d’écran (459).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (459).png" alt="Capture d’écran (459)" style="max-width:100%;height:auto; border-radius:8px;">
+        </div>
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+            <a href="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (460).png" download class="btn">📥 Télécharger l'image " Capture d’écran (460).png "</a>
+        </div>
+        <div class="pdf-container" style="margin-bottom: 20px;">
+            <img src="0-fichiers-sensibles/0-SHINKANSEN/0-capture-procedure/Capture d’écran (460).png" alt="Capture d’écran (460)" style="max-width:100%;height:auto; border-radius:8px;">
         </div>
 `;
