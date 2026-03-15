@@ -6,8 +6,8 @@ window.modalData['guide-transfer-hnd'] = /* html */ `
         <p><strong>Date et heure :</strong> Dimanche 26 avril à 05h30.</p>
         <p><strong>Départ :</strong> Toyoko Inn Tokyo Asakusa Kuramae No.2.</p>
         <p><strong>Arrivée :</strong> Haneda Airport Terminal 3 Station.</p>
-        <p><strong>Réservation 1 :</strong> Large People Carrier (service chauffeur 1).</p>
-        <p><strong>Réservation 2 :</strong> Large People Carrier (service chauffeur 2).</p>
+        <p><strong>Réservation 1 :</strong> Grand monospace 1 (service chauffeur 1).</p>
+        <p><strong>Réservation 2 :</strong> Grand monospace 2 (service chauffeur 2).</p>
         <p><em>Chauffeurs attendront max 15 minutes.</em></p>
 
         <div class="btn-group" style="margin-bottom: 15px;">

@@ -1,5 +1,5 @@
         (function () {
-            const gallery = document.getElementById('restaurant-gallery');
+            const galleries = Array.from(document.querySelectorAll('.restaurant-gallery'));
             const viewer = document.getElementById('restaurant-image-viewer');
             const fullImage = document.getElementById('restaurant-image-full');
             const btnPrev = document.getElementById('restaurant-image-prev');
@@ -7,17 +7,25 @@
             const btnClose = document.getElementById('restaurant-image-close');
             const zoneLeft = document.getElementById('restaurant-image-zone-left');
             const zoneRight = document.getElementById('restaurant-image-zone-right');
-            if (!gallery || !viewer || !fullImage) return;
+            if (!galleries.length || !viewer || !fullImage) return;
 
-            const images = Array.from(gallery.querySelectorAll('img'));
+            const defaultAlt = fullImage.alt || 'Apercu image';
+            const images = galleries
+                .flatMap((gallery) => Array.from(gallery.querySelectorAll('img')))
+                .filter((img) => {
+                    const src = img.getAttribute('src');
+                    return Boolean(src && src.trim());
+                });
+
             if (!images.length) return;
 
             let currentIndex = 0;
 
             function renderImage() {
                 const img = images[currentIndex];
+                if (!img) return;
                 fullImage.src = img.src;
-                fullImage.alt = img.alt || 'Aperçu image restaurant';
+                fullImage.alt = img.alt || defaultAlt;
             }
 
             function setHoverSide(side) {
