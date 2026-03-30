@@ -1,0 +1,1934 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste rapide restaurants - activités - lieux etc... voyage touristique au Japon 2026</title>
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/navigation.css">
+    <link rel="stylesheet" href="../../css/cards.css">
+    <link rel="stylesheet" href="../../css/alerts.css">
+    <link rel="stylesheet" href="../../css/infos-pratiques.css">
+    <link rel="stylesheet" href="../../css/info-article.css">
+    <link rel="stylesheet" href="../../css/restaurants-filters.css">
+    <link rel="stylesheet" href="../../css/apercu-image-gallery.css">
+    <link rel="stylesheet" href="../../css/circuler-tokyo.css">
+
+<style>
+        .quick-fiche-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: -4px;
+}
+
+.quick-fiche-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    border: 1px solid var(--border-color);
+    background: rgba(127, 127, 127, 0.08);
+    color: var(--text-main);
+    white-space: nowrap;
+}
+
+/* Types */
+.tag-restaurant {
+    background: rgba(255, 140, 0, 0.16);
+    border-color: rgba(255, 140, 0, 0.35);
+    color: #b45309;
+}
+
+.tag-bar {
+    background: rgba(180, 120, 255, 0.16);
+    border-color: rgba(180, 120, 255, 0.35);
+    color: #7c3aed;
+}
+
+.tag-activite {
+    background: rgba(0, 180, 140, 0.16);
+    border-color: rgba(0, 180, 140, 0.35);
+    color: #0f766e;
+}
+
+.tag-lieu {
+    background: rgba(80, 150, 255, 0.16);
+    border-color: rgba(80, 150, 255, 0.35);
+    color: #1d4ed8;
+}
+
+.tag-shopping {
+    background: rgba(255, 90, 140, 0.16);
+    border-color: rgba(255, 90, 140, 0.35);
+    color: #be185d;
+}
+
+.tag-nature {
+    background: rgba(80, 190, 90, 0.16);
+    border-color: rgba(80, 190, 90, 0.35);
+    color: #15803d;
+}
+
+.tag-temple {
+    background: rgba(220, 80, 80, 0.16);
+    border-color: rgba(220, 80, 80, 0.35);
+    color: #b91c1c;
+}
+
+.tag-musee {
+    background: rgba(120, 170, 210, 0.16);
+    border-color: rgba(120, 170, 210, 0.35);
+    color: #1d4ed8;
+}
+
+.tag-tokyo {
+    background: rgba(60, 130, 255, 0.16);
+    border-color: rgba(60, 130, 255, 0.35);
+    color: #1d4ed8;
+}
+
+.tag-osaka {
+    background: rgba(255, 120, 60, 0.16);
+    border-color: rgba(255, 120, 60, 0.35);
+    color: #c2410c;
+}
+
+.tag-kyoto {
+    background: rgba(140, 110, 255, 0.16);
+    border-color: rgba(140, 110, 255, 0.35);
+    color: #6d28d9;
+}
+
+.tag-aichi {
+    background: rgba(0, 170, 200, 0.16);
+    border-color: rgba(0, 170, 200, 0.35);
+    color: #0f766e;
+}
+
+.tag-bonus {
+    background: rgba(255, 215, 0, 0.14);
+    border-color: rgba(255, 215, 0, 0.30);
+    color: #b45309;
+}
+
+body[data-theme="dark"] .tag-restaurant {
+    color: #f59e0b;
+}
+
+body[data-theme="dark"] .tag-bar {
+    color: #c084fc;
+}
+
+body[data-theme="dark"] .tag-activite {
+    color: #2dd4bf;
+}
+
+body[data-theme="dark"] .tag-lieu {
+    color: #60a5fa;
+}
+
+body[data-theme="dark"] .tag-shopping {
+    color: #f472b6;
+}
+
+body[data-theme="dark"] .tag-nature {
+    color: #4ade80;
+}
+
+body[data-theme="dark"] .tag-temple {
+    color: #f87171;
+}
+
+body[data-theme="dark"] .tag-musee {
+    color: #93c5fd;
+}
+
+body[data-theme="dark"] .tag-tokyo {
+    color: #60a5fa;
+}
+
+body[data-theme="dark"] .tag-osaka {
+    color: #fb923c;
+}
+
+body[data-theme="dark"] .tag-kyoto {
+    color: #a78bfa;
+}
+
+body[data-theme="dark"] .tag-aichi {
+    color: #22d3ee;
+}
+
+body[data-theme="dark"] .tag-bonus {
+    color: #fde68a;
+}
+        .quick-fiches-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+            align-items: stretch;
+        }
+
+        .quick-fiche-card {
+            height: 100%;
+            min-width: 0;
+        }
+
+        .quick-fiche-card .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            height: 100%;
+        }
+
+        .quick-fiche-card h2 {
+            margin: 0;
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+
+        .quick-fiche-subtitle {
+            margin: -6px 0 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .quick-fiche-image,
+        .quick-fiche-image.info-gallery,
+        .quick-fiche-image.restaurant-gallery,
+        .quick-fiche-image.info-gallery.restaurant-gallery {
+            display: block !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: none !important;
+            border: 0 !important;
+            box-shadow: none !important;
+            grid-template-columns: none !important;
+            gap: 0 !important;
+            align-items: initial !important;
+        }
+
+        .quick-fiche-image figure,
+        .quick-fiche-image.info-gallery figure,
+        .quick-fiche-image.restaurant-gallery figure,
+        .quick-fiche-image.info-gallery.restaurant-gallery figure {
+            display: block !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: transparent !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            min-height: auto !important;
+            height: auto !important;
+        }
+
+        .quick-fiche-image img {
+            width: 100% !important;
+            height: 420px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            border-radius: 16px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .quick-fiche-image figcaption {
+            display: none !important;
+        }
+
+        .quick-fiche-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .quick-fiche-list li + li {
+            margin-top: 8px;
+        }
+
+        .quick-fiche-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .quick-fiche-actions .info-action {
+            flex: 1 1 160px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .info-note-box p {
+            word-break: break-word;
+        }
+
+        @media (max-width: 1200px) {
+            .quick-fiches-grid {
+                grid-template-columns: repeat(2, minmax(260px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .quick-fiches-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-fiche-image img {
+                height: 360px;
+            }
+
+            .quick-fiche-card h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="site-menu" aria-label="Navigation des pages">
+        <div class="site-menu__bar">
+            <button id="theme-toggle" class="theme-btn-header site-menu__theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span>
+                <span class="theme-text">Mode Nuit</span>
+            </button>
+            <div id="site-menu-links" class="site-menu__container">
+                <div class="site-menu__primary-links">
+                    <a class="site-menu__link" href="../../budget-voyage-japon.html">Budget Voyage Japon</a>
+                    <a class="site-menu__link" href="../../planning.html">Planning</a>
+                    <a class="site-menu__link is-active" href="../../infos-pratiques.html">Infos pratiques</a>
+                </div>
+                
+                <!-- SOMMAIRE MOBILE -->
+                <div class="site-menu__summary" aria-label="Sommaire mobile">
+                    <p class="site-menu__summary-title">Sommaire</p>
+                    <div class="site-menu__summary-links">
+                        <a class="site-menu__summary-link" href="../../infos-pratiques.html">Menu principal</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--section" href="../../infos/Liste/liste-rapide-fiches.html">Liste</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#resume-rapide">Introduction</a>
+                        <div>
+                            <hr>
+                        </div>
+                        <!-- DEBUT Lien des listes-->
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#queen-thailand-ginza">Queen of Thailand Ginza</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#stand-lizarran-oimachi">Stand LIZARRAN Oimachi</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#unataku-aichi">Ōban Unagi Unataku</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#mamonaku-busan-shinokubo">まもなく釜山駅</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#uni-no-hama-miyakojima">ウニの浜 (Miyakojima)</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#ryuen-kokura-honten">焼肉の龍園 小倉本店</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#snorkeling-okinawa">Snorkeling Okinawa</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#tokyo-bakery-cafe">Bakery Café Tokyo</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#okuma-beach">Okuma Beach</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#pelteca-mitaka">Pelteca Mitaka</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#roku-hamamatsu">Buffet 露菴 Hamamatsu</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#kerama-snorkeling">Kerama Snorkeling</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#gyudon-kyoto">Gyudon Kyoto</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#nishikawa-sleep">Nishikawa Sleep</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#ueno-building-food">Ueno Food Building</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#onigiri-ichiryumanpuku">一粒万福 Onigiri</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#tsukiji-tamasushi">Tsukiji Tama Sushi</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#pizzeria-spontini-harajuku">Pizzeria Spontini</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#mission-beach-okinawa">Mission Beach Okinawa</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#sushi-creative-ueno">Sushi Créatif Ueno</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#sushi-platter-tokyo">Sushi Set Premium</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#seafood-breakfast-buffet-tokyo">Seafood Breakfast Buffet Tokyo</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#shinjuku-yakiniku-all-you-can-eat">Yakiniku Shinjuku</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#ritz-carlton-tokyo-lunch">The Ritz-Carlton Tokyo</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#fruit-toast-tokyo-cafe">Fruit Toast Tokyo</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#gohansusumu-ikebukuro">ごはんすすむ by Komeraku</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#healthy-buffet-tokyo">Healthy Buffet Tokyo</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#daily-menu-buffet-tokyo">Daily Menu Buffet Tokyo</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#pupa-shinjuku">PUPA イタメシとワイン</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#tokyo-station-chicken-set">Tokyo Station Chicken Set</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#picica-picica-ebisu">PICICA PICICA</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#crab-sushi-izakaya-tokyo">Crab Sushi Izakaya</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#tokyu-plaza-shibuya-restaurant">Tokyu Plaza Shibuya Restaurant</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#shinokubo-dim-sum">Dim Sum Shin-Okubo</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#family-buffet-tokyo">Family Buffet Tokyo</a>
+                        <!-- FIN lien des listes -->
+                        <div>
+                            <hr>
+                        </div>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#faq-express">FAQ express</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="site-menu__toggle" type="button" aria-expanded="false" aria-controls="site-menu-links" aria-label="Ouvrir le menu" onclick="toggleSiteMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <h1>🇯🇵 JAPON 2026</h1>
+        <p class="subtitle">Kevin, Loïc, May Nhia, Stéphanie, Estelle<br>Du 5 Avril au 27 Avril 2026</p>
+    </header>
+
+    <main class="container info-page">
+        <!-- SOMMAIRE PC (Navigateur Web) -->
+        <aside class="info-toc" aria-label="Sommaire">
+            <div class="info-toc__box">
+                <h2>Sommaire</h2>
+                <nav class="info-toc__nav">
+                    <a class="info-toc__link" href="../../infos-pratiques.html">Menu principal</a>
+                    <div class="info-toc__group">
+                        <a class="info-toc__section-link" href="../../infos/Liste/liste-rapide-fiches.html">Liste</a>
+                        <div class="info-toc__children">
+                            <a class="info-toc__child-link" href="#resume-rapide">Introduction</a>
+                            <div>
+                                <hr>
+                            </div>
+                            <!-- DEBUT Lien des listes-->
+                            <a class="info-toc__child-link" href="#queen-thailand-ginza">Queen of Thailand Ginza</a>
+                            <a class="info-toc__child-link" href="#stand-lizarran-oimachi">Stand LIZARRAN Oimachi</a>
+                            <a class="info-toc__child-link" href="#unataku-aichi">Ōban Unagi Unataku</a>
+                            <a class="info-toc__child-link" href="#mamonaku-busan-shinokubo">まもなく釜山駅</a>
+                            <a class="info-toc__child-link" href="#uni-no-hama-miyakojima">ウニの浜 (Miyakojima)</a>
+                            <a class="info-toc__child-link" href="#ryuen-kokura-honten">焼肉の龍園 小倉本店</a>
+                            <a class="info-toc__child-link" href="#snorkeling-okinawa">Snorkeling Okinawa</a>
+                            <a class="info-toc__child-link" href="#tokyo-bakery-cafe">Bakery Café Tokyo</a>
+                            <a class="info-toc__child-link" href="#okuma-beach">Okuma Beach</a>
+                            <a class="info-toc__child-link" href="#pelteca-mitaka">Pelteca Mitaka</a>
+                            <a class="info-toc__child-link" href="#roku-hamamatsu">Buffet 露菴 Hamamatsu</a>
+                            <a class="info-toc__child-link" href="#kerama-snorkeling">Kerama Snorkeling</a>
+                            <a class="info-toc__child-link" href="#gyudon-kyoto">Gyudon Kyoto</a>
+                            <a class="info-toc__child-link" href="#nishikawa-sleep">Nishikawa Sleep</a>
+                            <a class="info-toc__child-link" href="#ueno-building-food">Ueno Food Building</a>
+                            <a class="info-toc__child-link" href="#onigiri-ichiryumanpuku">一粒万福 Onigiri</a>
+                            <a class="info-toc__child-link" href="#tsukiji-tamasushi">Tsukiji Tama Sushi</a>
+                            <a class="info-toc__child-link" href="#pizzeria-spontini-harajuku">Pizzeria Spontini</a>
+                            <a class="info-toc__child-link" href="#mission-beach-okinawa">Mission Beach Okinawa</a>
+                            <a class="info-toc__child-link" href="#sushi-creative-ueno">Sushi Créatif Ueno</a>
+                            <a class="info-toc__child-link" href="#sushi-platter-tokyo">Sushi Set Premium</a>
+                            <a class="info-toc__child-link" href="#seafood-breakfast-buffet-tokyo">Seafood Breakfast Buffet Tokyo</a>
+                            <a class="info-toc__child-link" href="#shinjuku-yakiniku-all-you-can-eat">Yakiniku Shinjuku</a>
+                            <a class="info-toc__child-link" href="#ritz-carlton-tokyo-lunch">The Ritz-Carlton Tokyo</a>
+                            <a class="info-toc__child-link" href="#fruit-toast-tokyo-cafe">Fruit Toast Tokyo</a>
+                            <a class="info-toc__child-link" href="#gohansusumu-ikebukuro">ごはんすすむ by Komeraku</a>
+                            <a class="info-toc__child-link" href="#healthy-buffet-tokyo">Healthy Buffet Tokyo</a>
+                            <a class="info-toc__child-link" href="#daily-menu-buffet-tokyo">Daily Menu Buffet Tokyo</a>
+                            <a class="info-toc__child-link" href="#pupa-shinjuku">PUPA イタメシとワイン</a>
+                            <a class="info-toc__child-link" href="#tokyo-station-chicken-set">Tokyo Station Chicken Set</a>
+                            <a class="info-toc__child-link" href="#picica-picica-ebisu">PICICA PICICA</a>
+                            <a class="info-toc__child-link" href="#crab-sushi-izakaya-tokyo">Crab Sushi Izakaya</a>
+                            <a class="info-toc__child-link" href="#tokyu-plaza-shibuya-restaurant">Tokyu Plaza Shibuya Restaurant</a>
+                            <a class="info-toc__child-link" href="#shinokubo-dim-sum">Dim Sum Shin-Okubo</a>
+                            <a class="info-toc__child-link" href="#family-buffet-tokyo">Family Buffet Tokyo</a>
+                            <!-- FIN lien des listes -->
+                            <div>
+                                <hr>
+                            </div>
+                            <a class="info-toc__child-link" href="#faq-express">FAQ express</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="info-content info-content--article">
+            <p class="info-breadcrumb">
+                <a href="../../infos-pratiques.html">Infos pratiques</a> /
+                Liste rapide restaurants - activités - lieux etc... voyage touristique au Japon 2026
+            </p>
+
+            <div class="info-back-nav">
+                <a class="info-back-link" href="../../infos-pratiques.html">← Retour au Menu principal</a>
+            </div>
+
+            <section class="info-article-header">
+                <h1>Liste rapide restaurants - activités - lieux etc... voyage touristique au Japon 2026</h1>
+            </section>
+            <br>
+            <article class="card info-article-section" id="resume-rapide">
+                <div class="card-content">
+                    <h2>Introduction</h2>
+
+                    <div class="info-note-box">
+                        <p>
+                        Fiches rapides à garder sous la main.
+                        Le but est simple :
+                        voir l’image, copier l’adresse et ouvrir Google Maps.
+                        </p>
+                        <p>
+                            <strong>Les 2 plus utiles pour Tokyo :</strong>
+                            Queen of Thailand Ginza et Stand LIZARRAN Oimachi.<br>
+                            <strong>Le 3e :</strong>
+                            Ōban Unagi Unataku = bonus hors Tokyo.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card info-article-section">
+                <div class="card-content">
+                    <section class="restaurant-filter" aria-label="Filtrer les fiches rapides">
+                        <p class="restaurant-filter__label">Trier par : hashtag</p>
+                        <div class="restaurant-filter__chips">
+                            <button class="restaurant-filter__chip is-active" type="button" data-filter-tag="all">#Tout</button>
+                            <button class="restaurant-filter__chip tag-restaurant" type="button" data-filter-tag="restaurant">#Restaurant</button>
+                            <button class="restaurant-filter__chip tag-bar" type="button" data-filter-tag="bar">#Restaurant / Bar</button>
+                            <button class="restaurant-filter__chip tag-activite" type="button" data-filter-tag="activite">#Activité</button>
+                            <button class="restaurant-filter__chip tag-lieu" type="button" data-filter-tag="lieu">#Lieu</button>
+                            <button class="restaurant-filter__chip tag-nature" type="button" data-filter-tag="nature">#Nature</button>
+                            <button class="restaurant-filter__chip tag-shopping" type="button" data-filter-tag="shopping">#Cafe / Bakery</button>
+                            <button class="restaurant-filter__chip tag-tokyo" type="button" data-filter-tag="tokyo">#Tokyo</button>
+                            <button class="restaurant-filter__chip tag-osaka" type="button" data-filter-tag="osaka">#Osaka</button>
+                            <button class="restaurant-filter__chip tag-kyoto" type="button" data-filter-tag="kyoto">#Kyoto</button>
+                            <button class="restaurant-filter__chip tag-aichi" type="button" data-filter-tag="aichi">#Aichi</button>
+                            <button class="restaurant-filter__chip tag-bonus" type="button" data-filter-tag="bonus">#Bonus</button>
+                        </div>
+                        <p id="restaurant-filter-empty" class="restaurant-filter__empty" hidden>Aucune fiche ne correspond à ce filtre pour le moment.</p>
+                    </section>
+                </div>
+            </article>
+
+            <!-- DEBUT - LISTE des FICHES RAPIDES -->
+            <section id="fiches-rapides" class="quick-fiches-grid">
+                <article class="card quick-fiche-card js-restaurant-card" id="queen-thailand-ginza" data-tags="restaurant,tokyo">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                        <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+                        <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                    </div>
+                        <h2>Queen of Thailand Ginza</h2>
+                        <p class="quick-fiche-subtitle">Buffet thaï à Ginza</p>
+
+                        <div class="quick-fiche-image info-gallery restaurant-gallery">
+                            <figure>
+                                <img
+                                    src="../../images/restaurants-lieux/queen-of-thailand-ginza.jpg"
+                                    loading="lazy"
+                                    alt="Queen of Thailand Ginza buffet thaï à Tokyo">
+                            </figure>
+                        </div>
+
+                        <div class="info-note-box">
+                            <p>
+                                <strong>Adresse</strong><br>
+                                〒104-0061 東京都中央区銀座2-2-14<br>
+                                マロニエゲート銀座1 10F
+                            </p>
+                        </div>
+
+                        <ul class="quick-fiche-list info-points-list">
+                            <li>Ginza Station : 2 min à pied</li>
+                            <li>Yurakucho Station : 4 min à pied</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Queen+of+Thailand+Ginza" target="_blank" rel="noopener noreferrer">
+                                Itinéraire
+                            </a>
+                            <a class="info-action" href="https://queen-thailand-ginza.com/" target="_blank" rel="noopener noreferrer">
+                                Site officiel
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card quick-fiche-card js-restaurant-card" id="stand-lizarran-oimachi" data-tags="restaurant,bar,tokyo">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                        <span class="quick-fiche-tag tag-bar">Restaurant / Bar</span>
+                        <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                    </div>
+                        <h2>Stand LIZARRAN Oimachi</h2>
+                        <p class="quick-fiche-subtitle">Tapas / bar à Oimachi</p>
+
+                        <div class="quick-fiche-image info-gallery restaurant-gallery">
+                            <figure>
+                                <img
+                                    src="../../images/restaurants-lieux/stand-lizarran-oimachi.jpg"
+                                    loading="lazy"
+                                    alt="Stand LIZARRAN Oimachi à Tokyo">
+                            </figure>
+                        </div>
+
+                        <div class="info-note-box">
+                            <p>
+                                <strong>Adresse</strong><br>
+                                〒140-0011 東京都品川区東大井5-9-12<br>
+                                OIMACHI TRACKS 4F
+                            </p>
+                        </div>
+
+                        <ul class="quick-fiche-list info-points-list">
+                            <li>JR Ōimachi Station : direct</li>
+                            <li>Bien pour une sortie du soir</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=LIZARRAN+%E5%A4%A7%E4%BA%95%E7%94%BA%E5%BA%97" target="_blank" rel="noopener noreferrer">
+                                Itinéraire
+                            </a>
+                            <a class="info-action" href="https://lizarran-oimachi.com/" target="_blank" rel="noopener noreferrer">
+                                Site officiel
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card quick-fiche-card js-restaurant-card" id="unataku-aichi" data-tags="restaurant,aichi,bonus">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                        <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+                        <span class="quick-fiche-tag tag-aichi">Aichi</span>
+                        <span class="quick-fiche-tag tag-bonus">Bonus</span>
+                    </div>
+
+                        <h2>Ōban Unagi Unataku</h2>
+                        <p class="quick-fiche-subtitle">Restaurant d’anguille à Aichi</p>
+
+                        <div class="quick-fiche-image info-gallery restaurant-gallery">
+                            <figure>
+                                <img
+                                    src="../../images/restaurants-lieux/oban-unagi-unataku-aichi.jpg"
+                                    loading="lazy"
+                                    alt="Ōban Unagi Unataku restaurant d’anguille à Aichi">
+                            </figure>
+                        </div>
+
+                        <div class="info-note-box">
+                            <p>
+                                <strong>Adresse</strong><br>
+                                〒483-8082 愛知県江南市高屋町本郷165-1
+                            </p>
+                        </div>
+
+                        <ul class="quick-fiche-list info-points-list">
+                            <li>Préfecture d’Aichi</li>
+                            <li>À garder comme repère bonus</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%A4%E9%B0%BB+%E3%81%86%E3%81%AA%E6%8B%93" target="_blank" rel="noopener noreferrer">
+                                Itinéraire
+                            </a>
+                            <a class="info-action" href="https://unataku.owst.jp/" target="_blank" rel="noopener noreferrer">
+                                Site officiel
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Ajouter des articles ici -->
+
+<article class="card quick-fiche-card js-restaurant-card" id="mamonaku-busan-shinokubo" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>まもなく釜山駅</h2>
+        <p class="quick-fiche-subtitle">Restaurant coréen / 麻辣湯 à Shin-Okubo</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/01.jpg"
+                    loading="lazy"
+                    alt="まもなく釜山駅 restaurant coréen à Shin-Okubo Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                〒169-0073 東京都新宿区百人町2-3-20 3F
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>JR Shin-Okubo : 1 min à pied</li>
+            <li>JR Okubo : 5 min à pied</li>
+            <li>Horaires : 10:30 - 23:00</li>
+            <li>Quartier coréen de Tokyo</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D+%E3%81%BE%E3%82%82%E3%81%AA%E3%81%8F%E9%87%9C%E5%B1%B1%E9%A7%85" target="_blank" rel="noopener noreferrer">
+                Itinéraire
+            </a>
+            <a class="info-action" href="https://mamonaku-busan.owst.jp/" target="_blank" rel="noopener noreferrer">
+                Site officiel
+            </a>
+        </div>
+    </div>
+</article>
+
+<article class="card quick-fiche-card js-restaurant-card" id="uni-no-hama-miyakojima" data-tags="lieu,nature,activite,bonus">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-lieu">Lieu</span>
+            <span class="quick-fiche-tag tag-nature">Nature</span>
+            <span class="quick-fiche-tag tag-activite">Activité</span>
+            <span class="quick-fiche-tag tag-bonus">Bonus</span>
+        </div>
+
+        <h2>ウニの浜 (Miyakojima)</h2>
+        <p class="quick-fiche-subtitle">Banc de sable paradisiaque à Okinawa</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/02.jpg"
+                    loading="lazy"
+                    alt="ウニの浜 Miyakojima Okinawa plage banc de sable">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                ウニの浜 / Uni no Hama<br>
+                Miyakojima, Okinawa, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Spot naturel très connu à Miyakojima</li>
+            <li>Eau turquoise + banc de sable</li>
+            <li>Visible dans une vidéo listant plusieurs spots Okinawa</li>
+            <li>Bonus hors île principale d’Okinawa</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A6%E3%83%8B%E3%81%AE%E6%B5%9C+%E5%AE%AE%E5%8F%A4%E5%B3%B6" target="_blank" rel="noopener noreferrer">
+                Itinéraire
+            </a>
+        </div>
+    </div>
+</article>
+
+<article class="card quick-fiche-card js-restaurant-card" id="ryuen-kokura-honten" data-tags="restaurant,bonus">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-bonus">Bonus</span>
+        </div>
+
+        <h2>焼肉の龍園 小倉本店</h2>
+        <p class="quick-fiche-subtitle">Yakiniku haut de gamme à Kokura</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/03.jpg"
+                    loading="lazy"
+                    alt="焼肉の龍園 小倉本店 yakiniku Kokura">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                〒802-0004 福岡県北九州市小倉北区鍛冶町1-8-15
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Monorail Heiwadori : 4 min à pied</li>
+            <li>Réservation recommandée</li>
+            <li>Yakiniku premium</li>
+            <li>Spot bonus hors parcours principal</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%81%AE%E9%BE%8D%E5%9C%92+%E5%B0%8F%E5%80%89%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener noreferrer">
+                Itinéraire
+            </a>
+            <a class="info-action" href="https://ryuen.biz/pages/ryuen-kokura" target="_blank" rel="noopener noreferrer">
+                Site officiel
+            </a>
+        </div>
+    </div>
+</article>
+
+<article class="card quick-fiche-card js-restaurant-card" id="snorkeling-okinawa" data-tags="activite,nature,bonus">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-activite">Activité</span>
+            <span class="quick-fiche-tag tag-nature">Nature</span>
+            <span class="quick-fiche-tag tag-bonus">Bonus</span>
+        </div>
+
+        <h2>Snorkeling Okinawa</h2>
+        <p class="quick-fiche-subtitle">Eau cristalline + coraux + poissons</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/04.jpg"
+                    loading="lazy"
+                    alt="Snorkeling Okinawa eau turquoise coraux Japon">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Okinawa, Japon<br>
+                (spots multiples)
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Eau ultra transparente</li>
+            <li>Poissons tropicaux + coraux</li>
+            <li>Parfait snorkeling / plongée</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Okinawa+Snorkeling" target="_blank">
+                Voir spots
+            </a>
+        </div>
+    </div>
+</article>
+
+<article class="card quick-fiche-card js-restaurant-card" id="tokyo-bakery-cafe" data-tags="restaurant,shopping,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Food</span>
+            <span class="quick-fiche-tag tag-shopping">Cafe / Bakery</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Bakery Café Tokyo</h2>
+        <p class="quick-fiche-subtitle">Pâtisseries japonaises stylées</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/05.jpg"
+                    loading="lazy"
+                    alt="Bakery café Tokyo pâtisserie japonaise">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyo, Japon<br>
+                (plusieurs cafés similaires)
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Pâtisseries visuelles stylées</li>
+            <li>Très populaire sur Insta / Reels</li>
+            <li>Parfait pause chill</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Bakery+Cafe" target="_blank">
+                Voir sur Maps
+            </a>
+        </div>
+    </div>
+</article>
+
+<article class="card quick-fiche-card js-restaurant-card" id="okuma-beach" data-tags="lieu,nature,activite">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-lieu">Lieu</span>
+            <span class="quick-fiche-tag tag-nature">Nature</span>
+            <span class="quick-fiche-tag tag-activite">Activité</span>
+        </div>
+
+        <h2>Okuma Beach</h2>
+        <p class="quick-fiche-subtitle">Plage calme sable blanc</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/06.jpg"
+                    loading="lazy"
+                    alt="Okuma Beach Okinawa plage sable blanc">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                沖縄県国頭村奥間<br>
+                Okinawa, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Plage moins touristique</li>
+            <li>Eau claire + sable blanc</li>
+            <li>Ambiance calme</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Okuma+Beach+Okinawa" target="_blank">
+                Itinéraire
+            </a>
+        </div>
+    </div>
+</article>
+
+<article class="card quick-fiche-card js-restaurant-card" id="pelteca-mitaka" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Pelteca Mitaka</h2>
+        <p class="quick-fiche-subtitle">Viande premium + sauce crémeuse</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/07.jpg"
+                    loading="lazy"
+                    alt="Pelteca Mitaka steak sauce crémeuse Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                東京都三鷹市新川3丁目1-17
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Bus depuis Kichijoji (~15 min)</li>
+            <li>Très bon rapport qualité / prix</li>
+            <li>Style occidental japonais</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Pelteca+Mitaka" target="_blank">
+                Itinéraire
+            </a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="roku-hamamatsu" data-tags="restaurant,bonus">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-bonus">Bonus</span>
+        </div>
+
+        <h2>旬菜創作ビュッフェ 露菴</h2>
+        <p class="quick-fiche-subtitle">Buffet japonais (50+ plats)</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/08.jpg"
+                    loading="lazy"
+                    alt="Buffet japonais Hamamatsu 露菴">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                静岡県浜松市浜名区平口330
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>+50 plats différents</li>
+            <li>Buffet japonais varié</li>
+            <li>Plusieurs restaurants au Japon</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=露菴+浜松" target="_blank">
+                Itinéraire
+            </a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="kerama-snorkeling" data-tags="nature,activite">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-nature">Nature</span>
+            <span class="quick-fiche-tag tag-activite">Activité</span>
+        </div>
+
+        <h2>Kerama Islands Snorkeling</h2>
+        <p class="quick-fiche-subtitle">Eau cristalline + poissons tropicaux</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/09.jpg"
+                    loading="lazy"
+                    alt="Snorkeling Kerama Okinawa coraux poissons">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Îles Kerama (Okinawa)
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Accès en bateau depuis Naha (~1h)</li>
+            <li>Parmi les plus belles eaux du Japon</li>
+            <li>Snorkeling / plongée</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Kerama+Islands" target="_blank">
+                Voir sur Maps
+            </a>
+        </div>
+    </div>
+</article>
+
+<article class="card quick-fiche-card js-restaurant-card" id="gyudon-kyoto" data-tags="restaurant,kyoto">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-kyoto">Kyoto</span>
+        </div>
+
+        <h2>Gyudon Kyoto</h2>
+        <p class="quick-fiche-subtitle">Bœuf + oignons + riz (ultra savoureux)</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/10.jpg"
+                    loading="lazy"
+                    alt="Bol gyudon Kyoto viande boeuf oignons">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Kyoto, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Plat japonais classique</li>
+            <li>Très bon marché</li>
+            <li>Rapide et efficace</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=gyudon+kyoto" target="_blank">
+                Itinéraire
+            </a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="nishikawa-sleep" data-tags="shopping,osaka">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-shopping">Shopping</span>
+            <span class="quick-fiche-tag tag-osaka">Osaka</span>
+        </div>
+
+        <h2>Nishikawa Sleep Store</h2>
+        <p class="quick-fiche-subtitle">Literie premium japonaise</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/11.jpg"
+                    loading="lazy"
+                    alt="Magasin Nishikawa Osaka literie premium">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Daimaru Shinsaibashi (Osaka)
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Consultation sommeil possible</li>
+            <li>Produits haut de gamme</li>
+            <li>Bon souvenir utile</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Nishikawa+Daimaru+Shinsaibashi" target="_blank">
+                Voir sur Maps
+            </a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="ueno-building-food" data-tags="lieu,restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-lieu">Lieu</span>
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Ueno Food Building</h2>
+        <p class="quick-fiche-subtitle">Multi-restaurants (spot pratique)</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img
+                    src="../../images/restaurants-lieux/12.jpg"
+                    loading="lazy"
+                    alt="Immeuble restaurants Ueno Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Ueno Station (Tokyo)
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Juste devant la gare</li>
+            <li>Plusieurs restos dans le même bâtiment</li>
+            <li>Idéal quand tu sais pas quoi manger</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Ueno+restaurants+building" target="_blank">
+                Itinéraire
+            </a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="onigiri-ichiryumanpuku" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>一汁おにぎり 一粒万福</h2>
+        <p class="quick-fiche-subtitle">Onigiri géants ultra garnis</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/13.jpg" loading="lazy" alt="Onigiri japonais Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                東京都品川区小山6-6-14
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Nishikoyama Station : 3 min</li>
+            <li>Ouvert : 08:00 - 17:00</li>
+            <li>Onigiri énormes + faits maison</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=一汁おにぎり+一粒万福" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="tsukiji-tamasushi" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Tsukiji Tama Sushi</h2>
+        <p class="quick-fiche-subtitle">All-you-can-eat sushi premium</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/14.jpg" loading="lazy" alt="Sushi Tokyo Tsukiji Tama Sushi">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Shibuya, Tokyo
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Sushi à volonté</li>
+            <li>Qualité premium</li>
+            <li>Expérience comptoir</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Tama+Sushi+Shibuya" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="pizzeria-spontini-harajuku" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Pizzeria Spontini</h2>
+        <p class="quick-fiche-subtitle">Pizza italienne populaire Harajuku</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/15.jpg" loading="lazy" alt="Pizzeria Spontini Harajuku">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Harajuku, Tokyo
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Très populaire à Tokyo</li>
+            <li>Pizza épaisse style Milano</li>
+            <li>Spot chill centre ville</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Pizzeria+Spontini+Tokyo" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="mission-beach-okinawa" data-tags="nature,lieu,activite">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-nature">Nature</span>
+            <span class="quick-fiche-tag tag-lieu">Lieu</span>
+            <span class="quick-fiche-tag tag-activite">Activité</span>
+        </div>
+
+        <h2>Mission Beach</h2>
+        <p class="quick-fiche-subtitle">Plage calme à Okinawa</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/16.jpg" loading="lazy" alt="Mission Beach Okinawa">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                恩納村 (Onna), Okinawa
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Plage peu touristique</li>
+            <li>Ambiance calme</li>
+            <li>Eau claire</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Mission+Beach+Okinawa" target="_blank">Voir sur Maps</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="sushi-creative-ueno" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Sushi Créatif Ueno</h2>
+        <p class="quick-fiche-subtitle">Sushi modernes ultra visuels</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/17.jpg" loading="lazy" alt="Sushi créatif Tokyo Ueno">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Ueno, Tokyo
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Sushi instagrammables</li>
+            <li>Présentation premium</li>
+            <li>Original et moderne</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Ueno+Creative+Sushi" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="sushi-platter-tokyo" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Sushi Set Premium</h2>
+        <p class="quick-fiche-subtitle">Plateau sushi varié haut de gamme</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/18.jpg" loading="lazy" alt="Plateau sushi japonais premium">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyo, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Plateaux variés</li>
+            <li>Idéal à partager</li>
+            <li>Très esthétique</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=sushi+tokyo+restaurant" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+<article class="card quick-fiche-card js-restaurant-card" id="seafood-breakfast-buffet-tokyo" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Seafood Breakfast Buffet Tokyo</h2>
+        <p class="quick-fiche-subtitle">Saumon + tamagoyaki à volonté</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/19.jpg" loading="lazy" alt="Buffet saumon et tamagoyaki Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyo, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Buffet style petit-déjeuner japonais</li>
+            <li>Saumon grillé + omelette japonaise</li>
+            <li>Bon spot pour bien commencer la journée</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=tokyo+seafood+breakfast+buffet" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="shinjuku-yakiniku-all-you-can-eat" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Yakiniku Shinjuku</h2>
+        <p class="quick-fiche-subtitle">Viande à volonté près de Shinjuku</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/20.jpg" loading="lazy" alt="Yakiniku à volonté Shinjuku Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Shinjuku, Tokyo
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Viande servie à table</li>
+            <li>Bon plan groupe</li>
+            <li>Repère pratique près de la gare</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=yakiniku+shinjuku+all+you+can+eat" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="ritz-carlton-tokyo-lunch" data-tags="restaurant,tokyo,bonus">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+            <span class="quick-fiche-tag tag-bonus">Bonus</span>
+        </div>
+
+        <h2>The Ritz-Carlton Tokyo</h2>
+        <p class="quick-fiche-subtitle">Lunch / desserts haut de gamme</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/21.jpg" loading="lazy" alt="Lunch desserts Ritz-Carlton Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                〒107-6245 東京都港区赤坂9-7-1<br>
+                東京ミッドタウン
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Vue panoramique</li>
+            <li>Lunch élégant / occasion spéciale</li>
+            <li>Spot bonus plus haut de gamme</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=The+Ritz-Carlton+Tokyo" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="fruit-toast-tokyo-cafe" data-tags="restaurant,shopping,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Food</span>
+            <span class="quick-fiche-tag tag-shopping">Cafe / Bakery</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Fruit Toast Tokyo</h2>
+        <p class="quick-fiche-subtitle">Toast / sandwich aux fruits</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/22.jpg" loading="lazy" alt="Fruit toast Tokyo café">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyo, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Pause café sucrée</li>
+            <li>Très visuel</li>
+            <li>Bon spot brunch / goûter</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=fruit+toast+tokyo+cafe" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="gohansusumu-ikebukuro" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>ごはんすすむ by Komeraku</h2>
+        <p class="quick-fiche-subtitle">Soupe-repas / teishoku à Ikebukuro</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/23.jpg" loading="lazy" alt="ごはんすすむ by Komeraku LUMINE Ikebukuro">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                ルミネ池袋<br>
+                Ikebukuro, Tokyo
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Soupe très généreuse</li>
+            <li>Style teishoku moderne</li>
+            <li>Pratique pour repas simple et chaud</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=%E3%81%94%E3%81%AF%E3%82%93%E3%81%99%E3%81%99%E3%82%80+by+Komeraku+%E3%83%AB%E3%83%9F%E3%83%8D%E6%B1%A0%E8%A2%8B" target="_blank">Itinéraire</a>
+            <a class="info-action" href="https://gohansusumu.jp/" target="_blank">Site officiel</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="healthy-buffet-tokyo" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Healthy Buffet Tokyo</h2>
+        <p class="quick-fiche-subtitle">Buffet légumes / pâtes / salades</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/24.jpg" loading="lazy" alt="Buffet légumes et salades Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyo, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Buffet varié</li>
+            <li>Option plus légère / légumes</li>
+            <li>Bon plan déjeuner</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=healthy+buffet+tokyo" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="daily-menu-buffet-tokyo" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Daily Menu Buffet Tokyo</h2>
+        <p class="quick-fiche-subtitle">Buffet plats du jour rapides</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/25.jpg" loading="lazy" alt="Buffet plats du jour Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyo, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Choix simple et rapide</li>
+            <li>Plusieurs plats préparés</li>
+            <li>Bon spot repas efficace</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=tokyo+daily+menu+buffet" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="pupa-shinjuku" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>PUPA イタメシとワイン</h2>
+        <p class="quick-fiche-subtitle">Pâtes crémeuses à Shinjuku</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/26.jpg" loading="lazy" alt="PUPA イタメシとワイン Shinjuku">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                〒160-0022 東京都新宿区新宿3-35-6<br>
+                国道20号線 高架下
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Shinjuku Est / Southeast exit</li>
+            <li>Ouvert : 11:00 - 23:00</li>
+            <li>Pâtes / vin / ambiance moderne</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=PUPA+%E3%82%A4%E3%82%BF%E3%83%A1%E3%82%B7%E3%81%A8%E3%83%AF%E3%82%A4%E3%83%B3" target="_blank">Itinéraire</a>
+            <a class="info-action" href="https://www.potomak.co.jp/shop/1015/" target="_blank">Site officiel</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="tokyo-station-chicken-set" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Tokyo Station Chicken Set</h2>
+        <p class="quick-fiche-subtitle">Poulet / soupe / riz en set</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/27.jpg" loading="lazy" alt="Set poulet Tokyo Station">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyo Station, Tokyo
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Set meal complet</li>
+            <li>Pratique avant / après train</li>
+            <li>Repas simple et efficace</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=tokyo+station+chicken+set" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+<article class="card quick-fiche-card js-restaurant-card" id="picica-picica-ebisu" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>PICICA PICICA</h2>
+        <p class="quick-fiche-subtitle">Pâtes fraîches tomate à Ebisu</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/31.jpg" loading="lazy" alt="PICICA PICICA pasta Ebisu Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Adresse</strong><br>
+                〒150-0013 東京都渋谷区恵比寿1-18-14<br>
+                恵比寿ファーストスクエア1F
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Ebisu Station : ~5 min</li>
+            <li>Pâtes fraîches maison</li>
+            <li>Bon rapport qualité / prix</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=PICICA+PICICA+Ebisu" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="crab-sushi-izakaya-tokyo" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Crab Sushi Izakaya</h2>
+        <p class="quick-fiche-subtitle">Crabe + sushi premium</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/32.jpg" loading="lazy" alt="Crabe japonais sushi Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyo, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Crabe entier premium</li>
+            <li>Sushi + fruits de mer</li>
+            <li>Expérience japonaise haut de gamme</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=tokyo+crab+sushi+restaurant" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="tokyu-plaza-shibuya-restaurant" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Tokyu Plaza Shibuya Restaurant</h2>
+        <p class="quick-fiche-subtitle">Restaurant moderne + dessert</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/28.jpg" loading="lazy" alt="Restaurant Tokyu Plaza Shibuya">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyu Plaza Shibuya, Tokyo
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Spot moderne</li>
+            <li>Menu + dessert stylé</li>
+            <li>Idéal pause chill Shibuya</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=Tokyu+Plaza+Shibuya+restaurant" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="shinokubo-dim-sum" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Dim Sum Shin-Okubo</h2>
+        <p class="quick-fiche-subtitle">Bao / dumplings vapeur</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/29.jpg" loading="lazy" alt="Dim sum Shin Okubo Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Shin-Okubo, Tokyo
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Quartier coréen / street food</li>
+            <li>Bao vapeur très populaires</li>
+            <li>Bon snack rapide</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=shinokubo+dim+sum" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+
+
+<article class="card quick-fiche-card js-restaurant-card" id="family-buffet-tokyo" data-tags="restaurant,tokyo">
+    <div class="card-content">
+        <div class="quick-fiche-tags">
+            <span class="quick-fiche-tag tag-restaurant">Restaurant</span>
+            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+        </div>
+
+        <h2>Family Buffet Tokyo</h2>
+        <p class="quick-fiche-subtitle">Buffet varié + plats japonais</p>
+
+        <div class="quick-fiche-image info-gallery restaurant-gallery">
+            <figure>
+                <img src="../../images/restaurants-lieux/30.jpg" loading="lazy" alt="Buffet familial Tokyo">
+            </figure>
+        </div>
+
+        <div class="info-note-box">
+            <p>
+                <strong>Lieu</strong><br>
+                Tokyo, Japon
+            </p>
+        </div>
+
+        <ul class="quick-fiche-list info-points-list">
+            <li>Idéal en groupe</li>
+            <li>Grand choix de plats</li>
+            <li>Très bon rapport qualité prix</li>
+        </ul>
+
+        <div class="quick-fiche-actions">
+            <a class="info-action info-action--primary" href="https://www.google.com/maps/search/?api=1&query=tokyo+family+buffet" target="_blank">Itinéraire</a>
+        </div>
+    </div>
+</article>
+                <!-- FIN des Ajouter des articles ici -->
+            </section>
+                <!-- FIN - LISTE des FICHES RAPIDES -->
+            
+
+            <!-- FAQ -->
+            <br>
+            <article class="card info-article-section" id="faq-express">
+                <div class="card-content">
+                    <h2>FAQ express</h2>
+
+                    <h3>Le plus pratique pour Tokyo ?</h3>
+                    <p>Queen of Thailand Ginza.</p>
+
+                    <h3>Le plus sympa pour une sortie du soir ?</h3>
+                    <p>Stand LIZARRAN Oimachi.</p>
+
+                    <h3>Le restaurant d’anguille est à Tokyo ?</h3>
+                    <p>Non, il est à Aichi.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <div id="restaurant-image-viewer" class="restaurant-image-viewer" aria-hidden="true">
+        <button id="restaurant-image-prev" class="restaurant-image-viewer__btn restaurant-image-viewer__btn--prev" type="button" aria-label="Image précédente">&#10094;</button>
+        <button id="restaurant-image-next" class="restaurant-image-viewer__btn restaurant-image-viewer__btn--next" type="button" aria-label="Image suivante">&#10095;</button>
+        <button id="restaurant-image-close" class="restaurant-image-viewer__btn restaurant-image-viewer__btn--close" type="button" aria-label="Fermer">&times;</button>
+        <div id="restaurant-image-zone-left" class="restaurant-image-viewer__zone restaurant-image-viewer__zone--left" aria-hidden="true"></div>
+        <div id="restaurant-image-zone-right" class="restaurant-image-viewer__zone restaurant-image-viewer__zone--right" aria-hidden="true"></div>
+        <img id="restaurant-image-full" class="restaurant-image-viewer__img" src="" alt="Aperçu image">
+    </div>
+
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/apercu-image-gallery.js"></script>
+
+    <!-- Script de filtrage HASHTAG des fiches rapides -->
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('[data-filter-tag]');
+            var cards = document.querySelectorAll('.js-restaurant-card');
+            var emptyState = document.getElementById('restaurant-filter-empty');
+
+            function applyFilter(tag) {
+                var visibleCount = 0;
+
+                buttons.forEach(function (button) {
+                    var isActive = button.getAttribute('data-filter-tag') === tag;
+                    button.classList.toggle('is-active', isActive);
+                });
+
+                cards.forEach(function (card) {
+                    var tags = (card.getAttribute('data-tags') || '')
+                        .split(',')
+                        .map(function (item) { return item.trim(); })
+                        .filter(Boolean);
+
+                    var showCard = tag === 'all' || tags.indexOf(tag) !== -1;
+                    card.style.display = showCard ? '' : 'none';
+
+                    if (showCard) {
+                        visibleCount += 1;
+                    }
+                });
+
+                emptyState.hidden = visibleCount !== 0;
+            }
+
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    applyFilter(button.getAttribute('data-filter-tag'));
+                });
+            });
+
+            applyFilter('all');
+        }());
+    </script>
+</body>
+</html>

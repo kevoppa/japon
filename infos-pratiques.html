@@ -27,6 +27,8 @@
                     <p class="site-menu__summary-title">Sommaire</p>
                     <div class="site-menu__summary-links">
                         <a class="site-menu__summary-link" href="infos-pratiques.html">D&eacute;but</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--section" href="infos/Liste/liste-rapide-fiches.html">Liste</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="infos/Liste/liste-rapide-fiches.html">Liste rapide</a>
                         <a class="site-menu__summary-link site-menu__summary-link--section" href="infos/avions/avions.html">Avions</a>
                         <a class="site-menu__summary-link site-menu__summary-link--child" href="infos/avions/sous menu1/trajectoire-vol-japanairlines.html">Trajectoire vol Japan Airlines</a>
                         <a class="site-menu__summary-link site-menu__summary-link--child" href="infos/avions/sous menu1/trajectoire-vol-ana-nh761.html">Trajectoire vol Ana 761 (Départ pour okinawa)</a>
@@ -78,6 +80,13 @@
                 <h2>Sommaire</h2>
                 <nav class="info-toc__nav">
                     <a class="info-toc__link" href="infos-pratiques.html">Menu principal</a>
+
+                    <div class="info-toc__group">
+                        <a class="info-toc__section-link" href="infos/Liste/liste-rapide-fiches.html">Liste</a>
+                        <div class="info-toc__children">
+                            <a class="info-toc__child-link" href="infos/Liste/liste-rapide-fiches.html">Liste rapide</a>
+                        </div>
+                    </div>
 
                     <div class="info-toc__group">
                         <a class="info-toc__section-link" href="infos/avions/avions.html">Avions</a>
@@ -162,6 +171,11 @@
             <section class="info-section">
                 <h2>Cat&eacute;gories principales</h2>
                 <div class="info-topic-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
+                    <a class="info-topic info-topic--link" href="infos/Liste/liste-rapide-fiches.html" style="padding:14px 16px; border-radius:10px;">
+                        <h3 style="margin-bottom:6px; font-size:1.05rem;">Liste</h3>
+                        <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Liste rapide &agrave; garder sous la main pour centraliser restaurants, lieux, activit&eacute;s et autres rep&egrave;res utiles du voyage.</p>
+                        <p class="info-topic__cta" style="color: var(--accent-blue); margin:0; font-size:0.88rem; font-weight:600;">Ouvrir la liste</p>
+                    </a>
                     <a class="info-topic info-topic--link" href="infos/avions/avions.html" style="padding:14px 16px; border-radius:10px;">
                         <h3 style="margin-bottom:6px; font-size:1.05rem;">Avions</h3>
                         <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Les informations des vols et des trajectoires des avions.</p>
