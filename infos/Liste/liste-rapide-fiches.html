@@ -167,6 +167,18 @@ body[data-theme="dark"] .tag-aichi {
 body[data-theme="dark"] .tag-bonus {
     color: #fde68a;
 }
+
+        .info-toc__box {
+            max-height: calc(100vh - 48px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+        }
+
+        .info-toc__nav {
+            padding-right: 6px;
+        }
+
         .quick-fiches-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(280px, 1fr));
