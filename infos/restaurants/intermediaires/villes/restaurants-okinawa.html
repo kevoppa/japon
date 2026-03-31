@@ -11,6 +11,23 @@
     <link rel="stylesheet" href="../../../../css/infos-pratiques.css">
     <link rel="stylesheet" href="../../../../css/info-article.css">
     <link rel="stylesheet" href="../../../../css/restaurants-filters.css">
+    <link rel="stylesheet" href="../../../../css/backToTop.css">
+    <style>
+        .restaurant-card-preview {
+            margin: 0 0 10px;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+        }
+
+        .restaurant-card-preview img {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <nav class="site-menu" aria-label="Navigation des pages">
@@ -99,6 +116,9 @@
                     <div class="info-topic-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
                         <a class="info-topic info-topic--link js-restaurant-card" data-tags="buffet-a-volonte" href="okinawa/buffet-restaurant-suriyun.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Buffet Restaurant Suriyun (Hilton Okinawa Chatan Resort)</h3>
+                            <div class="restaurant-card-preview">
+                                <img src="../../../../images/restaurants/okinawa/buffet-restaurant-suriyun/buffet-restaurant-suriyun-01.jpg" alt="Buffet Restaurant Suriyun">
+                            </div>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Buffet all-day dining a Chatan avec reservation en ligne, horaires complets (petit-dejeuner, lunch, dinner) et format pratique pour 5 personnes.</p>
                             <div class="restaurant-tags" aria-label="Tags restaurant">
                                 <span class="restaurant-tag tag--buffet-a-volonte">#Buffet &agrave; volont&eacute;</span>
@@ -107,6 +127,9 @@
                         </a>
                         <a class="info-topic info-topic--link js-restaurant-card" data-tags="buffet-a-volonte,a-volonte-sur-commande" href="okinawa/restaurant-kafuka.html" style="padding:14px 16px; border-radius:10px;">
                             <h3 style="margin-bottom:6px; font-size:1.05rem;">Restaurant Kafuka (Naha)</h3>
+                            <div class="restaurant-card-preview">
+                                <img src="../../../../images/restaurants/okinawa/restaurant-kafuka/restaurant-kafuka-01.jpg" alt="Restaurant Kafuka">
+                            </div>
                             <p style="margin-bottom:8px; font-size:0.94rem; line-height:1.45;">Grand buffet proche du centre de Naha, avec r&eacute;servation en ligne et option Agu Pork shabu-shabu &agrave; volont&eacute; sur commande.</p>
                             <div class="restaurant-tags" aria-label="Tags restaurant">
                                 <span class="restaurant-tag tag--buffet-a-volonte">#Buffet &agrave; volont&eacute;</span>
@@ -161,6 +184,11 @@
             applyFilter('all');
         }());
     </script>
+    <script src="../../../../js/backToTop.js"></script>
+
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">&#8593;</button>
 </body>
 </html>
+
+
 

@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Parkings - Voyage au Japon 2026</title>
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="../../../css/navigation.css">
+    <link rel="stylesheet" href="../../../css/cards.css">
+    <link rel="stylesheet" href="../../../css/alerts.css">
+    <link rel="stylesheet" href="../../../css/infos-pratiques.css">
+    <link rel="stylesheet" href="../../../css/info-article.css">
+    <style>
+        .info-toc__box {
+            max-height: calc(100vh - 48px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+        }
+
+        .info-toc__nav {
+            padding-right: 6px;
+        }
+
+        .parking-filter { margin-bottom: 4px; }
+
+        .parking-filter__label {
+            margin: 0 0 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .parking-filter__chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .parking-filter__chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 9px 12px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+            cursor: pointer;
+        }
+
+        .parking-filter__chip:hover,
+        .parking-filter__chip:focus-visible,
+        .parking-filter__chip.is-active {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            outline: none;
+        }
+
+        .parking-filter__chip.tag-tokyo.is-active { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
+        .parking-filter__chip.tag-osaka.is-active { background: #c2410c; color: #fff; border-color: #c2410c; }
+        .parking-filter__chip.tag-okinawa.is-active { background: #0f766e; color: #fff; border-color: #0f766e; }
+        .parking-filter__chip.tag-gratuit.is-active { background: #15803d; color: #fff; border-color: #15803d; }
+        .parking-filter__chip.tag-attention.is-active { background: #b45309; color: #fff; border-color: #b45309; }
+        .parking-filter__chip.tag-nuit.is-active { background: #6d28d9; color: #fff; border-color: #6d28d9; }
+
+        .parking-filter__empty {
+            margin: 8px 0 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .quick-fiche-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 0 0 4px;
+        }
+
+        .quick-fiche-tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            border: 1px solid var(--border-color);
+            background: rgba(127,127,127,0.08);
+            color: var(--text-main);
+            white-space: nowrap;
+        }
+
+        .tag-tokyo    { background: rgba(60,130,255,0.16);  border-color: rgba(60,130,255,0.35);  color: #1d4ed8; }
+        .tag-osaka    { background: rgba(255,120,60,0.16);  border-color: rgba(255,120,60,0.35);  color: #c2410c; }
+        .tag-okinawa  { background: rgba(0,180,140,0.16);   border-color: rgba(0,180,140,0.35);   color: #0f766e; }
+        .tag-gratuit  { background: rgba(80,190,90,0.16);   border-color: rgba(80,190,90,0.35);   color: #15803d; }
+        .tag-attention{ background: rgba(255,215,0,0.14);   border-color: rgba(255,215,0,0.30);   color: #b45309; }
+        .tag-nuit     { background: rgba(120,80,200,0.14);  border-color: rgba(120,80,200,0.30);  color: #6d28d9; }
+        .tag-gratuit-conditionnel { background: rgba(0,180,200,0.14); border-color: rgba(0,180,200,0.30); color: #0e7490; }
+
+        body[data-theme="dark"] .tag-tokyo    { color: #60a5fa; }
+        body[data-theme="dark"] .tag-osaka    { color: #fb923c; }
+        body[data-theme="dark"] .tag-okinawa  { color: #2dd4bf; }
+        body[data-theme="dark"] .tag-gratuit  { color: #4ade80; }
+        body[data-theme="dark"] .tag-attention{ color: #fde68a; }
+        body[data-theme="dark"] .tag-nuit     { color: #a78bfa; }
+        body[data-theme="dark"] .tag-gratuit-conditionnel { color: #22d3ee; }
+
+        .quick-fiches-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 1200px) { .quick-fiches-grid { grid-template-columns: repeat(2, minmax(260px, 1fr)); } }
+        @media (max-width: 768px)  { .quick-fiches-grid { grid-template-columns: 1fr; } }
+
+        .quick-fiche-card {
+            height: 100%;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.25s, transform 0.2s;
+        }
+
+        .quick-fiche-card:hover {
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .quick-fiche-card .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            height: 100%;
+        }
+
+        .quick-fiche-card h2 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .quick-fiche-subtitle {
+            margin: -6px 0 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .day-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            width: fit-content;
+            min-height: 34px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            background: color-mix(in srgb, var(--bg-main) 60%, var(--bg-card) 40%);
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            padding: 0 12px;
+        }
+
+        .map-preview {
+            width: 100%;
+            height: 200px;
+            border-radius: 16px;
+            background: color-mix(in srgb, var(--bg-main) 70%, var(--bg-card) 30%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px dashed var(--border-color);
+        }
+
+        .map-preview svg { opacity: 0.7; }
+
+        .parking-tip {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            background: color-mix(in srgb, var(--bg-main) 55%, var(--bg-card) 45%);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .parking-tip-icon { flex-shrink: 0; font-size: 0.9rem; }
+
+        .horaires-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.78rem;
+            padding: 3px 8px;
+            border-radius: 999px;
+            border: 1px dashed var(--border-color);
+            color: var(--text-muted);
+        }
+
+        .quick-fiche-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .quick-fiche-list li + li { margin-top: 8px; }
+
+        .quick-fiche-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .quick-fiche-actions .info-action {
+            flex: 1 1 220px;
+        }
+
+        .semaine-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin: 28px 0 4px;
+            box-shadow: var(--shadow);
+        }
+
+        .semaine-header-emoji { font-size: 1.4rem; }
+
+        .semaine-header-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .semaine-header-dates {
+            margin-left: auto;
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            background: color-mix(in srgb, var(--bg-main) 60%, var(--bg-card) 40%);
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+        }
+
+        .intro-card .card-content h2 {
+            margin-bottom: 14px;
+        }
+
+        .info-toc__box::-webkit-scrollbar { width: 4px; }
+        .info-toc__box::-webkit-scrollbar-track { background: transparent; }
+        .info-toc__box::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 2px; }
+
+        .alert-rendu {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background: rgba(229, 62, 62, 0.1);
+            border-left: 4px solid var(--accent-red);
+            border-radius: 0 8px 8px 0;
+            padding: 15px;
+            font-size: 0.85rem;
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+
+        .info-article-section,
+        .semaine-header,
+        .quick-fiche-card {
+            scroll-margin-top: 86px;
+        }
+
+        @media (max-width: 900px) {
+            .semaine-header {
+                flex-wrap: wrap;
+            }
+
+            .semaine-header-dates {
+                margin-left: 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../../css/backToTop.css">
+</head>
+<body>
+    <nav class="site-menu" aria-label="Navigation des pages">
+        <div class="site-menu__bar">
+            <button id="theme-toggle" class="theme-btn-header site-menu__theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span>
+                <span class="theme-text">Mode Nuit</span>
+            </button>
+            <div id="site-menu-links" class="site-menu__container">
+                <div class="site-menu__primary-links">
+                    <a class="site-menu__link" href="../../../budget-voyage-japon.html">Budget Voyage Japon</a>
+                    <a class="site-menu__link" href="../../../planning.html">Planning</a>
+                    <a class="site-menu__link is-active" href="../../../infos-pratiques.html">Infos pratiques</a>
+                </div>
+                <div class="site-menu__summary" aria-label="Sommaire mobile">
+                    <p class="site-menu__summary-title">Sommaire</p>
+                    <div class="site-menu__summary-links">
+                        <a class="site-menu__summary-link" href="../../../infos-pratiques.html">Menu principal</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--section" href="../stationnement-et-parking.html">Stationnement</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#intro">Introduction</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#sem1">Semaine 1 - Tokyo</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#sem2">Semaine 2 - Osaka et Kyoto</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#sem3">Semaine 3 - Okinawa</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#sem4">Semaine 4 - Retour Tokyo</a>
+                        <a class="site-menu__summary-link site-menu__summary-link--child" href="#faq-parkings">FAQ Parkings</a>
+                    </div>
+                </div>
+            </div>
+            <button class="site-menu__toggle" type="button" aria-expanded="false" aria-controls="site-menu-links" aria-label="Ouvrir le menu" onclick="toggleSiteMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <h1>🇯🇵 JAPON 2026</h1>
+        <p class="subtitle">Kevin, Loïc, May Nhia, Stéphanie, Estelle<br>Du 5 Avril au 27 Avril 2026</p>
+    </header>
+
+    <main class="container info-page">
+        <aside class="info-toc" aria-label="Sommaire">
+            <div class="info-toc__box">
+                <h2>Sommaire</h2>
+                <nav class="info-toc__nav">
+                    <a class="info-toc__link" href="../../../infos-pratiques.html">Menu principal</a>
+                    <div class="info-toc__group">
+                        <a class="info-toc__section-link" href="../stationnement-et-parking.html">Stationnement</a>
+                        <div class="info-toc__children">
+                            <a class="info-toc__child-link" href="#intro">Introduction</a>
+                            <br>
+                            <!-- Semaine 1 -->
+                            <a class="info-toc__child-link" href="#sem1">⛩️ Semaine 1 — Tokyo</a>
+                            <a class="info-toc__child-link" href="#shibuya-parking">Shibuya — 08/04</a>
+                            <a class="info-toc__child-link" href="#asakusa-parking">Asakusa / Skytree — 09/04</a>
+                            <a class="info-toc__child-link" href="#ueno-parking">Ueno — 09/04</a>
+                            <a class="info-toc__child-link" href="#ashikaga-parking">Ashikaga Flowers — 10/04</a>
+                            <a class="info-toc__child-link" href="#fuji-parking">Mont Fuji — 11/04</a>
+                            <a class="info-toc__child-link" href="#chinatown-parking">Chinatown Yokohama — 12/04</a>
+                            <hr>
+                            <!-- Semaine 2 -->
+                            <a class="info-toc__child-link" href="#sem2">🏯 Semaine 2 — Osaka & Kyoto</a>
+                            <a class="info-toc__child-link" href="#fushimi-parking">Fushimi Inari — 14/04</a>
+                            <a class="info-toc__child-link" href="#kiyomizu-parking">Kiyomizudera — 14/04</a>
+                            <a class="info-toc__child-link" href="#osaka-castle-parking">Château Osaka — 15/04</a>
+                            <a class="info-toc__child-link" href="#dotonbori-parking">Dotonbori — 15/04</a>
+                            <a class="info-toc__child-link" href="#kuromon-parking">Kuromon / Onsen — 17/04</a>
+                            <hr>
+                            <!-- Semaine 3 -->
+                            <a class="info-toc__child-link" href="#sem3">🏝️ Semaine 3 — Okinawa</a>
+                            <a class="info-toc__child-link" href="#manzamo-parking">Cape Manzamo — 19/04</a>
+                            <a class="info-toc__child-link" href="#churaumi-parking">Churaumi Aquarium — 20/04</a>
+                            <hr>
+                            <!-- Semaine 4 -->
+                            <a class="info-toc__child-link" href="#sem4">🗼 Semaine 4 — Retour Tokyo</a>
+                            <a class="info-toc__child-link" href="#akihabara-parking">Akihabara — 24/04</a>
+                            <a class="info-toc__child-link" href="#odaiba-parking">Odaiba — 24/04</a>
+                            <a class="info-toc__child-link" href="#shinjuku-parking">Shinjuku Gyoen — 25/04</a>
+                            <hr>
+                            <a class="info-toc__child-link" href="#faq-parkings">FAQ Parkings</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="info-content info-content--article">
+            <p class="info-breadcrumb">
+                <a href="../../../infos-pratiques.html">Infos pratiques</a> /
+                <a href="../stationnement-et-parking.html">Stationnement</a> /
+                Guide Parkings — Voyage au Japon 2026
+            </p>
+
+            <div class="info-back-nav">
+                <a class="info-back-link" href="../stationnement-et-parking.html">← Retour à Stationnement</a>
+            </div>
+
+            <section class="info-article-header">
+                <h1>🅿️ Guide Parkings — Voyage au Japon 2026</h1>
+                <p class="info-article-lead">Vue d'ensemble claire des parkings utiles pour vos journées en voiture à Tokyo, Osaka, Kyoto et Okinawa, avec filtre rapide et accès direct aux coordonnées.</p>
+            </section>
+
+            <!-- INTRO -->
+            <article class="card intro-card info-article-section" id="intro">
+                <div class="card-content">
+                    <h2>Introduction</h2>
+                    <div class="info-note-box">
+                        <p>
+                            Fiches rapides à garder sous la main pour chaque déplacement en voiture.
+                            Le but est simple : voir le jour, copier l'adresse et ouvrir Google Maps directement vers le parking le plus proche.
+                        </p>
+                        <p>
+                            <strong>Les 2 plus utiles à Tokyo :</strong> Shibuya Stream Parking et Tokyo Skytree Town Parking.<br>
+                            <strong>Le must d'Okinawa :</strong> Ocean Expo Park — entièrement gratuit.<br>
+                            <strong>Attention :</strong> Tous les jours avec rendu de voiture sont signalés en rouge.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FILTRE -->
+            <article class="card info-article-section">
+                <div class="card-content">
+                    <section class="parking-filter" aria-label="Filtrer les parkings">
+                        <p class="parking-filter__label">Trier par : hashtag</p>
+                        <div class="parking-filter__chips">
+                            <button class="parking-filter__chip is-active" type="button" data-filter-tag="all">#Tout</button>
+                            <button class="parking-filter__chip tag-tokyo"    type="button" data-filter-tag="tokyo">#Tokyo</button>
+                            <button class="parking-filter__chip tag-osaka"    type="button" data-filter-tag="osaka">#Osaka / Kyoto</button>
+                            <button class="parking-filter__chip tag-okinawa"  type="button" data-filter-tag="okinawa">#Okinawa</button>
+                            <button class="parking-filter__chip tag-gratuit"  type="button" data-filter-tag="gratuit">#Gratuit</button>
+                            <button class="parking-filter__chip tag-attention" type="button" data-filter-tag="attention">#Rendu voiture</button>
+                            <button class="parking-filter__chip tag-nuit"     type="button" data-filter-tag="nuit">#Ouvert 24h</button>
+                        </div>
+                        <p id="parking-filter-empty" class="parking-filter__empty" hidden>Aucune fiche ne correspond à ce filtre.</p>
+                    </section>
+                </div>
+            </article>
+
+            <!-- ===================== SEMAINE 1 ===================== -->
+            <div class="semaine-header" id="sem1">
+                <span class="semaine-header-emoji">⛩️</span>
+                <span class="semaine-header-title">Semaine 1 — Tokyo</span>
+                <span class="semaine-header-dates">05 – 12 avril 2026</span>
+            </div>
+
+            <section id="parkings-grid" class="quick-fiches-grid">
+
+                <!-- SHIBUYA -->
+                <article class="card quick-fiche-card js-parking-card" id="shibuya-parking" data-tags="tokyo,nuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                            <span class="quick-fiche-tag tag-nuit">Ouvert 24h</span>
+                        </div>
+                        <span class="day-badge">📅 Mercredi 08/04</span>
+                        <h2>Shibuya Stream Parking</h2>
+                        <p class="quick-fiche-subtitle">Pour : Shibuya Crossing + Dîner Ginza</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Shibuya, Tokyo
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            渋谷3丁目19 Shibuya Stream 1F<br>
+                            Shibuya, Tokyo</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>💴 1h gratuite, puis 100¥/h</li>
+                            <li>🅿️ Grand parking, haut plafond OK</li>
+                            <li>📍 500m du Shibuya Crossing</li>
+                            <li>💳 Carte IC + espèces acceptés</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=35.657606,139.702897" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ASAKUSA / SKYTREE -->
+                <article class="card quick-fiche-card js-parking-card" id="asakusa-parking" data-tags="tokyo">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                            <span class="quick-fiche-tag tag-gratuit-conditionnel">Réductions achats</span>
+                        </div>
+                        <span class="day-badge">📅 Jeudi 09/04</span>
+                        <h2>Skytree Town Parking</h2>
+                        <p class="quick-fiche-subtitle">Pour : Asakusa + Senso-ji + Tokyo Skytree</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Oshiage, Sumida — Tokyo
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            〒131-0045 1-1-1 Oshiage, Sumida<br>
+                            Tokyo Skytree Town</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ 7h30 – 22h00</li>
+                            <li>💴 450¥ / 30 min</li>
+                            <li>🎁 Réduction avec achats en boutique</li>
+                            <li>🅿️ Grand parking officiel Skytree</li>
+                            <li>📍 Base idéale pour Asakusa + Skytree</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=35.710242,139.809777" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- UENO -->
+                <article class="card quick-fiche-card js-parking-card" id="ueno-parking" data-tags="tokyo,nuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                            <span class="quick-fiche-tag tag-nuit">Ouvert 24h</span>
+                        </div>
+                        <span class="day-badge">📅 Jeudi 09/04</span>
+                        <h2>Parking Ueno Station</h2>
+                        <p class="quick-fiche-subtitle">Pour : Ueno Park</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Ueno, Taito City — Tokyo
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            〒110-0005 7-1-1 Ueno<br>
+                            Taito City, Tokyo</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>💴 400¥ / 30 min · max 2 200¥ (semaine)</li>
+                            <li>🅿️ Au-dessus de la gare Ueno</li>
+                            <li>⚠️ Éviter les week-ends (bouchons)</li>
+                            <li>💡 Arriver tôt = plus simple</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=35.713934,139.776251" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ASHIKAGA -->
+                <article class="card quick-fiche-card js-parking-card" id="ashikaga-parking" data-tags="tokyo,gratuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                            <span class="quick-fiche-tag tag-gratuit">Gratuit</span>
+                        </div>
+                        <span class="day-badge">📅 Vendredi 10/04</span>
+                        <h2>Ashikaga Flower Park Parking</h2>
+                        <p class="quick-fiche-subtitle">Pour : Ashikaga Flower Park (wisteria)</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Ashikaga, Tochigi
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            660-1 Hasamachō<br>
+                            Ashikaga, Tochigi 329-4216</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>💴 Gratuit</li>
+                            <li>🅿️ Grand parking officiel du parc</li>
+                            <li>🌸 Pleine saison wisteria début avril</li>
+                            <li>⚠️ Le matin = réservé aux bus touristiques</li>
+                            <li>💡 Arriver avant 7h ou en après-midi</li>
+                        </ul>
+
+                        <div class="parking-tip">
+                            <span class="parking-tip-icon">⚠️</span>
+                            Pleine saison wisteria = parking très fréquenté. Arriver avant 7h00 ou après 14h00 pour trouver facilement.
+                        </div>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=36.315390,139.521364" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- MONT FUJI -->
+                <article class="card quick-fiche-card js-parking-card" id="fuji-parking" data-tags="tokyo,gratuit,nuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                            <span class="quick-fiche-tag tag-gratuit">Gratuit</span>
+                            <span class="quick-fiche-tag tag-nuit">Ouvert 24h</span>
+                        </div>
+                        <span class="day-badge">📅 Samedi 11/04</span>
+                        <h2>Lake Kawaguchi Free Parking</h2>
+                        <p class="quick-fiche-subtitle">Pour : Spots photo Mont Fuji + Lac Kawaguchi</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Azagawa, Fujikawaguchiko
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            Azagawa, Fujikawaguchiko<br>
+                            Minamitsuru District, Yamanashi</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>💴 Entièrement gratuit</li>
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>🅿️ Grand parking, vue sur le lac</li>
+                            <li>📍 5 min à pied de la télécabine</li>
+                            <li>🗻 Base idéale pour tous les spots Fuji</li>
+                        </ul>
+
+                        <div class="parking-tip">
+                            <span class="parking-tip-icon">💡</span>
+                            Départ prévu à 7h = arrivée vers 9h. Éviter le parking gare Kawaguchiko (30 min gratuit seulement, puis tarif sans plafond).
+                        </div>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=35.506071,138.771968" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CHINATOWN YOKOHAMA -->
+                <article class="card quick-fiche-card js-parking-card" id="chinatown-parking" data-tags="tokyo,nuit,attention">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                            <span class="quick-fiche-tag tag-nuit">Ouvert 24h</span>
+                            <span class="quick-fiche-tag tag-attention">⚠️ Rendu voiture</span>
+                        </div>
+                        <span class="day-badge">📅 Dimanche 12/04</span>
+                        <h2>Chukagai Parking — Chinatown</h2>
+                        <p class="quick-fiche-subtitle">Pour : Chinatown Yokohama</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Yamashitacho, Naka — Yokohama
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            〒231-0023 94 Yamashitachō<br>
+                            Naka Ward, Yokohama, Kanagawa</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>📍 3 min à pied de Chinatown</li>
+                            <li>🅿️ Places limitées le week-end — arriver tôt</li>
+                            <li>🚻 Toilettes propres + distributeurs</li>
+                            <li>💡 Alternative : Direct Park Motomachi</li>
+                        </ul>
+
+                        <div class="alert-rendu">
+                            ⚠️ Rendre la voiture avant 20h ce soir ! Quitter Chinatown vers 18h30 maximum.
+                        </div>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=35.444145,139.645756" target="_blank">
+                                📍 Option 1 — Chukagai
+                            </a>
+                            <a class="info-action" href="https://maps.google.com/?q=35.440245,139.644464" target="_blank">
+                                📍 Option 2 — Direct Park
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </section><!-- fin grille sem1 -->
+
+            <!-- ===================== SEMAINE 2 ===================== -->
+            <div class="semaine-header" id="sem2">
+                <span class="semaine-header-emoji">🏯</span>
+                <span class="semaine-header-title">Semaine 2 — Osaka & Kyoto</span>
+                <span class="semaine-header-dates">13 – 17 avril 2026</span>
+            </div>
+
+            <section class="quick-fiches-grid">
+
+                <!-- FUSHIMI INARI -->
+                <article class="card quick-fiche-card js-parking-card" id="fushimi-parking" data-tags="osaka">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-osaka">Kyoto</span>
+                        </div>
+                        <span class="day-badge">📅 Mardi 14/04</span>
+                        <h2>ePARK Fushimi Inari</h2>
+                        <p class="quick-fiche-subtitle">Pour : Fushimi Inari Taisha (torii)</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Fushimi Ward, Kyoto
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            Fukakusa Kamiyokonawacho<br>
+                            Fushimi Ward, Kyoto 612-0006</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>🅿️ Le parking le plus proche du sanctuaire</li>
+                            <li>💡 Ouvert tôt le matin</li>
+                            <li>⚠️ Très fréquenté en saison — arriver avant 8h</li>
+                            <li>📍 Sanctuaire accessible à pied immédiatement</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=34.970369,135.768317" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- KIYOMIZUDERA -->
+                <article class="card quick-fiche-card js-parking-card" id="kiyomizu-parking" data-tags="osaka">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-osaka">Kyoto</span>
+                        </div>
+                        <span class="day-badge">📅 Mardi 14/04</span>
+                        <h2>TOYOCARMAX Kiyomizudera</h2>
+                        <p class="quick-fiche-subtitle">Pour : Temple Kiyomizudera + ruelle Sannenzaka</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Higashiyama Ward, Kyoto
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            〒605-0862 2-216 Kiyomizu<br>
+                            Higashiyama Ward, Kyoto</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>💴 ~800¥ / heure</li>
+                            <li>🅿️ Le plus proche du temple (≈20 places)</li>
+                            <li>💡 Arriver avant 9h — complet rapidement</li>
+                            <li>📍 5 min à pied du temple</li>
+                        </ul>
+
+                        <div class="parking-tip">
+                            <span class="parking-tip-icon">⚠️</span>
+                            Seulement ~20 places voitures. Arriver impérativement avant 9h ou chercher un parking alternatif dans le quartier.
+                        </div>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=34.996077,135.780521" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- OSAKA CASTLE -->
+                <article class="card quick-fiche-card js-parking-card" id="osaka-castle-parking" data-tags="osaka,nuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-osaka">Osaka</span>
+                            <span class="quick-fiche-tag tag-nuit">Ouvert 24h</span>
+                        </div>
+                        <span class="day-badge">📅 Mercredi 15/04</span>
+                        <h2>Osaka Castle Park Parking</h2>
+                        <p class="quick-fiche-subtitle">Pour : Château d'Osaka</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Chuo Ward, Osaka
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            Osakajo, Chuo Ward<br>
+                            Osaka 540-0002</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>🅿️ Parking dans le parc du château</li>
+                            <li>🌿 Parc gratuit, château payant</li>
+                            <li>📍 Accès direct depuis le parking</li>
+                            <li>💡 Grand espace, rarement plein</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=34.686480,135.526211" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DOTONBORI -->
+                <article class="card quick-fiche-card js-parking-card" id="dotonbori-parking" data-tags="osaka,nuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-osaka">Osaka</span>
+                            <span class="quick-fiche-tag tag-nuit">Ouvert 24h</span>
+                        </div>
+                        <span class="day-badge">📅 Mercredi 15/04</span>
+                        <h2>BooBooPark Dotonbori</h2>
+                        <p class="quick-fiche-subtitle">Pour : Dotonbori + Shinsekai + Don Quijote</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Kozu 2-chome, Chuo — Osaka
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            〒542-0072 2-1-24 Kōzu<br>
+                            Chuo Ward, Osaka</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>💴 Pas cher pour la zone Dotonbori</li>
+                            <li>📍 5 min à pied de Dotonbori</li>
+                            <li>💳 Paiement sans espèces disponible</li>
+                            <li>🅿️ Proche aussi de Kuromon Ichiba</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=34.668420,135.511040" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- G-TWO SHINSAIBASHI -->
+                <article class="card quick-fiche-card js-parking-card" id="shinsaibashi-parking" data-tags="osaka,nuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-osaka">Osaka</span>
+                            <span class="quick-fiche-tag tag-nuit">Ouvert 24h</span>
+                        </div>
+                        <span class="day-badge">📅 Mercredi 15/04</span>
+                        <h2>G-TWO Parking Shinsaibashi</h2>
+                        <p class="quick-fiche-subtitle">Pour : Umeda Sky Building + Don Quijote</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Shinsaibashisuji, Chuo — Osaka
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            〒542-0085 2-5-15 Shinsaibashisuji<br>
+                            Chuo Ward, Osaka</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>🅿️ Haut plafond OK — personnel anglophone</li>
+                            <li>⭐ Très bien noté (4.9/5)</li>
+                            <li>📍 Centre de Shinsaibashi</li>
+                            <li>💡 Alternative si BooBooPark plein</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=34.669948,135.500718" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- KUROMON / ONSEN -->
+                <article class="card quick-fiche-card js-parking-card" id="kuromon-parking" data-tags="osaka,nuit,attention">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-osaka">Osaka</span>
+                            <span class="quick-fiche-tag tag-nuit">Ouvert 24h</span>
+                            <span class="quick-fiche-tag tag-attention">⚠️ Rendu voiture</span>
+                        </div>
+                        <span class="day-badge">📅 Vendredi 17/04</span>
+                        <h2>BooBooPark Dotonbori</h2>
+                        <p class="quick-fiche-subtitle">Pour : Marché Kuromon + Onsen Solaniwa</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Kozu 2-chome, Chuo — Osaka
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Même parking que Dotonbori</strong><br>
+                            〒542-0072 2-1-24 Kōzu<br>
+                            Chuo Ward, Osaka</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>📍 7 min à pied du marché Kuromon</li>
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>💡 Même parking que la veille — repère connu</li>
+                        </ul>
+
+                        <div class="alert-rendu">
+                            ⚠️ Rendre la voiture avant 21h ! Quitter l'Onsen Solaniwa avant 20h.
+                        </div>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=34.668420,135.511040" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </section><!-- fin grille sem2 -->
+
+            <!-- ===================== SEMAINE 3 ===================== -->
+            <div class="semaine-header" id="sem3">
+                <span class="semaine-header-emoji">🏝️</span>
+                <span class="semaine-header-title">Semaine 3 — Okinawa</span>
+                <span class="semaine-header-dates">18 – 23 avril 2026</span>
+            </div>
+
+            <section class="quick-fiches-grid">
+
+                <!-- MANZAMO -->
+                <article class="card quick-fiche-card js-parking-card" id="manzamo-parking" data-tags="okinawa,gratuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-okinawa">Okinawa</span>
+                            <span class="quick-fiche-tag tag-gratuit">Gratuit</span>
+                        </div>
+                        <span class="day-badge">📅 Dimanche 19/04</span>
+                        <h2>Manzamo Parking</h2>
+                        <p class="quick-fiche-subtitle">Pour : Cape Manzamo (falaise)</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Onna Village, Kunigami — Okinawa
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            2871 Onna, Kunigami District<br>
+                            Okinawa 904-0411</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>💴 Gratuit (+ 100¥ éco-contribution)</li>
+                            <li>🅿️ Grand parking ouvert</li>
+                            <li>📍 Accès direct à la falaise</li>
+                            <li>💡 Gratuit en semaine — peut se remplir le week-end</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=26.503407,127.850869" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CHURAUMI -->
+                <article class="card quick-fiche-card js-parking-card" id="churaumi-parking" data-tags="okinawa,gratuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-okinawa">Okinawa</span>
+                            <span class="quick-fiche-tag tag-gratuit">Gratuit</span>
+                        </div>
+                        <span class="day-badge">📅 Lundi 20/04</span>
+                        <h2>Ocean Expo Park Parking</h2>
+                        <p class="quick-fiche-subtitle">Pour : Churaumi Aquarium</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Motobu, Kunigami — Okinawa
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            424 Ishikawa, Motobu<br>
+                            Kunigami District, Okinawa 905-0206</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>💴 Entièrement gratuit</li>
+                            <li>⏰ 8h00 – 18h00</li>
+                            <li>🅿️ Très grand parking — jamais plein</li>
+                            <li>📍 Entrée nord = la plus proche de l'aquarium</li>
+                            <li>💡 Arriver avant 10h le week-end</li>
+                        </ul>
+
+                        <div class="parking-tip">
+                            <span class="parking-tip-icon">💡</span>
+                            Parking gratuit + aquarium à 2 200¥/adulte. La vue depuis le parking est déjà magnifique.
+                        </div>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=26.694338,127.878013" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </section><!-- fin grille sem3 -->
+
+            <!-- ===================== SEMAINE 4 ===================== -->
+            <div class="semaine-header" id="sem4">
+                <span class="semaine-header-emoji">🗼</span>
+                <span class="semaine-header-title">Semaine 4 — Retour Tokyo</span>
+                <span class="semaine-header-dates">23 – 25 avril 2026</span>
+            </div>
+
+            <section class="quick-fiches-grid">
+
+                <!-- AKIHABARA -->
+                <article class="card quick-fiche-card js-parking-card" id="akihabara-parking" data-tags="tokyo,nuit">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                            <span class="quick-fiche-tag tag-nuit">Ouvert 24h</span>
+                        </div>
+                        <span class="day-badge">📅 Vendredi 24/04</span>
+                        <h2>Akihabara UDX Parking</h2>
+                        <p class="quick-fiche-subtitle">Pour : Akihabara Shopping</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Sotokanda, Chiyoda — Tokyo
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            〒101-0021 4-14-1 Sotokanda<br>
+                            Chiyoda City, Tokyo</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ Ouvert 24h/24</li>
+                            <li>🅿️ Grand parking sécurisé</li>
+                            <li>💴 Tarif raisonnable pour le quartier</li>
+                            <li>📍 Accès direct à Akihabara</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=35.700807,139.773018" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ODAIBA -->
+                <article class="card quick-fiche-card js-parking-card" id="odaiba-parking" data-tags="tokyo,gratuit-conditionnel">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                            <span class="quick-fiche-tag tag-gratuit-conditionnel">Validation achats</span>
+                        </div>
+                        <span class="day-badge">📅 Vendredi 24/04</span>
+                        <h2>DiverCity / Aqua City Parking</h2>
+                        <p class="quick-fiche-subtitle">Pour : Odaiba</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Odaiba, Minato — Tokyo
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Lieu</strong><br>
+                            DiverCity Tokyo Plaza ou Aqua City<br>
+                            Odaiba, Tokyo</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>🏢 Parking intégré aux centres commerciaux</li>
+                            <li>🎁 Validation gratuite avec achats</li>
+                            <li>🅿️ Grand espace, facile d'accès</li>
+                            <li>📍 Vue sur la baie de Tokyo</li>
+                        </ul>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=DiverCity+Tokyo+Plaza+parking&near=35.625400,139.775100" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SHINJUKU GYOEN -->
+                <article class="card quick-fiche-card js-parking-card" id="shinjuku-parking" data-tags="tokyo,attention">
+                    <div class="card-content">
+                        <div class="quick-fiche-tags">
+                            <span class="quick-fiche-tag tag-tokyo">Tokyo</span>
+                            <span class="quick-fiche-tag tag-attention">⚠️ Rendu voiture</span>
+                        </div>
+                        <span class="day-badge">📅 Samedi 25/04</span>
+                        <h2>Times Shinjuku Gyoen Okido</h2>
+                        <p class="quick-fiche-subtitle">Pour : Shinjuku Gyoen + Godzilla Head + Derniers achats</p>
+
+                        <div class="map-preview">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Naitomachi, Shinjuku — Tokyo
+                        </div>
+
+                        <div class="info-note-box">
+                            <p><strong>Adresse</strong><br>
+                            〒160-0014 11 Naitōmachi<br>
+                            Shinjuku City, Tokyo</p>
+                        </div>
+
+                        <ul class="quick-fiche-list">
+                            <li>⏰ 7h30 – 21h00 (sortie 24h)</li>
+                            <li>💴 600¥ / 2h avec visite jardin</li>
+                            <li>💴 Max 2 900¥ / journée</li>
+                            <li>🅿️ Accepte grands véhicules et bus</li>
+                            <li>📍 Accès direct Shinjuku Gyoen</li>
+                        </ul>
+
+                        <div class="alert-rendu">
+                            ⚠️ Dernière journée avec voiture ! Rendre avant 20h. C'est la dernière location.
+                        </div>
+
+                        <div class="quick-fiche-actions">
+                            <a class="info-action info-action--primary" href="https://maps.google.com/?q=35.686511,139.714237" target="_blank">
+                                📍 Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </section><!-- fin grille sem4 -->
+
+            <!-- FAQ -->
+            <br>
+            <article class="card info-article-section" id="faq-parkings">
+                <div class="card-content">
+                    <h2>FAQ Parkings</h2>
+
+                    <h3>Le parking le plus pratique à Tokyo ?</h3>
+                    <p>Tokyo Skytree Town Parking — il couvre à la fois Asakusa et Skytree depuis un seul endroit.</p>
+
+                    <h3>Le seul parking entièrement gratuit à Tokyo ?</h3>
+                    <p>Lake Kawaguchi Free Parking (Mont Fuji) — ouvert 24h/24 et sans limite de durée.</p>
+
+                    <h3>Les parkings à Okinawa sont-ils payants ?</h3>
+                    <p>Non — les deux principaux (Manzamo et Ocean Expo Park) sont totalement gratuits.</p>
+
+                    <h3>Que faire si le parking est plein ?</h3>
+                    <p>Chercher "parking" sur Google Maps à proximité — au Japon, il y a toujours une alternative dans un rayon de 300m. Ou utiliser les apps Akippa ou Times Parking pour réserver à l'avance.</p>
+
+                    <h3>Paiement en espèces obligatoire ?</h3>
+                    <p>Non — la majorité accepte la carte IC (Suica/Pasmo) et de plus en plus les cartes bancaires. Garder quand même 1 000¥ en pièces au cas où.</p>
+                </div>
+            </article>
+
+        </div><!-- fin info-content -->
+    </main>
+
+    <script src="../../../js/theme.js"></script>
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('[data-filter-tag]');
+            var cards   = document.querySelectorAll('.js-parking-card');
+            var empty   = document.getElementById('parking-filter-empty');
+
+            function applyFilter(tag) {
+                var count = 0;
+                buttons.forEach(function (btn) {
+                    btn.classList.toggle('is-active', btn.getAttribute('data-filter-tag') === tag);
+                });
+                cards.forEach(function (card) {
+                    var tags = (card.getAttribute('data-tags') || '').split(',').map(function (t) { return t.trim(); });
+                    var show = tag === 'all' || tags.indexOf(tag) !== -1;
+                    card.style.display = show ? '' : 'none';
+                    if (show) count++;
+                });
+                empty.hidden = count !== 0;
+            }
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () { applyFilter(btn.getAttribute('data-filter-tag')); });
+            });
+
+            applyFilter('all');
+        }());
+    </script>
+    <script src="../../../js/backToTop.js"></script>
+
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">&#8593;</button>
+</body>
+</html>
+
+
