@@ -3,14 +3,38 @@
 /* Barre rouge qui avance pendant la lecture du planning */
 .nav-progress-bar {
     position: absolute;
-    bottom: -4px; 
+    bottom: -4px;
     left: 0;
     height: 4px;
-    width: 0%; 
-    background: var(--accent-red);
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-blue));
     transition: width 0.5s ease-in-out;
     z-index: 1100;
+    overflow: visible;
 }
+
+.nav-progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translate(50%, -50%);
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.95),
+        0 0 16px rgba(255, 255, 255, 0.8),
+        0 0 24px rgba(255, 255, 255, 0.45);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.nav-progress-bar.show-glow::after {
+    opacity: 1;
+}
+
 
 /* Version un peu plus fine sur mobile */
 @media (max-width: 600px) {

@@ -1,28 +1,31 @@
 // Gère la barre de progression selon les positions Web/Mobile que tu as définies.
 
+/* VERTICAL */
 const positionsMobile = { 
     'header': 0, 
     'tokyo1': 11, 
-    'osaka': 31, 
-    'okinawa': 51, 
+    'osaka': 30.5, 
+    'okinawa': 50.5, 
     'tokyo2': 70, 
     'france': 100 
 };
 
+/* HORIZONTAL */
 const positionsMobileHorizontal = { 
     'header': 0, 
-    'tokyo1': 12, 
-    'osaka': 32, 
-    'okinawa': 51, 
-    'tokyo2': 71, 
+    'tokyo1': 11.5, 
+    'osaka': 31.5, 
+    'okinawa': 50.5, 
+    'tokyo2': 70, 
     'france': 100
 };
 
+/* DESKTOP */
 const positionsWeb = { 
     'header': 0, 
-    'tokyo1': 28, 
-    'osaka': 39, 
-    'okinawa': 51, 
+    'tokyo1': 27, 
+    'osaka': 38.5, 
+    'okinawa': 50, 
     'tokyo2': 62, 
     'france': 100
 };
@@ -36,6 +39,7 @@ function updateProgress(id) {
     const pourcentage = positions[id];
     if (pourcentage !== undefined) {
         progressBar.style.width = pourcentage + '%';
+        progressBar.classList.toggle('show-glow', pourcentage > 0 && pourcentage < 100);
     }
 }
 
