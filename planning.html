@@ -37,7 +37,18 @@
 
     <header>
         <h1>🇯🇵 JAPON 2026</h1>
-        <p class="subtitle">Kevin, Loïc, May Nhia, Stéphanie, Estelle<br>Du 5 Avril au 27 Avril 2026</p>
+<p class="subtitle">Kevin, Loïc, May Nhia, Stéphanie, Estelle
+    <br>
+
+<em onclick="let s=this.nextElementSibling; s.style.display=(s.style.display==='inline'?'none':'inline')" style="cursor:pointer; color: #ff6b6b; font-style: normal; font-weight: 600; font-size: 0.9em; letter-spacing: 0.05em; text-shadow: 0 0 5px #000000, 0 0 10px #000000;">
+👉 Noisette = (ヘーゼルナッツ) hēzeru nattsu / (アレルギー) arerugī
+</em>
+<span style="display:none; margin-left:8px; color:#00f0ff;">
+<br>👉 Allergie aux noisettes = (彼女はヘーゼルナッツアレルギーです) kanojo wa hēzeru nattsu arerugī desu
+</span>
+
+    <br>
+    Du 5 Avril au 27 Avril 2026</p>
     </header>
 
     <nav class="main-nav">
@@ -309,6 +320,7 @@
                     <p><strong class="blue-text">10h20 :</strong> Vol JAL45 ➔ Arrivée Paris CDG (17h55).</p>
                     <p><strong class="blue-text">21h00 :</strong> Navette vers l'hôtel Première Classe Roissy.</p>
                     <div class="btn-group">
+                        <button class="btn" onclick="openModal('guide-vol-japon')">✈️ Infos vol Japon aller/retour</button>
                         <button class="btn" onclick="openModal('guide-transfer-hnd')">🚐 Transferts Haneda</button>
                         <button class="btn" onclick="openModal('guide-navette-paris')">🚐 Infos Navette</button>
                         <button class="btn" onclick="openModal('guide-hotel-retour-france')">🏨 Hôtel Première Classe CDG</button>

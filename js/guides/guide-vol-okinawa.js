@@ -6,11 +6,11 @@ window.modalData['guide-vol-okinawa'] = /* html */ `
         <img src="images/avions/avion-osaka-vers-okinawa.jpg" alt="Avion vol okinawa" style="max-width:100%;height:auto; border-radius:8px;">
         <p><strong>Osaka (ITM) vers Naha (OKA)</strong><br>sam. 18 avr. · 8h15 - sam. 18 avr. · 10h25</p>
         <p>Vol direct · 2 h 10 min · Classe économique<br>All Nippon Airways · NH761</p>
-
-        <p><strong>Bagages</strong></p>
-        <p>5 petits bagages à main<br>Vous devrez placer ce(s) bagage(s) sous le siège situé devant vous.</p>
-        <p>5 bagages cabine<br>25 x 40 x 55 cm · Poids max. : 8 kg</p>
-        <p>10 bagages en soute<br>Poids max. : 23 kg</p>
+<hr>
+        <p><strong>Bagages par PERSONNE :</strong></p>
+        <p>1 petits bagages à main<br>Vous devrez placer ce(s) bagage(s) sous le siège situé devant vous.</p>
+        <p>1 bagages cabine<br>25 x 40 x 55 cm · Poids max. : 8 kg</p>
+        <p>2 bagages en soute<br>Poids max. : 23 kg</p>
 
         <div class="btn-group" style="margin-bottom: 15px;">
             <a href="0-fichiers-sensibles/0-BILLET_AVIONS/1-OSAKA - OKINAWA (aller)/booking-details.pdf" download class="btn">📥 Télécharger le PDF " booking-details.pdf "</a>

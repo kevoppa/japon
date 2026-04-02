@@ -10,6 +10,11 @@ window.modalData['guide-vol-japon'] = /* html */ `
 
         <p><strong>Tokyo (HND) vers Paris (CDG)</strong><br>dim. 26 avr. · 10h20 - dim. 26 avr. · 17h55</p>
         <p>Vol direct · 14 h 35 min · Classe économique<br>Japan Airlines · JL45</p>
+        <hr>
+        <p><strong>Bagages par PERSONNE :</strong></p>
+        <p>1 petits bagages à main<br>Vous devrez placer ce(s) bagage(s) sous le siège situé devant vous.</p>
+        <p>1 bagages cabine<br>25 x 40 x 55 cm · Poids max. : 10 kg</p>
+        <p>2 bagages en soute<br>Poids max. : 23 kg</p>
 
         <div class="btn-group" style="margin-bottom: 15px;">
             <a href="0-fichiers-sensibles/0-BILLET_AVIONS/0-PARIS - TOKYO (aller retour)/booking-details.pdf" download class="btn">📥 Télécharger le PDF " booking-details.pdf "</a>

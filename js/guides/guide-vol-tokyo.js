@@ -7,11 +7,11 @@ window.modalData['guide-vol-tokyo'] = /* html */ `
         
         <p><strong>Naha (OKA) vers Tokyo (HND)</strong><br>jeu. 23 avr. · 15h10 - jeu. 23 avr. · 17h35</p>
         <p>Vol direct · 2 h 25 min · Classe économique<br>All Nippon Airways · NH470</p>
-
-        <p><strong>Bagages</strong></p>
-        <p>5 petits bagages à main<br>Vous devrez placer ce(s) bagage(s) sous le siège situé devant vous.</p>
-        <p>5 bagages cabine<br>25 x 40 x 55 cm · Poids max. : 8 kg</p>
-        <p>10 bagages en soute<br>Poids max. : 23 kg</p>
+<hr>
+        <p><strong>Bagages par PERSONNE :</strong></p>
+        <p>1 petits bagages à main<br>Vous devrez placer ce(s) bagage(s) sous le siège situé devant vous.</p>
+        <p>1 bagages cabine<br>25 x 40 x 55 cm · Poids max. : 8 kg</p>
+        <p>2 bagages en soute<br>Poids max. : 23 kg</p>
 
         <div class="btn-group" style="margin-bottom: 15px;">
             <a href="0-fichiers-sensibles/0-BILLET_AVIONS/2-OKINAWA - TOKYO (aller)/booking-details.pdf" download class="btn">📥 Télécharger le PDF " booking-details.pdf "</a>
